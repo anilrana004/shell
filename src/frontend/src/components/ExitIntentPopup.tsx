@@ -49,7 +49,7 @@ export function ExitIntentPopup() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 hidden md:block"
-            style={{ background: "rgba(26,14,16,0.75)" }}
+            style={{ background: "rgba(26,42,30,0.75)" }}
             onClick={handleDismiss}
           />
           <motion.div
@@ -63,9 +63,9 @@ export function ExitIntentPopup() {
             <div
               className="w-full max-w-md p-8 rounded-2xl relative pointer-events-auto"
               style={{
-                background: "#E6D8C4",
-                border: "1px solid rgba(248,131,121,0.4)",
-                boxShadow: "0 32px 80px rgba(248,131,121,0.2)",
+                background: "#EDF7F2",
+                border: "1px solid rgba(232,84,26,0.4)",
+                boxShadow: "0 32px 80px rgba(232,84,26,0.2)",
               }}
             >
               <button
@@ -74,8 +74,8 @@ export function ExitIntentPopup() {
                 onClick={handleDismiss}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
                 style={{
-                  background: "rgba(248,131,121,0.2)",
-                  color: "#4A4A4A",
+                  background: "rgba(232,84,26,0.2)",
+                  color: "#4A5E52",
                 }}
                 aria-label="Close popup"
               >
@@ -87,23 +87,23 @@ export function ExitIntentPopup() {
                   <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5"
                     style={{
-                      background: "rgba(248,131,121,0.15)",
-                      border: "1px solid rgba(248,131,121,0.3)",
+                      background: "rgba(232,84,26,0.15)",
+                      border: "1px solid rgba(232,84,26,0.3)",
                     }}
                   >
-                    <Gift size={28} style={{ color: "#F88379" }} />
+                    <Gift size={28} style={{ color: "#E8541A" }} />
                   </div>
 
                   <h2
                     className="text-2xl font-semibold mb-1"
                     style={{
                       fontFamily: "var(--font-display)",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                     }}
                   >
                     Wait — Before You Go!
                   </h2>
-                  <p className="text-sm mb-2" style={{ color: "#4A4A4A" }}>
+                  <p className="text-sm mb-2" style={{ color: "#4A5E52" }}>
                     Get
                     <span
                       className="font-bold mx-1"
@@ -113,7 +113,7 @@ export function ExitIntentPopup() {
                     </span>
                     your first Himalayan trek.
                   </p>
-                  <p className="text-xs mb-6" style={{ color: "#4A4A4A70" }}>
+                  <p className="text-xs mb-6" style={{ color: "#4A5E5270" }}>
                     Join 8,000+ trekkers — exclusive offer for new subscribers
                     only.
                   </p>
@@ -129,15 +129,15 @@ export function ExitIntentPopup() {
                       className="flex-1 px-4 py-3 rounded-xl text-sm outline-none"
                       style={{
                         background: "rgba(255,255,255,0.9)",
-                        border: "1px solid rgba(232,160,170,0.25)",
-                        color: "#1A1A1A",
+                        border: "1px solid rgba(212,237,224,0.25)",
+                        color: "#1A2A1E",
                       }}
                     />
                     <button
                       type="submit"
                       data-ocid="exit_popup.submit_button"
                       className="px-5 py-3 rounded-xl text-sm font-semibold transition-all hover:opacity-90"
-                      style={{ background: "#F88379", color: "#1A1A1A" }}
+                      style={{ background: "#E8541A", color: "#FFFFFF" }}
                     >
                       Claim
                     </button>
@@ -147,7 +147,7 @@ export function ExitIntentPopup() {
                     type="button"
                     onClick={handleDismiss}
                     className="mt-4 text-xs w-full text-center transition-colors"
-                    style={{ color: "#4A4A4A50" }}
+                    style={{ color: "#4A5E5250" }}
                   >
                     No thanks, I'll pay full price
                   </button>
@@ -159,12 +159,12 @@ export function ExitIntentPopup() {
                     className="text-xl font-semibold mb-2"
                     style={{
                       fontFamily: "var(--font-display)",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                     }}
                   >
                     You're In!
                   </h3>
-                  <p className="text-sm" style={{ color: "#4A4A4A" }}>
+                  <p className="text-sm" style={{ color: "#4A5E52" }}>
                     Your ₹500 coupon is on its way to{" "}
                     <span style={{ color: "#D4A843" }}>{email}</span>.
                     <br />

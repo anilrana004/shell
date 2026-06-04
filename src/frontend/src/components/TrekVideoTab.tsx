@@ -58,7 +58,7 @@ const VIDEO_SECTIONS = [
 export default function TrekVideoTab({ trek }: Props) {
   return (
     <div className="py-8 space-y-8">
-      <h2 className="font-display text-3xl" style={{ color: "#1A1A1A" }}>
+      <h2 className="font-display text-3xl" style={{ color: "#1A2A1E" }}>
         Videos - {trek.name}
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -68,7 +68,7 @@ export default function TrekVideoTab({ trek }: Props) {
             className="rounded-2xl overflow-hidden border group cursor-pointer"
             style={{
               background: "rgba(255,255,255,0.9)",
-              borderColor: "#4A4A4A22",
+              borderColor: "#4A5E5222",
             }}
           >
             <div className="relative">
@@ -83,9 +83,9 @@ export default function TrekVideoTab({ trek }: Props) {
               >
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
-                  style={{ background: "rgba(248,131,121,0.9)" }}
+                  style={{ background: "rgba(232,84,26,0.9)" }}
                 >
-                  <span className="text-2xl ml-1" style={{ color: "#1A1A1A" }}>
+                  <span className="text-2xl ml-1" style={{ color: "#1A2A1E" }}>
                     &#9654;
                   </span>
                 </div>
@@ -94,7 +94,7 @@ export default function TrekVideoTab({ trek }: Props) {
                 className="absolute bottom-2 right-2 text-xs px-2 py-0.5 rounded"
                 style={{
                   background: "rgba(255,255,255,0.9)",
-                  color: "#1A1A1A",
+                  color: "#1A2A1E",
                 }}
               >
                 {video.duration}
@@ -103,14 +103,14 @@ export default function TrekVideoTab({ trek }: Props) {
             <div className="p-4">
               <div
                 className="font-semibold text-sm mb-1"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 {video.title}
               </div>
-              <div className="text-xs mb-2" style={{ color: "#4A4A4A" }}>
+              <div className="text-xs mb-2" style={{ color: "#4A5E52" }}>
                 {video.desc}
               </div>
-              <div className="text-xs" style={{ color: "#4A4A4A88" }}>
+              <div className="text-xs" style={{ color: "#4A5E5288" }}>
                 {video.views} views
               </div>
             </div>

@@ -12,7 +12,7 @@ export function FeaturedTreksSection() {
   return (
     <section
       data-ocid="featured_treks.section"
-      style={{ background: "#E6D8C4" }}
+      style={{ background: "#EDF7F2" }}
       className="py-20"
     >
       <div className="max-w-7xl mx-auto px-4">
@@ -22,8 +22,8 @@ export function FeaturedTreksSection() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xs uppercase tracking-[0.4em] mb-3"
-              style={{ color: "#F88379" }}
+              className="text-xs uppercase tracking-[0.3em] mb-3"
+              style={{ color: "#2E7D4F" }}
             >
               Handpicked for You
             </motion.p>
@@ -33,7 +33,7 @@ export function FeaturedTreksSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl font-semibold"
-              style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+              style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
             >
               LEGENDARY TRAILS
             </motion.h2>
@@ -41,8 +41,8 @@ export function FeaturedTreksSection() {
           <Link
             to="/treks"
             data-ocid="featured_treks.view_all"
-            className="hidden md:flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-80"
-            style={{ color: "#4A4A4A" }}
+            className="hidden md:flex items-center gap-2 text-sm font-semibold transition-colors hover:text-[#E8541A]"
+            style={{ color: "#2E7D4F" }}
           >
             View All 14 Treks →
           </Link>
@@ -67,8 +67,8 @@ export function FeaturedTreksSection() {
             data-ocid="featured_treks.view_all_mobile"
             className="px-6 py-3 rounded-xl text-sm font-semibold tracking-wide"
             style={{
-              border: "1px solid rgba(248,131,121,0.4)",
-              color: "#F88379",
+              border: "1px solid rgba(232,84,26,0.4)",
+              color: "#E8541A",
             }}
           >
             View All 14 Treks →

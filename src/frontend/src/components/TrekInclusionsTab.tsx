@@ -70,7 +70,7 @@ export default function TrekInclusionsTab({ trek: _trek }: Props) {
         <div>
           <h2
             className="font-display text-2xl mb-5"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "#1A2A1E" }}
           >
             What's Included
           </h2>
@@ -82,7 +82,7 @@ export default function TrekInclusionsTab({ trek: _trek }: Props) {
                 style={{ background: "rgba(45,80,22,0.15)" }}
               >
                 <span className="text-green-400 flex-shrink-0">&#10003;</span>
-                <span className="text-sm" style={{ color: "#1A1A1A" }}>
+                <span className="text-sm" style={{ color: "#1A2A1E" }}>
                   {item}
                 </span>
               </div>
@@ -92,7 +92,7 @@ export default function TrekInclusionsTab({ trek: _trek }: Props) {
         <div>
           <h2
             className="font-display text-2xl mb-5"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "#1A2A1E" }}
           >
             What's Excluded
           </h2>
@@ -101,10 +101,10 @@ export default function TrekInclusionsTab({ trek: _trek }: Props) {
               <div
                 key={item}
                 className="flex items-start gap-3 rounded-xl px-4 py-3"
-                style={{ background: "rgba(248,131,121,0.1)" }}
+                style={{ background: "rgba(232,84,26,0.1)" }}
               >
                 <span className="text-red-400 flex-shrink-0">&#10007;</span>
-                <span className="text-sm" style={{ color: "#1A1A1A" }}>
+                <span className="text-sm" style={{ color: "#1A2A1E" }}>
                   {item}
                 </span>
               </div>
@@ -114,19 +114,19 @@ export default function TrekInclusionsTab({ trek: _trek }: Props) {
       </div>
 
       <div>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Gear: What We Provide vs What You Carry
         </h2>
         <div className="grid md:grid-cols-2 gap-4">
           <div
             className="rounded-2xl overflow-hidden border"
-            style={{ borderColor: "#2D6A4F" }}
+            style={{ borderColor: "#2E7D4F" }}
           >
             <div
               className="px-5 py-3"
               style={{ background: "rgba(45,80,22,0.3)" }}
             >
-              <div className="font-semibold" style={{ color: "#1A1A1A" }}>
+              <div className="font-semibold" style={{ color: "#1A2A1E" }}>
                 Shail Hikers Provides
               </div>
             </div>
@@ -137,22 +137,22 @@ export default function TrekInclusionsTab({ trek: _trek }: Props) {
                 style={{
                   background:
                     idx % 2 === 0 ? "rgba(45,80,22,0.1)" : "transparent",
-                  color: "#1A1A1A",
+                  color: "#1A2A1E",
                 }}
               >
-                <span style={{ color: "#2D6A4F" }}>&#10003;</span> {item}
+                <span style={{ color: "#2E7D4F" }}>&#10003;</span> {item}
               </div>
             ))}
           </div>
           <div
             className="rounded-2xl overflow-hidden border"
-            style={{ borderColor: "#4A4A4A33" }}
+            style={{ borderColor: "#4A5E5233" }}
           >
             <div
               className="px-5 py-3"
               style={{ background: "rgba(255,255,255,0.9)" }}
             >
-              <div className="font-semibold" style={{ color: "#1A1A1A" }}>
+              <div className="font-semibold" style={{ color: "#1A2A1E" }}>
                 You Must Bring
               </div>
             </div>
@@ -162,8 +162,8 @@ export default function TrekInclusionsTab({ trek: _trek }: Props) {
                 className="flex items-center gap-2 px-5 py-2 text-sm"
                 style={{
                   background:
-                    idx % 2 === 0 ? "rgba(45,27,30,0.4)" : "transparent",
-                  color: "#1A1A1A",
+                    idx % 2 === 0 ? "rgba(255,255,255,0.4)" : "transparent",
+                  color: "#1A2A1E",
                 }}
               >
                 <span style={{ color: "#D4A843" }}>&#8594;</span> {item}

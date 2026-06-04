@@ -75,7 +75,7 @@ export function WhyUsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-xs uppercase tracking-[0.4em] mb-4"
-              style={{ color: "#F88379" }}
+              style={{ color: "#E8541A" }}
             >
               Why Choose Us
             </motion.p>
@@ -85,17 +85,17 @@ export function WhyUsSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-semibold leading-tight mb-6"
-              style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+              style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
             >
               NOT JUST A TREK.
               <br />
-              <span style={{ color: "#F88379", fontStyle: "italic" }}>
+              <span style={{ color: "#E8541A", fontStyle: "italic" }}>
                 AN EXPERIENCE.
               </span>
             </motion.h2>
             <p
               className="text-sm leading-relaxed mb-8"
-              style={{ color: "#4A4A4A" }}
+              style={{ color: "#4A5E52" }}
             >
               Shail Hikers was born from a deep love for the Himalayas — not
               from a business plan. Every decision we make is guided by the
@@ -107,7 +107,7 @@ export function WhyUsSection() {
               to="/about"
               data-ocid="why_us.learn_more"
               className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80"
-              style={{ color: "#F88379" }}
+              style={{ color: "#E8541A" }}
             >
               Our full story →
             </Link>
@@ -123,7 +123,7 @@ export function WhyUsSection() {
                   key={feat.title}
                   data-ocid={`why_us.feature.${i + 1}`}
                   className="rounded-xl overflow-hidden"
-                  style={{ border: "1px solid rgba(248,131,121,0.2)" }}
+                  style={{ border: "1px solid rgba(232,84,26,0.2)" }}
                 >
                   <button
                     type="button"
@@ -131,31 +131,31 @@ export function WhyUsSection() {
                     className="w-full flex items-center gap-4 p-4 text-left transition-all"
                     style={{
                       background: isOpen
-                        ? "rgba(248,131,121,0.12)"
+                        ? "rgba(232,84,26,0.12)"
                         : "rgba(255,255,255,0.7)",
                     }}
                   >
                     <div
                       className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ background: "rgba(248,131,121,0.2)" }}
+                      style={{ background: "rgba(232,84,26,0.2)" }}
                     >
-                      <Icon size={18} style={{ color: "#F88379" }} />
+                      <Icon size={18} style={{ color: "#E8541A" }} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p
                         className="font-semibold text-sm"
-                        style={{ color: "#1A1A1A" }}
+                        style={{ color: "#1A2A1E" }}
                       >
                         {feat.title}
                       </p>
-                      <p className="text-xs" style={{ color: "#4A4A4A" }}>
+                      <p className="text-xs" style={{ color: "#4A5E52" }}>
                         {feat.shortDesc}
                       </p>
                     </div>
                     <ChevronDown
                       size={15}
                       style={{
-                        color: "#4A4A4A",
+                        color: "#4A5E52",
                         transform: isOpen ? "rotate(180deg)" : "none",
                         transition: "transform 0.25s",
                         flexShrink: 0,
@@ -175,7 +175,7 @@ export function WhyUsSection() {
                         <p
                           className="px-5 py-4 text-xs leading-relaxed"
                           style={{
-                            color: "#4A4A4A",
+                            color: "#4A5E52",
                             background: "rgba(255,255,255,0.5)",
                           }}
                         >

@@ -42,7 +42,7 @@ export function CompareTeaserSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs uppercase tracking-[0.4em] mb-3"
-            style={{ color: "#F88379" }}
+            style={{ color: "#E8541A" }}
           >
             Can't Decide?
           </motion.p>
@@ -52,11 +52,11 @@ export function CompareTeaserSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-semibold"
-            style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+            style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
           >
             COMPARE TREKS
             <br />
-            <span style={{ color: "#F88379", fontStyle: "italic" }}>
+            <span style={{ color: "#E8541A", fontStyle: "italic" }}>
               SIDE BY SIDE
             </span>
           </motion.h2>
@@ -66,7 +66,7 @@ export function CompareTeaserSection() {
           className="max-w-3xl mx-auto rounded-2xl p-6"
           style={{
             background: "rgba(255,255,255,0.85)",
-            border: "1px solid rgba(248,131,121,0.25)",
+            border: "1px solid rgba(232,84,26,0.25)",
           }}
         >
           {/* Trek selectors */}
@@ -85,15 +85,15 @@ export function CompareTeaserSection() {
                 className="w-full px-3 py-3 rounded-xl text-sm font-medium outline-none"
                 style={{
                   background: "#FFFFFF",
-                  border: "1px solid rgba(248,131,121,0.35)",
-                  color: "#1A1A1A",
+                  border: "1px solid rgba(232,84,26,0.35)",
+                  color: "#1A2A1E",
                 }}
               >
                 {TREKS.map((t) => (
                   <option
                     key={t.slug}
                     value={t.slug}
-                    style={{ background: "#E6D8C4" }}
+                    style={{ background: "#EDF7F2" }}
                   >
                     {t.name}
                   </option>
@@ -106,7 +106,7 @@ export function CompareTeaserSection() {
           {leftTrek && rightTrek && (
             <div
               className="divide-y"
-              style={{ borderColor: "rgba(248,131,121,0.15)" }}
+              style={{ borderColor: "rgba(232,84,26,0.15)" }}
             >
               {COMPARE_FIELDS.map((field) => (
                 <div
@@ -115,19 +115,19 @@ export function CompareTeaserSection() {
                 >
                   <span
                     className="text-xs uppercase tracking-wide text-center"
-                    style={{ color: "#4A4A4A60" }}
+                    style={{ color: "#4A5E5260" }}
                   >
                     {field.label}
                   </span>
                   <span
                     className="text-sm font-medium text-center"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     {field.get(leftTrek)}
                   </span>
                   <span
                     className="text-sm font-medium text-center"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     {field.get(rightTrek)}
                   </span>
@@ -140,7 +140,7 @@ export function CompareTeaserSection() {
             to="/compare"
             data-ocid="compare_teaser.full_compare"
             className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm transition-all hover:opacity-90"
-            style={{ background: "#F88379", color: "#1A1A1A" }}
+            style={{ background: "#E8541A", color: "#FFFFFF" }}
           >
             See Full Comparison (25+ Parameters) <ArrowRight size={14} />
           </Link>

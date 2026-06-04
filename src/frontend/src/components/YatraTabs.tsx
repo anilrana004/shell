@@ -537,8 +537,8 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
       <div
         className="sticky top-0 z-30 overflow-x-auto"
         style={{
-          background: "#E6D8C4",
-          borderBottom: "1px solid rgba(232,160,170,0.2)",
+          background: "#EDF7F2",
+          borderBottom: "1px solid rgba(212,237,224,0.2)",
         }}
       >
         <div className="flex min-w-max">
@@ -550,10 +550,10 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
               onClick={() => setActiveTab(tab.id)}
               className="px-4 py-4 text-sm font-medium whitespace-nowrap transition-colors"
               style={{
-                color: activeTab === tab.id ? "#1A1A1A" : "#4A4A4A",
+                color: activeTab === tab.id ? "#1A2A1E" : "#4A5E52",
                 borderBottom:
                   activeTab === tab.id
-                    ? "2px solid #F88379"
+                    ? "2px solid #E8541A"
                     : "2px solid transparent",
               }}
             >
@@ -569,13 +569,13 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
           <div className="space-y-8">
             <div
               style={{
-                borderLeft: "4px solid #F88379",
+                borderLeft: "4px solid #E8541A",
                 paddingLeft: "1.25rem",
               }}
             >
               <p
                 style={{
-                  color: "#1A1A1A",
+                  color: "#1A2A1E",
                   lineHeight: 1.85,
                   fontSize: "1.05rem",
                 }}
@@ -588,7 +588,7 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
             <div>
               <h3
                 className="text-xl font-bold mb-4"
-                style={{ color: "#1A1A1A", fontFamily: "var(--font-display)" }}
+                style={{ color: "#1A2A1E", fontFamily: "var(--font-display)" }}
               >
                 Yatra Highlights
               </h3>
@@ -639,18 +639,18 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                     key={h.title}
                     className="p-4 rounded-xl"
                     style={{
-                      background: "rgba(250,212,216,0.04)",
-                      border: "1px solid rgba(232,160,170,0.15)",
+                      background: "rgba(212,237,224,0.04)",
+                      border: "1px solid rgba(212,237,224,0.15)",
                     }}
                   >
                     <div className="text-2xl mb-2">{h.icon}</div>
                     <p
                       className="font-bold text-sm mb-1"
-                      style={{ color: "#1A1A1A" }}
+                      style={{ color: "#1A2A1E" }}
                     >
                       {h.title}
                     </p>
-                    <p className="text-xs" style={{ color: "#4A4A4A" }}>
+                    <p className="text-xs" style={{ color: "#4A5E52" }}>
                       {h.desc}
                     </p>
                   </div>
@@ -662,13 +662,13 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
             <div>
               <h3
                 className="text-xl font-bold mb-4"
-                style={{ color: "#1A1A1A", fontFamily: "var(--font-display)" }}
+                style={{ color: "#1A2A1E", fontFamily: "var(--font-display)" }}
               >
                 Yatra At A Glance
               </h3>
               <div
                 className="rounded-xl overflow-hidden"
-                style={{ border: "1px solid rgba(232,160,170,0.2)" }}
+                style={{ border: "1px solid rgba(212,237,224,0.2)" }}
               >
                 {[
                   [
@@ -703,20 +703,20 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                     className="flex"
                     style={{
                       background:
-                        i % 2 === 0 ? "rgba(250,212,216,0.03)" : "transparent",
+                        i % 2 === 0 ? "rgba(212,237,224,0.03)" : "transparent",
                       borderTop:
-                        i > 0 ? "1px solid rgba(232,160,170,0.1)" : undefined,
+                        i > 0 ? "1px solid rgba(212,237,224,0.1)" : undefined,
                     }}
                   >
                     <div
                       className="w-40 md:w-52 p-3 font-bold text-sm flex-shrink-0"
-                      style={{ color: "#F88379" }}
+                      style={{ color: "#E8541A" }}
                     >
                       {label}
                     </div>
                     <div
                       className="flex-1 p-3 text-sm"
-                      style={{ color: "#4A4A4A" }}
+                      style={{ color: "#4A5E52" }}
                     >
                       {value}
                     </div>
@@ -735,13 +735,13 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
             >
               <h4
                 className="font-bold mb-2 flex items-center gap-2"
-                style={{ color: "#82C8E5" }}
+                style={{ color: "#2E7D4F" }}
               >
                 ♿ Senior Citizen & Accessibility Information
               </h4>
               <p
                 style={{
-                  color: "#4A4A4A",
+                  color: "#4A5E52",
                   fontSize: "0.9rem",
                   lineHeight: 1.7,
                 }}
@@ -767,7 +767,7 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                     className="px-3 py-1 rounded-full text-xs"
                     style={{
                       background: "rgba(168,197,218,0.12)",
-                      color: "#82C8E5",
+                      color: "#2E7D4F",
                       border: "1px solid rgba(168,197,218,0.3)",
                     }}
                   >
@@ -782,33 +782,33 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
         {/* ITINERARY TAB */}
         {activeTab === "itinerary" && (
           <div className="space-y-4">
-            <p className="mb-6" style={{ color: "#4A4A4A" }}>
+            <p className="mb-6" style={{ color: "#4A5E52" }}>
               Day-by-day journey across the sacred route.
             </p>
             {itinerary.map((day) => (
               <details
                 key={day.day}
                 className="group rounded-xl overflow-hidden"
-                style={{ border: "1px solid rgba(232,160,170,0.2)" }}
+                style={{ border: "1px solid rgba(212,237,224,0.2)" }}
               >
                 <summary className="flex items-center gap-4 p-5 cursor-pointer list-none">
                   <span
                     className="w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0"
-                    style={{ background: "#F88379", color: "#1A1A1A" }}
+                    style={{ background: "#E8541A", color: "#FFFFFF" }}
                   >
                     D{day.day}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="font-bold" style={{ color: "#1A1A1A" }}>
+                    <p className="font-bold" style={{ color: "#1A2A1E" }}>
                       {day.title}
                     </p>
-                    <p className="text-sm" style={{ color: "#4A4A4A" }}>
+                    <p className="text-sm" style={{ color: "#4A5E52" }}>
                       {day.locations}
                     </p>
                   </div>
                   <span
                     className="text-xl transition-transform group-open:rotate-180 flex-shrink-0"
-                    style={{ color: "#F88379" }}
+                    style={{ color: "#E8541A" }}
                   >
                     ›
                   </span>
@@ -818,19 +818,19 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                     {day.driving !== "—" && (
                       <div
                         className="flex items-center gap-2"
-                        style={{ color: "#4A4A4A", fontSize: "0.875rem" }}
+                        style={{ color: "#4A5E52", fontSize: "0.875rem" }}
                       >
                         <span>🚐</span> {day.driving} drive
                       </div>
                     )}
                     <div
                       className="flex items-center gap-2"
-                      style={{ color: "#4A4A4A", fontSize: "0.875rem" }}
+                      style={{ color: "#4A5E52", fontSize: "0.875rem" }}
                     >
                       <span>🏨</span> {day.hotel}
                     </div>
                   </div>
-                  <p style={{ color: "#4A4A4A", lineHeight: 1.75 }}>
+                  <p style={{ color: "#4A5E52", lineHeight: 1.75 }}>
                     {day.description}
                   </p>
                 </div>
@@ -845,7 +845,7 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
             <div>
               <h3
                 className="text-lg font-bold mb-4"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 ✅ Inclusions
               </h3>
@@ -859,10 +859,10 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                       border: "1px solid rgba(45,80,22,0.25)",
                     }}
                   >
-                    <span style={{ color: "#2D6A4F" }}>✓</span>
+                    <span style={{ color: "#2E7D4F" }}>✓</span>
                     <span
                       style={{
-                        color: "#4A4A4A",
+                        color: "#4A5E52",
                         fontSize: "0.875rem",
                         lineHeight: 1.6,
                       }}
@@ -876,7 +876,7 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
             <div>
               <h3
                 className="text-lg font-bold mb-4"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 ❌ Exclusions
               </h3>
@@ -886,14 +886,14 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                     key={item}
                     className="flex items-start gap-3 p-3 rounded-lg"
                     style={{
-                      background: "rgba(248,131,121,0.06)",
-                      border: "1px solid rgba(248,131,121,0.2)",
+                      background: "rgba(232,84,26,0.06)",
+                      border: "1px solid rgba(232,84,26,0.2)",
                     }}
                   >
-                    <span style={{ color: "#F88379" }}>✗</span>
+                    <span style={{ color: "#E8541A" }}>✗</span>
                     <span
                       style={{
-                        color: "#4A4A4A",
+                        color: "#4A5E52",
                         fontSize: "0.875rem",
                         lineHeight: 1.6,
                       }}
@@ -912,24 +912,24 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
           <div className="space-y-8">
             <div
               className="rounded-xl overflow-hidden"
-              style={{ border: "1px solid rgba(232,160,170,0.2)" }}
+              style={{ border: "1px solid rgba(212,237,224,0.2)" }}
             >
               <div
                 className="p-4"
-                style={{ background: "rgba(248,131,121,0.15)" }}
+                style={{ background: "rgba(232,84,26,0.15)" }}
               >
-                <h3 className="font-bold" style={{ color: "#1A1A1A" }}>
+                <h3 className="font-bold" style={{ color: "#1A2A1E" }}>
                   Group Size Pricing
                 </h3>
               </div>
               <table className="w-full">
                 <thead>
-                  <tr style={{ background: "rgba(250,212,216,0.04)" }}>
+                  <tr style={{ background: "rgba(212,237,224,0.04)" }}>
                     {["Group Size", "Price Per Person", "Discount"].map((h) => (
                       <th
                         key={h}
                         className="p-4 text-left text-sm font-bold"
-                        style={{ color: "#1A1A1A" }}
+                        style={{ color: "#1A2A1E" }}
                       >
                         {h}
                       </th>
@@ -941,14 +941,14 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                     <tr
                       key={tier.group}
                       style={{
-                        borderTop: "1px solid rgba(232,160,170,0.1)",
+                        borderTop: "1px solid rgba(212,237,224,0.1)",
                         background:
                           i % 2 === 0
-                            ? "rgba(250,212,216,0.02)"
+                            ? "rgba(212,237,224,0.02)"
                             : "transparent",
                       }}
                     >
-                      <td className="p-4" style={{ color: "#4A4A4A" }}>
+                      <td className="p-4" style={{ color: "#4A5E52" }}>
                         {tier.group}
                       </td>
                       <td
@@ -965,10 +965,10 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                         style={{
                           color:
                             tier.multiplier < 1
-                              ? "#2D6A4F"
+                              ? "#2E7D4F"
                               : tier.multiplier > 1
-                                ? "#F88379"
-                                : "#4A4A4A",
+                                ? "#E8541A"
+                                : "#4A5E52",
                         }}
                       >
                         {tier.multiplier < 1
@@ -995,35 +995,35 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                   label: "Pay ₹5,000 Now",
                   desc: "Balance 14 days before",
                   badge: "Popular",
-                  color: "#F88379",
+                  color: "#E8541A",
                 },
                 {
                   label: "EMI — 3 or 6 months",
                   desc: "Via Razorpay",
                   badge: "",
-                  color: "#82C8E5",
+                  color: "#2E7D4F",
                 },
               ].map((opt) => (
                 <div
                   key={opt.label}
                   className="p-5 rounded-xl"
                   style={{
-                    background: "rgba(250,212,216,0.04)",
-                    border: "1px solid rgba(232,160,170,0.15)",
+                    background: "rgba(212,237,224,0.04)",
+                    border: "1px solid rgba(212,237,224,0.15)",
                   }}
                 >
                   {opt.badge && (
                     <span
                       className="text-xs font-bold px-2 py-0.5 rounded mb-2 inline-block"
-                      style={{ background: opt.color, color: "#E6D8C4" }}
+                      style={{ background: opt.color, color: "#EDF7F2" }}
                     >
                       {opt.badge}
                     </span>
                   )}
-                  <p className="font-bold" style={{ color: "#1A1A1A" }}>
+                  <p className="font-bold" style={{ color: "#1A2A1E" }}>
                     {opt.label}
                   </p>
-                  <p className="text-sm" style={{ color: "#4A4A4A" }}>
+                  <p className="text-sm" style={{ color: "#4A5E52" }}>
                     {opt.desc}
                   </p>
                 </div>
@@ -1040,7 +1040,7 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
               <p className="font-bold mb-1" style={{ color: "#D4A843" }}>
                 Early Bird Discount
               </p>
-              <p style={{ color: "#4A4A4A", fontSize: "0.9rem" }}>
+              <p style={{ color: "#4A5E52", fontSize: "0.9rem" }}>
                 Book 60 days ahead — save 10%. Refer a friend: both get ₹500
                 off.
               </p>
@@ -1098,19 +1098,19 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                 <p className="text-4xl font-bold" style={{ color: "#D4A843" }}>
                   4.9
                 </p>
-                <p className="text-xs" style={{ color: "#4A4A4A" }}>
+                <p className="text-xs" style={{ color: "#4A5E52" }}>
                   out of 5
                 </p>
               </div>
               <div className="flex-1">
                 {[5, 4, 3, 2, 1].map((star) => (
                   <div key={star} className="flex items-center gap-2 mb-1">
-                    <span className="text-xs w-4" style={{ color: "#4A4A4A" }}>
+                    <span className="text-xs w-4" style={{ color: "#4A5E52" }}>
                       {star}★
                     </span>
                     <div
                       className="flex-1 h-2 rounded-full"
-                      style={{ background: "rgba(232,160,170,0.2)" }}
+                      style={{ background: "rgba(212,237,224,0.2)" }}
                     >
                       <div
                         className="h-full rounded-full"
@@ -1130,8 +1130,8 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                 data-ocid={`yatra.review.item.${i + 1}`}
                 className="p-5 rounded-xl"
                 style={{
-                  border: "1px solid rgba(232,160,170,0.15)",
-                  background: "rgba(250,212,216,0.03)",
+                  border: "1px solid rgba(212,237,224,0.15)",
+                  background: "rgba(212,237,224,0.03)",
                 }}
               >
                 <div className="flex items-start gap-3 mb-3">
@@ -1139,13 +1139,13 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                     src={review.avatar}
                     alt={review.name}
                     className="w-10 h-10 rounded-full object-cover flex-shrink-0"
-                    style={{ border: "2px solid #4A4A4A" }}
+                    style={{ border: "2px solid #4A5E52" }}
                   />
                   <div className="flex-1 min-w-0">
-                    <p className="font-bold" style={{ color: "#1A1A1A" }}>
+                    <p className="font-bold" style={{ color: "#1A2A1E" }}>
                       {review.name}
                     </p>
-                    <p className="text-xs" style={{ color: "#4A4A4A" }}>
+                    <p className="text-xs" style={{ color: "#4A5E52" }}>
                       {review.city} · {review.date} · {review.yatra}
                     </p>
                   </div>
@@ -1155,7 +1155,7 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                 </div>
                 <p
                   style={{
-                    color: "#4A4A4A",
+                    color: "#4A5E52",
                     lineHeight: 1.7,
                     fontSize: "0.9rem",
                   }}
@@ -1174,32 +1174,32 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
               <details
                 key={faq.q}
                 className="group rounded-xl overflow-hidden"
-                style={{ border: "1px solid rgba(232,160,170,0.15)" }}
+                style={{ border: "1px solid rgba(212,237,224,0.15)" }}
               >
                 <summary className="flex items-start justify-between gap-4 p-5 cursor-pointer list-none">
                   <div className="flex items-start gap-3">
                     <span
                       className="text-xs px-2 py-0.5 rounded mt-0.5 flex-shrink-0"
                       style={{
-                        background: "rgba(248,131,121,0.2)",
-                        color: "#F88379",
+                        background: "rgba(232,84,26,0.2)",
+                        color: "#E8541A",
                       }}
                     >
                       {faq.cat}
                     </span>
-                    <span className="font-medium" style={{ color: "#1A1A1A" }}>
+                    <span className="font-medium" style={{ color: "#1A2A1E" }}>
                       {faq.q}
                     </span>
                   </div>
                   <span
                     className="text-xl transition-transform group-open:rotate-180 flex-shrink-0 mt-0.5"
-                    style={{ color: "#F88379" }}
+                    style={{ color: "#E8541A" }}
                   >
                     ›
                   </span>
                 </summary>
                 <div className="px-5 pb-5">
-                  <p style={{ color: "#4A4A4A", lineHeight: 1.75 }}>{faq.a}</p>
+                  <p style={{ color: "#4A5E52", lineHeight: 1.75 }}>{faq.a}</p>
                 </div>
               </details>
             ))}
@@ -1214,29 +1214,29 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                 key={permit.name}
                 className="p-5 rounded-xl"
                 style={{
-                  border: "1px solid rgba(232,160,170,0.15)",
-                  background: "rgba(250,212,216,0.03)",
+                  border: "1px solid rgba(212,237,224,0.15)",
+                  background: "rgba(212,237,224,0.03)",
                 }}
               >
-                <h4 className="font-bold mb-3" style={{ color: "#1A1A1A" }}>
+                <h4 className="font-bold mb-3" style={{ color: "#1A2A1E" }}>
                   {permit.name}
                 </h4>
                 <div className="grid md:grid-cols-2 gap-3 text-sm">
                   <div>
-                    <span style={{ color: "#F88379" }}>Issued by: </span>
-                    <span style={{ color: "#4A4A4A" }}>{permit.by}</span>
+                    <span style={{ color: "#E8541A" }}>Issued by: </span>
+                    <span style={{ color: "#4A5E52" }}>{permit.by}</span>
                   </div>
                   <div>
-                    <span style={{ color: "#F88379" }}>Cost: </span>
+                    <span style={{ color: "#E8541A" }}>Cost: </span>
                     <span style={{ color: "#D4A843" }}>{permit.cost}</span>
                   </div>
                   <div className="md:col-span-2">
-                    <span style={{ color: "#F88379" }}>How handled: </span>
-                    <span style={{ color: "#4A4A4A" }}>{permit.handled}</span>
+                    <span style={{ color: "#E8541A" }}>How handled: </span>
+                    <span style={{ color: "#4A5E52" }}>{permit.handled}</span>
                   </div>
                   <div className="md:col-span-2">
-                    <span style={{ color: "#F88379" }}>Documents: </span>
-                    <span style={{ color: "#4A4A4A" }}>
+                    <span style={{ color: "#E8541A" }}>Documents: </span>
+                    <span style={{ color: "#4A5E52" }}>
                       {permit.docs.join(", ")}
                     </span>
                   </div>
@@ -1250,10 +1250,10 @@ export default function YatraTabs({ yatra }: YatraTabsProps) {
                 border: "1px solid rgba(168,197,218,0.2)",
               }}
             >
-              <p className="font-bold mb-1" style={{ color: "#82C8E5" }}>
+              <p className="font-bold mb-1" style={{ color: "#2E7D4F" }}>
                 Upload Your Aadhaar
               </p>
-              <p className="text-sm" style={{ color: "#4A4A4A" }}>
+              <p className="text-sm" style={{ color: "#4A5E52" }}>
                 Upload your Aadhaar card in your dashboard before the yatra. Our
                 team uses it for all permit and registration processing — saving
                 you time at checkposts.

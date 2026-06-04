@@ -27,7 +27,7 @@ export function NewsletterSection() {
   return (
     <section
       data-ocid="newsletter.section"
-      style={{ background: "#F88379" }}
+      style={{ background: "#E8541A" }}
       className="py-16"
     >
       <div className="max-w-2xl mx-auto px-4 text-center">
@@ -36,7 +36,7 @@ export function NewsletterSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-xs uppercase tracking-[0.4em] mb-3"
-          style={{ color: "rgba(250,212,216,0.8)" }}
+          style={{ color: "rgba(255,255,255,0.8)" }}
         >
           Stay Connected
         </motion.p>
@@ -46,11 +46,11 @@ export function NewsletterSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
           className="text-3xl md:text-5xl font-semibold mb-2"
-          style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+          style={{ fontFamily: "var(--font-display)", color: "#FFFFFF" }}
         >
           JOIN THE TRIBE
         </motion.h2>
-        <p className="text-sm mb-8" style={{ color: "rgba(250,212,216,0.8)" }}>
+        <p className="text-sm mb-8" style={{ color: "rgba(255,255,255,0.8)" }}>
           Join 8,000+ trekkers — first dibs on new batches, seasonal offers &
           trail updates
         </p>
@@ -65,9 +65,9 @@ export function NewsletterSection() {
                   className="flex items-center gap-2 cursor-pointer px-3 py-2 rounded-xl transition-all"
                   style={{
                     background: prefs.includes(p.id)
-                      ? "rgba(26,14,16,0.35)"
-                      : "rgba(26,14,16,0.15)",
-                    border: `1px solid ${prefs.includes(p.id) ? "rgba(250,212,216,0.5)" : "rgba(250,212,216,0.2)"}`,
+                      ? "rgba(26,42,30,0.35)"
+                      : "rgba(26,42,30,0.15)",
+                    border: `1px solid ${prefs.includes(p.id) ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.2)"}`,
                   }}
                 >
                   <input
@@ -81,18 +81,18 @@ export function NewsletterSection() {
                     className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0"
                     style={{
                       background: prefs.includes(p.id)
-                        ? "#1A1A1A"
+                        ? "#1A2A1E"
                         : "transparent",
-                      border: "1.5px solid rgba(250,212,216,0.6)",
+                      border: "1.5px solid rgba(255,255,255,0.6)",
                     }}
                   >
                     {prefs.includes(p.id) && (
-                      <Check size={10} style={{ color: "#F88379" }} />
+                      <Check size={10} style={{ color: "#E8541A" }} />
                     )}
                   </span>
                   <span
                     className="text-xs font-medium"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#FFFFFF" }}
                   >
                     {p.label}
                   </span>
@@ -111,15 +111,15 @@ export function NewsletterSection() {
                 className="flex-1 px-4 py-3 rounded-xl text-sm outline-none"
                 style={{
                   background: "rgba(255,255,255,0.5)",
-                  border: "1px solid rgba(250,212,216,0.3)",
-                  color: "#1A1A1A",
+                  border: "1px solid rgba(255,255,255,0.3)",
+                  color: "#1A2A1E",
                 }}
               />
               <button
                 type="submit"
                 data-ocid="newsletter.submit_button"
                 className="px-5 py-3 rounded-xl font-semibold text-sm transition-all hover:opacity-90 flex items-center gap-2"
-                style={{ background: "#E6D8C4", color: "#1A1A1A" }}
+                style={{ background: "#2E7D4F", color: "#FFFFFF" }}
               >
                 <Send size={14} /> Subscribe
               </button>
@@ -131,14 +131,14 @@ export function NewsletterSection() {
               className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ background: "rgba(255,255,255,0.4)" }}
             >
-              <Check size={24} style={{ color: "#1A1A1A" }} />
+              <Check size={24} style={{ color: "#1A2A1E" }} />
             </div>
-            <p className="text-base font-semibold" style={{ color: "#1A1A1A" }}>
+            <p className="text-base font-semibold" style={{ color: "#1A2A1E" }}>
               You're subscribed!
             </p>
             <p
               className="text-sm mt-1"
-              style={{ color: "rgba(250,212,216,0.8)" }}
+              style={{ color: "rgba(255,255,255,0.8)" }}
             >
               Welcome to the Shail Hikers tribe. 🏔️
             </p>

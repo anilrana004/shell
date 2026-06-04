@@ -72,7 +72,7 @@ export function TestimonialsSection() {
               left: `${(i * 13 + 5) % 90}%`,
               top: `${(i * 17 + 8) % 80}%`,
               opacity: 0.03,
-              color: "#1A1A1A",
+              color: "#1A2A1E",
               fontFamily: "serif",
               transform: `rotate(${i * 45}deg)`,
             }}
@@ -89,7 +89,7 @@ export function TestimonialsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs uppercase tracking-[0.4em] mb-3"
-            style={{ color: "#F88379" }}
+            style={{ color: "#E8541A" }}
           >
             Real Trekkers, Real Stories
           </motion.p>
@@ -99,7 +99,7 @@ export function TestimonialsSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-semibold"
-            style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+            style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
           >
             VOICES FROM THE MOUNTAINS
           </motion.h2>
@@ -134,25 +134,25 @@ export function TestimonialsSection() {
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center transition-transform group-hover:scale-110"
                   style={{
-                    background: "rgba(248,131,121,0.8)",
-                    border: "2px solid rgba(250,212,216,0.4)",
+                    background: "rgba(232,84,26,0.8)",
+                    border: "2px solid rgba(212,237,224,0.4)",
                   }}
                 >
                   <Play
                     size={18}
-                    fill="#1A1A1A"
-                    style={{ color: "#1A1A1A", marginLeft: "2px" }}
+                    fill="#1A2A1E"
+                    style={{ color: "#1A2A1E", marginLeft: "2px" }}
                   />
                 </div>
               </div>
               <div className="absolute bottom-3 left-3">
                 <p
                   className="text-xs font-semibold"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   {v.name} — {v.trek}
                 </p>
-                <p className="text-[10px]" style={{ color: "#4A4A4A" }}>
+                <p className="text-[10px]" style={{ color: "#4A5E52" }}>
                   {v.duration} · {v.views.toLocaleString()} views
                 </p>
               </div>
@@ -164,7 +164,7 @@ export function TestimonialsSection() {
         <div className="flex flex-wrap gap-2 mb-8 justify-center">
           <Filter
             size={13}
-            style={{ color: "#4A4A4A60" }}
+            style={{ color: "#4A5E5260" }}
             className="self-center"
           />
           {TREK_FILTERS.map((f) => (
@@ -176,9 +176,9 @@ export function TestimonialsSection() {
               className="px-3 py-1.5 rounded-full text-xs font-medium transition-all"
               style={{
                 background:
-                  activeFilter === f ? "#F88379" : "rgba(255,255,255,0.8)",
-                border: `1px solid ${activeFilter === f ? "#F88379" : "rgba(248,131,121,0.3)"}`,
-                color: activeFilter === f ? "#1A1A1A" : "#4A4A4A",
+                  activeFilter === f ? "#E8541A" : "rgba(255,255,255,0.8)",
+                border: `1px solid ${activeFilter === f ? "#E8541A" : "rgba(232,84,26,0.3)"}`,
+                color: activeFilter === f ? "#1A2A1E" : "#4A5E52",
               }}
             >
               {f}
@@ -199,7 +199,7 @@ export function TestimonialsSection() {
               className="p-5 rounded-2xl"
               style={{
                 background: "rgba(255,255,255,0.8)",
-                border: "1px solid rgba(248,131,121,0.2)",
+                border: "1px solid rgba(232,84,26,0.2)",
               }}
             >
               {/* Stars */}
@@ -217,7 +217,7 @@ export function TestimonialsSection() {
 
               <p
                 className="text-sm leading-relaxed mb-4"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 “{t.text}”
               </p>
@@ -227,16 +227,16 @@ export function TestimonialsSection() {
                   src={t.avatar}
                   alt={`${t.name} profile`}
                   className="w-10 h-10 rounded-full object-cover"
-                  style={{ border: "2px solid rgba(232,160,170,0.4)" }}
+                  style={{ border: "2px solid rgba(212,237,224,0.4)" }}
                 />
                 <div>
                   <p
                     className="text-sm font-semibold"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     {t.name}
                   </p>
-                  <p className="text-xs" style={{ color: "#4A4A4A70" }}>
+                  <p className="text-xs" style={{ color: "#4A5E5270" }}>
                     {t.city} · {t.trek} · {t.date}
                   </p>
                 </div>
@@ -246,7 +246,7 @@ export function TestimonialsSection() {
           {filtered.length === 0 && (
             <p
               className="col-span-full text-center text-sm"
-              style={{ color: "#4A4A4A60" }}
+              style={{ color: "#4A5E5260" }}
             >
               No reviews for this trek yet.
             </p>

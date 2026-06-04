@@ -155,14 +155,14 @@ export default function TrekWeatherTab({ trek }: Props) {
     <div className="py-8 space-y-10">
       {/* Current Weather */}
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Current Weather — {trek.startingPoint.split(",")[0]}
         </h2>
         <div
           className="rounded-2xl p-6 border"
           style={{
             background: "rgba(255,255,255,0.9)",
-            borderColor: "#82C8E544",
+            borderColor: "#2E7D4F44",
           }}
         >
           <div className="flex items-center gap-8">
@@ -170,14 +170,14 @@ export default function TrekWeatherTab({ trek }: Props) {
             <div>
               <div
                 className="text-4xl font-bold mb-1"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 -3°C
               </div>
-              <div className="text-sm" style={{ color: "#4A4A4A" }}>
+              <div className="text-sm" style={{ color: "#4A5E52" }}>
                 Light Snowfall
               </div>
-              <div className="text-xs mt-1" style={{ color: "#4A4A4A88" }}>
+              <div className="text-xs mt-1" style={{ color: "#4A5E5288" }}>
                 Last updated: Just now
               </div>
             </div>
@@ -191,12 +191,12 @@ export default function TrekWeatherTab({ trek }: Props) {
                 ["Condition", "Snowfall"],
               ].map(([label, value]) => (
                 <div key={label}>
-                  <div className="text-xs" style={{ color: "#4A4A4A" }}>
+                  <div className="text-xs" style={{ color: "#4A5E52" }}>
                     {label}
                   </div>
                   <div
                     className="text-sm font-semibold"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     {value}
                   </div>
@@ -209,7 +209,7 @@ export default function TrekWeatherTab({ trek }: Props) {
 
       {/* 7-Day Forecast */}
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           7-Day Forecast
         </h2>
         <div className="flex gap-3 overflow-x-auto pb-2">
@@ -219,23 +219,23 @@ export default function TrekWeatherTab({ trek }: Props) {
               className="flex-shrink-0 rounded-xl p-4 text-center min-w-[90px] border"
               style={{
                 background: "rgba(255,255,255,0.9)",
-                borderColor: "#4A4A4A22",
+                borderColor: "#4A5E5222",
               }}
             >
               <div
                 className="text-sm font-semibold mb-2"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 {day.day}
               </div>
               <div className="text-2xl mb-2">{WEATHER_ICONS[day.icon]}</div>
-              <div className="text-sm font-bold" style={{ color: "#1A1A1A" }}>
+              <div className="text-sm font-bold" style={{ color: "#1A2A1E" }}>
                 {day.high}°
               </div>
-              <div className="text-xs" style={{ color: "#82C8E5" }}>
+              <div className="text-xs" style={{ color: "#2E7D4F" }}>
                 {day.low}°
               </div>
-              <div className="text-xs mt-1" style={{ color: "#82C8E5" }}>
+              <div className="text-xs mt-1" style={{ color: "#2E7D4F" }}>
                 {day.precip}%
               </div>
             </div>
@@ -245,7 +245,7 @@ export default function TrekWeatherTab({ trek }: Props) {
 
       {/* Monthly Guide */}
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Monthly Weather Guide
         </h2>
         <div className="flex gap-3 overflow-x-auto pb-2">
@@ -255,30 +255,30 @@ export default function TrekWeatherTab({ trek }: Props) {
               className="flex-shrink-0 rounded-xl p-4 min-w-[110px] border relative"
               style={{
                 background: "rgba(255,255,255,0.9)",
-                borderColor: m.best ? "#D4A843" : "#4A4A4A22",
+                borderColor: m.best ? "#D4A843" : "#4A5E5222",
               }}
             >
               {m.best && (
                 <div
                   className="absolute -top-2 left-1/2 -translate-x-1/2 text-xs px-2 py-0.5 rounded-full"
-                  style={{ background: "#D4A843", color: "#E6D8C4" }}
+                  style={{ background: "#D4A843", color: "#EDF7F2" }}
                 >
                   Best
                 </div>
               )}
               <div
                 className="font-bold text-sm mb-1"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 {m.month}
               </div>
-              <div className="text-xs mb-1" style={{ color: "#4A4A4A" }}>
+              <div className="text-xs mb-1" style={{ color: "#4A5E52" }}>
                 {m.high}° / {m.low}°
               </div>
               <div
                 className="text-xs"
                 style={{
-                  color: m.status === "caution" ? "#D4A843" : "#82C8E5",
+                  color: m.status === "caution" ? "#D4A843" : "#2E7D4F",
                 }}
               >
                 {m.condition}
@@ -290,21 +290,21 @@ export default function TrekWeatherTab({ trek }: Props) {
 
       {/* AMS Warning */}
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Altitude & AMS Warning
         </h2>
         <div
           className="rounded-2xl p-6 border"
           style={{
-            background: "rgba(248,131,121,0.1)",
-            borderColor: "#F8837966",
+            background: "rgba(232,84,26,0.1)",
+            borderColor: "#E8541A66",
           }}
         >
-          <div className="font-semibold mb-3" style={{ color: "#F88379" }}>
+          <div className="font-semibold mb-3" style={{ color: "#E8541A" }}>
             AMS Risk at {trek.maxAltitude.toLocaleString()} ft (
             {trek.maxAltitudeM.toLocaleString()} m)
           </div>
-          <div className="mb-4 text-sm" style={{ color: "#1A1A1A" }}>
+          <div className="mb-4 text-sm" style={{ color: "#1A2A1E" }}>
             At altitudes above 10,000 ft, Acute Mountain Sickness can affect
             anyone regardless of fitness level. Know the signs.
           </div>
@@ -312,7 +312,7 @@ export default function TrekWeatherTab({ trek }: Props) {
             <div>
               <div
                 className="font-semibold text-sm mb-3"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 Symptoms Checklist
               </div>
@@ -328,9 +328,9 @@ export default function TrekWeatherTab({ trek }: Props) {
                   <div
                     key={s}
                     className="flex items-center gap-2 text-sm"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
-                    <span style={{ color: "#F88379" }}>&#9679;</span> {s}
+                    <span style={{ color: "#E8541A" }}>&#9679;</span> {s}
                   </div>
                 ))}
               </div>
@@ -338,7 +338,7 @@ export default function TrekWeatherTab({ trek }: Props) {
             <div>
               <div
                 className="font-semibold text-sm mb-3"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 What To Do
               </div>
@@ -354,9 +354,9 @@ export default function TrekWeatherTab({ trek }: Props) {
                   <div
                     key={s}
                     className="flex items-start gap-2 text-sm"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
-                    <span className="font-bold" style={{ color: "#82C8E5" }}>
+                    <span className="font-bold" style={{ color: "#2E7D4F" }}>
                       {idx + 1}.
                     </span>{" "}
                     {s}
@@ -370,14 +370,14 @@ export default function TrekWeatherTab({ trek }: Props) {
 
       {/* Historical Chart */}
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Historical Rainfall & Snowfall
         </h2>
         <div
           className="rounded-2xl p-6 border"
           style={{
             background: "rgba(255,255,255,0.9)",
-            borderColor: "#4A4A4A33",
+            borderColor: "#4A5E5233",
           }}
         >
           <ResponsiveContainer width="100%" height={200}>
@@ -385,27 +385,27 @@ export default function TrekWeatherTab({ trek }: Props) {
               data={HISTORICAL_DATA}
               margin={{ top: 5, right: 10, bottom: 5, left: 10 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#4A4A4A11" />
-              <XAxis dataKey="month" tick={{ fill: "#4A4A4A", fontSize: 10 }} />
-              <YAxis tick={{ fill: "#4A4A4A", fontSize: 10 }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#4A5E5211" />
+              <XAxis dataKey="month" tick={{ fill: "#4A5E52", fontSize: 10 }} />
+              <YAxis tick={{ fill: "#4A5E52", fontSize: 10 }} />
               <Tooltip
                 contentStyle={{
-                  background: "#E6D8C4",
-                  border: "1px solid #4A4A4A44",
+                  background: "#EDF7F2",
+                  border: "1px solid #4A5E5244",
                   borderRadius: "8px",
-                  color: "#1A1A1A",
+                  color: "#1A2A1E",
                 }}
               />
               <Bar
                 dataKey="rainfall"
-                fill="#82C8E5"
-                opacity={0.8}
+                fill="#FDE8DE"
+                opacity={0.9}
                 name="Rainfall (mm)"
               />
               <Bar
                 dataKey="snowfall"
-                fill="#1A1A1A"
-                opacity={0.6}
+                fill="#2E7D4F"
+                opacity={0.8}
                 name="Snowfall (cm)"
               />
             </BarChart>
@@ -413,21 +413,21 @@ export default function TrekWeatherTab({ trek }: Props) {
           <div className="flex gap-6 justify-center mt-3">
             <div
               className="flex items-center gap-2 text-xs"
-              style={{ color: "#4A4A4A" }}
+              style={{ color: "#4A5E52" }}
             >
               <div
                 className="w-3 h-3 rounded"
-                style={{ background: "#82C8E5" }}
+                style={{ background: "#FDE8DE" }}
               />
               Rainfall (mm)
             </div>
             <div
               className="flex items-center gap-2 text-xs"
-              style={{ color: "#4A4A4A" }}
+              style={{ color: "#4A5E52" }}
             >
               <div
                 className="w-3 h-3 rounded"
-                style={{ background: "#1A1A1A" }}
+                style={{ background: "#2E7D4F" }}
               />
               Snowfall (cm)
             </div>

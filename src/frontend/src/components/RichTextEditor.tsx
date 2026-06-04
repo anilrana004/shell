@@ -80,11 +80,11 @@ export default function RichTextEditor({
   return (
     <div className="relative">
       {/* Toolbar */}
-      <div className="flex items-center gap-1 rounded-t border border-[#C9B99A] bg-[#E6D8C4] px-2 py-1">
+      <div className="flex items-center gap-1 rounded-t border border-[#D4EDE0] bg-[#EDF7F2] px-2 py-1">
         <button
           type="button"
           onClick={() => exec("bold")}
-          className="rounded px-2 py-1 text-sm font-bold text-[#1A1A1A] transition-colors hover:bg-[#F88379] hover:text-white"
+          className="rounded px-2 py-1 text-sm font-bold text-[#1A2A1E] transition-colors hover:bg-[#E8541A] hover:text-white"
           title="Bold"
         >
           B
@@ -92,7 +92,7 @@ export default function RichTextEditor({
         <button
           type="button"
           onClick={() => exec("italic")}
-          className="rounded px-2 py-1 text-sm italic text-[#1A1A1A] transition-colors hover:bg-[#F88379] hover:text-white"
+          className="rounded px-2 py-1 text-sm italic text-[#1A2A1E] transition-colors hover:bg-[#E8541A] hover:text-white"
           title="Italic"
         >
           I
@@ -100,7 +100,7 @@ export default function RichTextEditor({
         <button
           type="button"
           onClick={() => exec("underline")}
-          className="rounded px-2 py-1 text-sm underline text-[#1A1A1A] transition-colors hover:bg-[#F88379] hover:text-white"
+          className="rounded px-2 py-1 text-sm underline text-[#1A2A1E] transition-colors hover:bg-[#E8541A] hover:text-white"
           title="Underline"
         >
           U
@@ -108,7 +108,7 @@ export default function RichTextEditor({
         <button
           type="button"
           onClick={handleLink}
-          className="rounded px-2 py-1 text-sm text-[#1A1A1A] transition-colors hover:bg-[#F88379] hover:text-white"
+          className="rounded px-2 py-1 text-sm text-[#1A2A1E] transition-colors hover:bg-[#E8541A] hover:text-white"
           title="Insert Link"
         >
           🔗
@@ -117,7 +117,7 @@ export default function RichTextEditor({
           <button
             type="button"
             onClick={() => setShowEmoji((v) => !v)}
-            className="rounded px-2 py-1 text-sm text-[#1A1A1A] transition-colors hover:bg-[#F88379] hover:text-white"
+            className="rounded px-2 py-1 text-sm text-[#1A2A1E] transition-colors hover:bg-[#E8541A] hover:text-white"
             title="Insert Emoji"
           >
             😊
@@ -134,13 +134,13 @@ export default function RichTextEditor({
                 tabIndex={0}
                 aria-label="Close emoji picker"
               />
-              <div className="absolute left-0 top-full z-50 mt-1 grid grid-cols-5 gap-1 rounded border border-[#C9B99A] bg-white p-2 shadow-lg">
+              <div className="absolute left-0 top-full z-50 mt-1 grid grid-cols-5 gap-1 rounded border border-[#D4EDE0] bg-white p-2 shadow-lg">
                 {EMOJIS.map((emoji) => (
                   <button
                     key={emoji}
                     type="button"
                     onClick={() => insertEmoji(emoji)}
-                    className="rounded p-1 text-lg transition-colors hover:bg-[#F5EEE4]"
+                    className="rounded p-1 text-lg transition-colors hover:bg-[#FEF4F0]"
                   >
                     {emoji}
                   </button>
@@ -154,7 +154,7 @@ export default function RichTextEditor({
       {/* Editor area */}
       <div className="relative">
         {isEmpty && !isFocused && (
-          <span className="pointer-events-none absolute left-3 top-3 text-sm text-[#7A7A7A]">
+          <span className="pointer-events-none absolute left-3 top-3 text-sm text-[#7A8E80]">
             {placeholder}
           </span>
         )}
@@ -164,7 +164,7 @@ export default function RichTextEditor({
           onInput={handleInput}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          className="min-h-[80px] rounded-b border border-t-0 border-[#C9B99A] bg-white p-3 text-sm text-[#1A1A1A] focus:outline-none focus:ring-1 focus:ring-[#F88379]"
+          className="min-h-[80px] rounded-b border border-t-0 border-[#D4EDE0] bg-white p-3 text-sm text-[#1A2A1E] focus:outline-none focus:ring-1 focus:ring-[#E8541A]"
           suppressContentEditableWarning
         />
       </div>

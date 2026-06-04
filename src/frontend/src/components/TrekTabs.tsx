@@ -71,7 +71,7 @@ export default function TrekTabs({ trek }: Props) {
       {/* Sticky Tab Bar */}
       <div
         className="sticky top-0 z-20 border-b overflow-x-auto"
-        style={{ background: "#E6D8C4", borderColor: "#4A4A4A22" }}
+        style={{ background: "#EDF7F2", borderColor: "#4A5E5222" }}
       >
         <div className="flex min-w-max">
           {TABS.map((tab, i) => (
@@ -81,13 +81,13 @@ export default function TrekTabs({ trek }: Props) {
               data-ocid={`trek.tab.${i + 1}`}
               onClick={() => setActiveTab(i)}
               className="px-5 py-4 text-sm font-medium whitespace-nowrap transition-colors relative"
-              style={{ color: activeTab === i ? "#1A1A1A" : "#4A4A4A" }}
+              style={{ color: activeTab === i ? "#1A2A1E" : "#4A5E52" }}
             >
               {tab}
               {activeTab === i && (
                 <div
                   className="absolute bottom-0 left-0 right-0 h-0.5"
-                  style={{ background: "#F88379" }}
+                  style={{ background: "#E8541A" }}
                 />
               )}
             </button>

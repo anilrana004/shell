@@ -16,7 +16,7 @@ export default function PaymentFailurePage() {
         className="min-h-screen flex items-center justify-center px-4 py-16"
         style={{
           background:
-            "linear-gradient(135deg, #E6D8C4 0%, #FFFFFF 50%, #E6D8C4 100%)",
+            "linear-gradient(135deg, #EDF7F2 0%, #FFFFFF 50%, #EDF7F2 100%)",
         }}
       >
         <motion.div
@@ -26,7 +26,7 @@ export default function PaymentFailurePage() {
           className="max-w-lg w-full rounded-2xl p-8 md:p-10 text-center"
           style={{
             background: "rgba(255,255,255,0.95)",
-            border: "1px solid rgba(248,131,121,0.3)",
+            border: "1px solid rgba(232,84,26,0.3)",
           }}
         >
           <motion.div
@@ -40,11 +40,11 @@ export default function PaymentFailurePage() {
             }}
             className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
             style={{
-              background: "rgba(248,131,121,0.2)",
-              border: "2px solid #F88379",
+              background: "rgba(232,84,26,0.2)",
+              border: "2px solid #E8541A",
             }}
           >
-            <XCircle size={40} style={{ color: "#F88379" }} />
+            <XCircle size={40} style={{ color: "#E8541A" }} />
           </motion.div>
 
           <motion.h1
@@ -52,7 +52,7 @@ export default function PaymentFailurePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             className="font-display text-2xl md:text-3xl mb-3"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "#1A2A1E" }}
           >
             Payment Failed
           </motion.h1>
@@ -62,7 +62,7 @@ export default function PaymentFailurePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="font-body mb-2"
-            style={{ color: "#4A4A4A" }}
+            style={{ color: "#4A5E52" }}
           >
             We could not process your payment. Your booking has not been
             confirmed and no money was charged.
@@ -73,7 +73,7 @@ export default function PaymentFailurePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45 }}
             className="font-body text-sm mb-6"
-            style={{ color: "#4A4A4A", opacity: 0.7 }}
+            style={{ color: "#4A5E52", opacity: 0.7 }}
           >
             This usually happens due to a network issue, expired card, or bank
             decline. Please try again with a different payment method.
@@ -86,12 +86,12 @@ export default function PaymentFailurePage() {
             className="rounded-xl p-5 mb-6 text-left"
             style={{
               background: "rgba(255,255,255,0.8)",
-              border: "1px solid rgba(250,212,216,0.1)",
+              border: "1px solid rgba(212,237,224,0.1)",
             }}
           >
             <h3
               className="font-display text-sm mb-3"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "#1A2A1E" }}
             >
               Common reasons for failure:
             </h3>
@@ -106,12 +106,12 @@ export default function PaymentFailurePage() {
                 <li
                   key={reason}
                   className="flex items-start gap-2 font-body text-sm"
-                  style={{ color: "#4A4A4A" }}
+                  style={{ color: "#4A5E52" }}
                 >
                   <HelpCircle
                     size={14}
                     className="mt-0.5 shrink-0"
-                    style={{ color: "#F88379" }}
+                    style={{ color: "#E8541A" }}
                   />
                   {reason}
                 </li>
@@ -129,7 +129,7 @@ export default function PaymentFailurePage() {
               type="button"
               onClick={() => window.history.back()}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body text-sm transition-all duration-200 hover:opacity-90"
-              style={{ background: "#F88379", color: "#1A1A1A" }}
+              style={{ background: "#E8541A", color: "#FFFFFF" }}
               data-ocid="payment.retry_button"
             >
               <RefreshCw size={16} />
@@ -139,9 +139,9 @@ export default function PaymentFailurePage() {
               to="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body text-sm transition-all duration-200 hover:opacity-90"
               style={{
-                background: "rgba(250,212,216,0.1)",
-                color: "#1A1A1A",
-                border: "1px solid rgba(250,212,216,0.2)",
+                background: "rgba(212,237,224,0.1)",
+                color: "#1A2A1E",
+                border: "1px solid rgba(212,237,224,0.2)",
               }}
               data-ocid="payment.contact_support_button"
             >
@@ -152,9 +152,9 @@ export default function PaymentFailurePage() {
               to="/"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body text-sm transition-all duration-200 hover:opacity-90"
               style={{
-                background: "rgba(250,212,216,0.05)",
-                color: "#4A4A4A",
-                border: "1px solid rgba(250,212,216,0.1)",
+                background: "rgba(212,237,224,0.05)",
+                color: "#4A5E52",
+                border: "1px solid rgba(212,237,224,0.1)",
               }}
               data-ocid="payment.go_home_button"
             >

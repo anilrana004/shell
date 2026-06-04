@@ -18,6 +18,8 @@ import {
   X,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import { Logo } from "@/components/Logo";
+import { useScrollHeaderContext } from "@/context/scroll-header-context";
 import { useEffect, useRef, useState } from "react";
 
 const AnnouncementText: React.FC<{ html: string }> = ({ html }) => {
@@ -34,7 +36,7 @@ const ALL_TREKS = [
     slug: "kedarkantha",
     difficulty: "Easy",
     price: "Rs 5,999",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
     altitude: "12,500 ft",
     days: 6,
   },
@@ -43,7 +45,7 @@ const ALL_TREKS = [
     slug: "har-ki-dun",
     difficulty: "Easy",
     price: "Rs 6,499",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
     altitude: "11,670 ft",
     days: 7,
   },
@@ -61,7 +63,7 @@ const ALL_TREKS = [
     slug: "dayara-bugyal",
     difficulty: "Easy",
     price: "Rs 5,499",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
     altitude: "12,000 ft",
     days: 5,
   },
@@ -70,7 +72,7 @@ const ALL_TREKS = [
     slug: "nag-tibba",
     difficulty: "Easy",
     price: "Rs 3,499",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
     altitude: "9,915 ft",
     days: 2,
   },
@@ -88,7 +90,7 @@ const ALL_TREKS = [
     slug: "buran-ghati",
     difficulty: "Difficult",
     price: "Rs 8,999",
-    color: "#F88379",
+    color: "#E8541A",
     altitude: "15,000 ft",
     days: 8,
   },
@@ -97,7 +99,7 @@ const ALL_TREKS = [
     slug: "rupin-pass",
     difficulty: "Difficult",
     price: "Rs 7,999",
-    color: "#F88379",
+    color: "#E8541A",
     altitude: "15,250 ft",
     days: 8,
   },
@@ -106,7 +108,7 @@ const ALL_TREKS = [
     slug: "bali-pass",
     difficulty: "Difficult",
     price: "Rs 9,499",
-    color: "#F88379",
+    color: "#E8541A",
     altitude: "16,207 ft",
     days: 9,
   },
@@ -124,7 +126,7 @@ const ALL_TREKS = [
     slug: "borasu-pass",
     difficulty: "Difficult",
     price: "Rs 9,999",
-    color: "#F88379",
+    color: "#E8541A",
     altitude: "17,100 ft",
     days: 10,
   },
@@ -151,7 +153,7 @@ const ALL_TREKS = [
     slug: "chaainsheel-bugyal",
     difficulty: "Easy",
     price: "Rs 5,999",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
     altitude: "11,500 ft",
     days: 4,
   },
@@ -211,7 +213,7 @@ function NavRightActions({
         type="button"
         onClick={() => setSearchOpen(!searchOpen)}
         className="p-2 rounded-lg transition-colors hover:bg-white/5"
-        style={{ color: searchOpen ? "#1A1A1A" : "#4A4A4A" }}
+        style={{ color: searchOpen ? "#E8541A" : "#4A5E52" }}
         aria-label="Search treks"
         data-ocid="navbar.search_input"
       >
@@ -220,8 +222,8 @@ function NavRightActions({
       {/* Phone */}
       <a
         href="tel:+918279888470"
-        className="flex items-center gap-1.5 text-xs font-medium transition-colors hover:text-[#1A1A1A] hidden lg:flex"
-        style={{ color: "#4A4A4A" }}
+        className="flex items-center gap-1.5 text-xs font-medium transition-colors hover:text-[#1A2A1E] hidden lg:flex"
+        style={{ color: "#4A5E52" }}
       >
         <Phone size={13} />
         +91-82798 88470
@@ -231,7 +233,7 @@ function NavRightActions({
         to="/book/$slug"
         params={{ slug: "kedarkantha" }}
         className="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all hover:opacity-90 hover:scale-[1.02]"
-        style={{ background: "#F88379", color: "#1A1A1A" }}
+        style={{ background: "#E8541A", color: "#FFFFFF" }}
         data-ocid="navbar.book_now_button"
       >
         Book Now
@@ -243,7 +245,7 @@ function NavRightActions({
             type="button"
             onClick={() => setUserMenuOpen((v) => !v)}
             className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-opacity hover:opacity-80"
-            style={{ background: "#F88379", color: "#fff" }}
+            style={{ background: "#E8541A", color: "#FFFFFF" }}
             data-ocid="navbar.user_avatar"
             aria-label="User menu"
           >
@@ -253,15 +255,15 @@ function NavRightActions({
             <div
               className="absolute right-0 mt-2 w-48 rounded-xl shadow-xl overflow-hidden z-50"
               style={{
-                background: "#E6D8C4",
-                border: "1px solid rgba(248,131,121,0.3)",
+                background: "#EDF7F2",
+                border: "1px solid rgba(232,84,26,0.3)",
               }}
             >
               <Link
                 to="/dashboard"
                 onClick={() => setUserMenuOpen(false)}
                 className="flex items-center gap-2 px-4 py-3 text-sm transition-colors hover:bg-white/5"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
                 data-ocid="navbar.dashboard_link"
               >
                 My Dashboard
@@ -270,7 +272,7 @@ function NavRightActions({
                 to="/dashboard"
                 onClick={() => setUserMenuOpen(false)}
                 className="flex items-center gap-2 px-4 py-3 text-sm transition-colors hover:bg-white/5"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
                 data-ocid="navbar.my_bookings_link"
               >
                 My Bookings
@@ -282,7 +284,7 @@ function NavRightActions({
                   setUserMenuOpen(false);
                 }}
                 className="w-full text-left flex items-center gap-2 px-4 py-3 text-sm transition-colors hover:bg-white/5"
-                style={{ color: "#F88379" }}
+                style={{ color: "#E8541A" }}
                 data-ocid="navbar.logout_button"
               >
                 Logout
@@ -294,7 +296,7 @@ function NavRightActions({
         <Link
           to="/auth/login"
           className="px-3 py-2 rounded-lg text-xs font-semibold transition-all hover:opacity-90"
-          style={{ background: "#F88379", color: "#fff" }}
+          style={{ background: "#E8541A", color: "#FFFFFF" }}
           data-ocid="navbar.login_button"
         >
           Login
@@ -313,6 +315,7 @@ const FALLBACK_ANNOUNCEMENTS = [
 ];
 
 export function Navbar() {
+  const { visible: headerVisible, pin, unpin } = useScrollHeaderContext();
   const [scrolled, setScrolled] = useState(false);
   const [activeMega, setActiveMega] = useState<MegaSection>(null);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -329,6 +332,14 @@ export function Navbar() {
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  useEffect(() => {
+    if (activeMega || searchOpen) {
+      pin("navbar-overlay");
+      return () => unpin("navbar-overlay");
+    }
+    unpin("navbar-overlay");
+  }, [activeMega, searchOpen, pin, unpin]);
 
   useEffect(() => {
     async function fetchAnnouncements() {
@@ -363,7 +374,9 @@ export function Navbar() {
 
   return (
     <header
-      className="hidden md:block md:fixed md:top-0 md:inset-x-0 md:z-40"
+      className={`hidden md:block md:fixed md:top-0 md:inset-x-0 md:z-40 transition-transform duration-300 ease-out will-change-transform ${
+        headerVisible ? "md:translate-y-0" : "md:-translate-y-full"
+      }`}
       data-ocid="navbar"
     >
       {/* Announcement bar */}
@@ -376,13 +389,13 @@ export function Navbar() {
         const tickerText = activeTexts.join(" · ");
         return (
           <div
-            style={{ background: "#F88379" }}
+            style={{ background: "#E8541A" }}
             className="overflow-hidden hidden md:block"
           >
             <div className="py-1.5 flex">
               <div
                 className="animate-marquee whitespace-nowrap flex items-center gap-12 text-xs font-medium"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#FFFFFF" }}
               >
                 {[0, 1].map((i) => (
                   <span key={i} className="flex items-center gap-8">
@@ -403,11 +416,12 @@ export function Navbar() {
         }`}
         style={{
           background: scrolled
-            ? "rgba(45,27,30,0.92)"
+            ? "rgba(255,255,255,0.92)"
             : "rgba(255,255,255,0.95)",
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(248,131,121,0.2)",
+          borderBottom: "1px solid #E4F0EA",
+          boxShadow: "0 2px 16px rgba(46,125,79,0.1)",
           height: scrolled ? 56 : 72,
         }}
       >
@@ -417,24 +431,7 @@ export function Navbar() {
             to="/"
             className="flex items-center gap-2.5 flex-shrink-0 group"
           >
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 40 40"
-              fill="none"
-              role="img"
-              aria-label="Shail Hikers mountain logo"
-            >
-              <path d="M20 3L38 36H2L20 3Z" fill="#F88379" />
-              <path d="M20 13L30 36H10L20 13Z" fill="#E6D8C4" opacity="0.5" />
-              <circle cx="20" cy="36" r="2" fill="#D4A843" />
-            </svg>
-            <span
-              style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
-              className="font-semibold tracking-widest uppercase text-lg group-hover:text-white transition-colors"
-            >
-              Shail Hikers
-            </span>
+            <Logo size={40} showWordmark className="text-lg" />
           </Link>
 
           {/* Nav items */}
@@ -451,8 +448,8 @@ export function Navbar() {
                 style={{
                   color:
                     pathname.startsWith("/treks") || pathname === "/trek-finder"
-                      ? "#1A1A1A"
-                      : "#4A4A4A",
+                      ? "#E8541A"
+                      : "#4A5E52",
                 }}
                 data-ocid="navbar.treks_menu"
               >
@@ -473,8 +470,8 @@ export function Navbar() {
                     transition={{ duration: 0.18 }}
                     className="absolute top-full left-0 mt-1 rounded-2xl shadow-2xl p-5"
                     style={{
-                      background: "#E6D8C4",
-                      border: "1px solid #F8837933",
+                      background: "#EDF7F2",
+                      border: "1px solid #E8541A33",
                       width: 680,
                     }}
                     onMouseEnter={() => openMega("treks")}
@@ -483,7 +480,7 @@ export function Navbar() {
                     <div className="flex items-center justify-between mb-4">
                       <h3
                         style={{
-                          color: "#1A1A1A",
+                          color: "#1A2A1E",
                           fontFamily: "var(--font-display)",
                         }}
                         className="text-lg font-semibold"
@@ -492,8 +489,8 @@ export function Navbar() {
                       </h3>
                       <Link
                         to="/treks"
-                        style={{ color: "#F88379" }}
-                        className="text-xs hover:text-[#1A1A1A] transition-colors font-medium"
+                        style={{ color: "#E8541A" }}
+                        className="text-xs hover:text-[#1A2A1E] transition-colors font-medium"
                       >
                         View All 14 →
                       </Link>
@@ -508,12 +505,12 @@ export function Navbar() {
                           className="rounded-xl p-2.5 transition-all hover:scale-[1.02] group"
                           style={{
                             background: "#FFFFFF",
-                            border: "1px solid #F883791A",
+                            border: "1px solid #E8541A1A",
                           }}
                         >
                           <div className="flex items-start justify-between gap-1 mb-1">
                             <span
-                              style={{ color: "#1A1A1A" }}
+                              style={{ color: "#1A2A1E" }}
                               className="text-[11px] font-semibold leading-tight group-hover:text-white transition-colors"
                             >
                               {t.name}
@@ -530,7 +527,7 @@ export function Navbar() {
                           </div>
                           <div className="flex items-center justify-between">
                             <span
-                              style={{ color: "#4A4A4A" }}
+                              style={{ color: "#4A5E52" }}
                               className="text-[10px]"
                             >
                               {t.altitude}
@@ -545,10 +542,10 @@ export function Navbar() {
                           <div className="flex items-center gap-1 mt-1">
                             <span
                               className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                              style={{ background: "#2D6A4F" }}
+                              style={{ background: "#2E7D4F" }}
                             />
                             <span
-                              style={{ color: "#4A4A4A77" }}
+                              style={{ color: "#4A5E5277" }}
                               className="text-[9px]"
                             >
                               {t.days}D
@@ -559,27 +556,27 @@ export function Navbar() {
                     </div>
                     <div
                       className="grid grid-cols-2 gap-2 pt-3"
-                      style={{ borderTop: "1px solid #F883791A" }}
+                      style={{ borderTop: "1px solid #E8541A1A" }}
                     >
                       <Link
                         to="/trek-finder"
                         onClick={() => setActiveMega(null)}
                         className="flex items-center gap-3 p-3 rounded-xl transition-colors"
                         style={{
-                          background: "#F8837915",
-                          border: "1px dashed #F8837955",
+                          background: "#E8541A15",
+                          border: "1px dashed #E8541A55",
                         }}
                       >
-                        <Sparkles size={16} style={{ color: "#F88379" }} />
+                        <Sparkles size={16} style={{ color: "#E8541A" }} />
                         <div>
                           <p
-                            style={{ color: "#1A1A1A" }}
+                            style={{ color: "#1A2A1E" }}
                             className="text-xs font-semibold"
                           >
                             Not sure which trek?
                           </p>
                           <p
-                            style={{ color: "#4A4A4A" }}
+                            style={{ color: "#4A5E52" }}
                             className="text-[10px]"
                           >
                             Take our 2-min AI quiz →
@@ -591,20 +588,20 @@ export function Navbar() {
                         onClick={() => setActiveMega(null)}
                         className="flex items-center gap-3 p-3 rounded-xl transition-colors"
                         style={{
-                          background: "#F8837915",
-                          border: "1px dashed #F8837955",
+                          background: "#E8541A15",
+                          border: "1px dashed #E8541A55",
                         }}
                       >
-                        <BarChart2 size={16} style={{ color: "#F88379" }} />
+                        <BarChart2 size={16} style={{ color: "#E8541A" }} />
                         <div>
                           <p
-                            style={{ color: "#1A1A1A" }}
+                            style={{ color: "#1A2A1E" }}
                             className="text-xs font-semibold"
                           >
                             Compare treks
                           </p>
                           <p
-                            style={{ color: "#4A4A4A" }}
+                            style={{ color: "#4A5E52" }}
                             className="text-[10px]"
                           >
                             Side-by-side for up to 3 →
@@ -627,7 +624,7 @@ export function Navbar() {
                 type="button"
                 className="flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors"
                 style={{
-                  color: pathname.startsWith("/yatras") ? "#1A1A1A" : "#4A4A4A",
+                  color: pathname.startsWith("/yatras") ? "#E8541A" : "#4A5E52",
                 }}
                 data-ocid="navbar.yatras_menu"
               >
@@ -648,8 +645,8 @@ export function Navbar() {
                     transition={{ duration: 0.18 }}
                     className="absolute top-full left-0 mt-1 rounded-2xl shadow-2xl p-5"
                     style={{
-                      background: "#E6D8C4",
-                      border: "1px solid #F8837933",
+                      background: "#EDF7F2",
+                      border: "1px solid #E8541A33",
                       width: 360,
                     }}
                     onMouseEnter={() => openMega("yatras")}
@@ -657,7 +654,7 @@ export function Navbar() {
                   >
                     <h3
                       style={{
-                        color: "#1A1A1A",
+                        color: "#1A2A1E",
                         fontFamily: "var(--font-display)",
                       }}
                       className="text-base font-semibold mb-3"
@@ -674,24 +671,24 @@ export function Navbar() {
                           className="flex items-center justify-between p-3 rounded-xl transition-all hover:scale-[1.01] group"
                           style={{
                             background: "#FFFFFF",
-                            border: "1px solid #F883791A",
+                            border: "1px solid #E8541A1A",
                           }}
                         >
                           <div>
                             <p
-                              style={{ color: "#1A1A1A" }}
+                              style={{ color: "#1A2A1E" }}
                               className="text-xs font-semibold group-hover:text-white transition-colors"
                             >
                               {y.name}
                             </p>
                             <p
-                              style={{ color: "#4A4A4A" }}
+                              style={{ color: "#4A5E52" }}
                               className="text-[10px] mt-0.5"
                             >
                               {y.tagline}
                             </p>
                             <p
-                              style={{ color: "#4A4A4A77" }}
+                              style={{ color: "#4A5E5277" }}
                               className="text-[10px]"
                             >
                               {y.days} days
@@ -716,7 +713,7 @@ export function Navbar() {
               to="/packages"
               className="px-3 py-2 text-sm font-medium transition-colors"
               style={{
-                color: pathname === "/packages" ? "#1A1A1A" : "#4A4A4A",
+                color: pathname === "/packages" ? "#E8541A" : "#4A5E52",
               }}
             >
               Packages
@@ -727,7 +724,7 @@ export function Navbar() {
               to="/corporate"
               className="px-3 py-2 text-sm font-medium transition-colors"
               style={{
-                color: pathname === "/corporate" ? "#1A1A1A" : "#4A4A4A",
+                color: pathname === "/corporate" ? "#E8541A" : "#4A5E52",
               }}
             >
               Corporate
@@ -748,8 +745,8 @@ export function Navbar() {
                     pathname === "/team" ||
                     pathname === "/gallery" ||
                     pathname === "/blog"
-                      ? "#1A1A1A"
-                      : "#4A4A4A",
+                      ? "#E8541A"
+                      : "#4A5E52",
                 }}
                 data-ocid="navbar.about_menu"
               >
@@ -770,8 +767,8 @@ export function Navbar() {
                     transition={{ duration: 0.18 }}
                     className="absolute top-full left-0 mt-1 rounded-2xl shadow-2xl p-3"
                     style={{
-                      background: "#E6D8C4",
-                      border: "1px solid #F8837933",
+                      background: "#EDF7F2",
+                      border: "1px solid #E8541A33",
                       minWidth: 180,
                     }}
                     onMouseEnter={() => openMega("about")}
@@ -789,7 +786,7 @@ export function Navbar() {
                         onClick={() => setActiveMega(null)}
                         className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg transition-colors"
                         style={{
-                          color: pathname === to ? "#1A1A1A" : "#4A4A4A",
+                          color: pathname === to ? "#E8541A" : "#4A5E52",
                         }}
                       >
                         <Icon size={14} />
@@ -810,7 +807,7 @@ export function Navbar() {
               <button
                 type="button"
                 className="flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
                 data-ocid="navbar.support_menu"
               >
                 Support
@@ -830,8 +827,8 @@ export function Navbar() {
                     transition={{ duration: 0.18 }}
                     className="absolute top-full right-0 mt-1 rounded-2xl shadow-2xl p-3"
                     style={{
-                      background: "#E6D8C4",
-                      border: "1px solid #F8837933",
+                      background: "#EDF7F2",
+                      border: "1px solid #E8541A33",
                       minWidth: 200,
                     }}
                     onMouseEnter={() => openMega("support")}
@@ -861,7 +858,7 @@ export function Navbar() {
                           to={to as "/"}
                           onClick={() => setActiveMega(null)}
                           className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg transition-colors"
-                          style={{ color: "#4A4A4A" }}
+                          style={{ color: "#4A5E52" }}
                         >
                           <Icon size={14} />
                           <span className="text-sm">{label}</span>
@@ -871,7 +868,7 @@ export function Navbar() {
                           key={href}
                           href={href}
                           className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg transition-colors"
-                          style={{ color: "#F88379" }}
+                          style={{ color: "#E8541A" }}
                         >
                           <Icon size={14} />
                           <span className="text-sm font-semibold">{label}</span>
@@ -900,8 +897,8 @@ export function Navbar() {
               exit={{ height: 0, opacity: 0 }}
               className="absolute top-full inset-x-0 overflow-hidden"
               style={{
-                background: "#E6D8C4",
-                borderBottom: "1px solid #F8837933",
+                background: "#EDF7F2",
+                borderBottom: "1px solid #E8541A33",
               }}
             >
               <div className="max-w-2xl mx-auto px-4 py-4">
@@ -909,7 +906,7 @@ export function Navbar() {
                   <Search
                     size={16}
                     className="absolute left-3 top-1/2 -translate-y-1/2"
-                    style={{ color: "#4A4A4A" }}
+                    style={{ color: "#4A5E52" }}
                   />
                   <input
                     type="text"
@@ -919,8 +916,8 @@ export function Navbar() {
                     className="w-full pl-9 pr-4 py-3 rounded-xl text-sm outline-none"
                     style={{
                       background: "#FFFFFF",
-                      border: "1px solid #F8837944",
-                      color: "#1A1A1A",
+                      border: "1px solid #E8541A44",
+                      color: "#1A2A1E",
                     }}
                   />
                 </div>
@@ -938,13 +935,13 @@ export function Navbar() {
                         className="flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors"
                         style={{
                           background: "#FFFFFF",
-                          border: "1px solid #F883791A",
+                          border: "1px solid #E8541A1A",
                         }}
                       >
                         <div className="flex items-center gap-2">
-                          <Mountain size={14} style={{ color: "#F88379" }} />
+                          <Mountain size={14} style={{ color: "#E8541A" }} />
                           <span
-                            style={{ color: "#1A1A1A" }}
+                            style={{ color: "#1A2A1E" }}
                             className="text-sm font-medium"
                           >
                             {t.name}
@@ -972,7 +969,7 @@ export function Navbar() {
                 {searchQuery && filteredTreks.length === 0 && (
                   <p
                     className="mt-3 text-sm text-center"
-                    style={{ color: "#4A4A4A" }}
+                    style={{ color: "#4A5E52" }}
                   >
                     No treks found for "{searchQuery}"
                   </p>

@@ -80,7 +80,7 @@ export function InstagramSection() {
   return (
     <section
       data-ocid="instagram.section"
-      style={{ background: "#E6D8C4" }}
+      style={{ background: "#EDF7F2" }}
       className="py-20"
     >
       <div className="max-w-7xl mx-auto px-4">
@@ -91,11 +91,11 @@ export function InstagramSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-3xl md:text-5xl font-semibold"
-              style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+              style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
             >
               #ShailHikers
             </motion.h2>
-            <p className="text-sm mt-1" style={{ color: "#4A4A4A" }}>
+            <p className="text-sm mt-1" style={{ color: "#4A5E52" }}>
               Our community captures the Himalayas
             </p>
           </div>
@@ -106,9 +106,9 @@ export function InstagramSection() {
             data-ocid="instagram.follow_link"
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all hover:opacity-90"
             style={{
-              background: "rgba(248,131,121,0.2)",
-              border: "1px solid rgba(248,131,121,0.35)",
-              color: "#4A4A4A",
+              background: "rgba(232,84,26,0.2)",
+              border: "1px solid rgba(232,84,26,0.35)",
+              color: "#4A5E52",
             }}
           >
             <Instagram size={15} />
@@ -126,7 +126,7 @@ export function InstagramSection() {
               transition={{ delay: i * 0.04 }}
               data-ocid={`instagram.item.${i + 1}`}
               className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer"
-              style={{ border: "1px solid rgba(248,131,121,0.15)" }}
+              style={{ border: "1px solid rgba(232,84,26,0.15)" }}
             >
               <img
                 src={photo.src}
@@ -136,13 +136,13 @@ export function InstagramSection() {
               />
               <div
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: "rgba(248,131,121,0.65)" }}
+                style={{ background: "rgba(232,84,26,0.65)" }}
               >
                 <div className="text-center">
                   <span className="text-lg">♥</span>
                   <p
                     className="text-xs font-bold mt-0.5"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     {photo.likes.toLocaleString()}
                   </p>

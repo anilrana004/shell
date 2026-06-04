@@ -34,11 +34,11 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: "#E6D8C4" }}
+        style={{ background: "#EDF7F2" }}
       >
         <div
           className="w-12 h-12 rounded-full border-2 border-t-transparent animate-spin"
-          style={{ borderColor: "#F88379", borderTopColor: "transparent" }}
+          style={{ borderColor: "#E8541A", borderTopColor: "transparent" }}
           aria-label="Checking authentication..."
         />
       </div>

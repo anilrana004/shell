@@ -47,8 +47,8 @@ export default function ContactPage() {
   const fieldStyle: React.CSSProperties = {
     width: "100%",
     background: "#FFFFFF",
-    border: "1px solid rgba(232,160,170,0.25)",
-    color: "#1A1A1A",
+    border: "1px solid rgba(212,237,224,0.25)",
+    color: "#1A2A1E",
     borderRadius: 8,
     padding: "0.65rem 0.875rem",
     fontFamily: "var(--font-body)",
@@ -56,7 +56,7 @@ export default function ContactPage() {
   };
 
   const labelStyle: React.CSSProperties = {
-    color: "#4A4A4A",
+    color: "#4A5E52",
     fontFamily: "var(--font-body)",
     fontSize: "0.8rem",
     display: "block",
@@ -69,7 +69,7 @@ export default function ContactPage() {
         {/* Page Header */}
         <section
           className="pt-24 pb-8 text-center px-4"
-          style={{ background: "#E6D8C4" }}
+          style={{ background: "#EDF7F2" }}
         >
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -78,7 +78,7 @@ export default function ContactPage() {
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2.5rem, 6vw, 3.75rem)",
-              color: "#1A1A1A",
+              color: "#1A2A1E",
               fontWeight: 700,
               letterSpacing: "0.04em",
             }}
@@ -90,7 +90,7 @@ export default function ContactPage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
             style={{
-              color: "#4A4A4A",
+              color: "#4A5E52",
               fontFamily: "var(--font-body)",
               marginTop: "0.75rem",
               fontSize: "1rem",
@@ -104,14 +104,14 @@ export default function ContactPage() {
         {/* Response Badge */}
         <div
           style={{
-            background: "#2D6A4F",
+            background: "#2E7D4F",
             textAlign: "center",
             padding: "0.6rem",
           }}
         >
           <span
             style={{
-              color: "#1A1A1A",
+              color: "#1A2A1E",
               fontFamily: "var(--font-body)",
               fontSize: "0.85rem",
             }}
@@ -138,8 +138,8 @@ export default function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="h-full flex flex-col items-center justify-center p-12 rounded-2xl text-center"
                   style={{
-                    background: "#E6D8C4",
-                    border: "1px solid rgba(248,131,121,0.3)",
+                    background: "#EDF7F2",
+                    border: "1px solid rgba(232,84,26,0.3)",
                     minHeight: 400,
                   }}
                   data-ocid="contact.success_state"
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "2rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontWeight: 700,
                       marginBottom: "0.75rem",
                     }}
@@ -160,7 +160,7 @@ export default function ContactPage() {
                   </h2>
                   <p
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       lineHeight: 1.7,
                       maxWidth: 380,
@@ -168,7 +168,7 @@ export default function ContactPage() {
                   >
                     We’ll reply within 4 hours. Meanwhile, feel free to WhatsApp
                     us directly at{" "}
-                    <strong style={{ color: "#1A1A1A" }}>+91-8279888470</strong>{" "}
+                    <strong style={{ color: "#1A2A1E" }}>+91-8279888470</strong>{" "}
                     for instant support.
                   </p>
                 </motion.div>
@@ -177,8 +177,8 @@ export default function ContactPage() {
                   onSubmit={handleSubmit}
                   className="rounded-2xl p-8 flex flex-col gap-5"
                   style={{
-                    background: "#E6D8C4",
-                    border: "1px solid rgba(232,160,170,0.12)",
+                    background: "#EDF7F2",
+                    border: "1px solid rgba(212,237,224,0.12)",
                   }}
                   data-ocid="contact.form"
                 >
@@ -186,7 +186,7 @@ export default function ContactPage() {
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "1.75rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontWeight: 700,
                       marginBottom: "0.5rem",
                     }}
@@ -328,8 +328,7 @@ export default function ContactPage() {
                     type="submit"
                     data-ocid="contact.submit_button"
                     style={{
-                      background: "#F88379",
-                      color: "#1A1A1A",
+                      background: "#E8541A", color: "#FFFFFF",
                       border: "none",
                       padding: "0.875rem 2.5rem",
                       borderRadius: 999,
@@ -358,15 +357,15 @@ export default function ContactPage() {
               <div
                 className="rounded-2xl p-6"
                 style={{
-                  background: "#E6D8C4",
-                  border: "1px solid rgba(232,160,170,0.12)",
+                  background: "#EDF7F2",
+                  border: "1px solid rgba(212,237,224,0.12)",
                 }}
               >
                 <h3
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "1.375rem",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     fontWeight: 700,
                     marginBottom: "1.25rem",
                   }}
@@ -390,12 +389,12 @@ export default function ContactPage() {
                   <div key={item.label} className="flex items-start gap-3 mb-4">
                     <item.icon
                       className="w-5 h-5 mt-0.5 flex-shrink-0"
-                      style={{ color: "#F88379" }}
+                      style={{ color: "#E8541A" }}
                     />
                     <div>
                       <div
                         style={{
-                          color: "#4A4A4A",
+                          color: "#4A5E52",
                           fontFamily: "var(--font-body)",
                           fontSize: "0.75rem",
                           marginBottom: 2,
@@ -405,7 +404,7 @@ export default function ContactPage() {
                       </div>
                       <div
                         style={{
-                          color: "#1A1A1A",
+                          color: "#1A2A1E",
                           fontFamily: "var(--font-body)",
                           fontSize: "0.9rem",
                         }}
@@ -419,32 +418,32 @@ export default function ContactPage() {
                 {/* Social Links */}
                 <div
                   className="flex gap-3 mt-5 pt-5"
-                  style={{ borderTop: "1px solid rgba(232,160,170,0.12)" }}
+                  style={{ borderTop: "1px solid rgba(212,237,224,0.12)" }}
                 >
                   {[
                     {
                       icon: Instagram,
                       label: "Instagram",
                       href: "#",
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                     },
                     {
                       icon: Facebook,
                       label: "Facebook",
                       href: "#",
-                      color: "#82C8E5",
+                      color: "#2E7D4F",
                     },
                     {
                       icon: Youtube,
                       label: "YouTube",
                       href: "#",
-                      color: "#F88379",
+                      color: "#E8541A",
                     },
                     {
                       icon: MessageCircle,
                       label: "WhatsApp",
                       href: "https://wa.me/918279888470",
-                      color: "#2D6A4F",
+                      color: "#2E7D4F",
                     },
                   ].map((s) => (
                     <a
@@ -460,7 +459,7 @@ export default function ContactPage() {
                         alignItems: "center",
                         justifyContent: "center",
                         background: "#FFFFFF",
-                        border: "1px solid rgba(232,160,170,0.2)",
+                        border: "1px solid rgba(212,237,224,0.2)",
                         color: s.color,
                         transition: "background 0.2s",
                       }}
@@ -474,7 +473,7 @@ export default function ContactPage() {
               {/* Static Map */}
               <div
                 className="rounded-2xl overflow-hidden"
-                style={{ border: "1px solid rgba(232,160,170,0.12)" }}
+                style={{ border: "1px solid rgba(212,237,224,0.12)" }}
               >
                 <img
                   src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=400&fit=crop&q=80"
@@ -488,17 +487,17 @@ export default function ContactPage() {
                 />
                 <div
                   style={{
-                    background: "#E6D8C4",
+                    background: "#EDF7F2",
                     padding: "0.75rem 1rem",
                     display: "flex",
                     alignItems: "center",
                     gap: 6,
                   }}
                 >
-                  <MapPin className="w-4 h-4" style={{ color: "#F88379" }} />
+                  <MapPin className="w-4 h-4" style={{ color: "#E8541A" }} />
                   <span
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                     }}
@@ -512,7 +511,7 @@ export default function ContactPage() {
               <div
                 className="rounded-2xl p-5 flex items-center gap-4"
                 style={{
-                  background: "#E6D8C4",
+                  background: "#EDF7F2",
                   border: "1px solid rgba(45,80,22,0.5)",
                 }}
               >
@@ -521,7 +520,7 @@ export default function ContactPage() {
                     width: 44,
                     height: 44,
                     borderRadius: "50%",
-                    background: "#2D6A4F",
+                    background: "#2E7D4F",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -530,7 +529,7 @@ export default function ContactPage() {
                 >
                   <MessageCircle
                     className="w-5 h-5"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   />
                 </div>
                 <div>
@@ -538,7 +537,7 @@ export default function ContactPage() {
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "1rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontWeight: 700,
                     }}
                   >
@@ -546,7 +545,7 @@ export default function ContactPage() {
                   </div>
                   <div
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                       marginTop: 2,
@@ -562,8 +561,8 @@ export default function ContactPage() {
                   data-ocid="contact.whatsapp_chat_button"
                   style={{
                     marginLeft: "auto",
-                    background: "#2D6A4F",
-                    color: "#1A1A1A",
+                    background: "#2E7D4F",
+                    color: "#1A2A1E",
                     padding: "0.5rem 1.25rem",
                     borderRadius: 999,
                     fontFamily: "var(--font-body)",
@@ -589,14 +588,14 @@ export default function ContactPage() {
             transition={{ duration: 0.55 }}
             className="max-w-3xl mx-auto rounded-2xl overflow-hidden"
             style={{
-              border: "2px solid #F88379",
-              boxShadow: "0 0 40px rgba(248,131,121,0.15)",
+              border: "2px solid #E8541A",
+              boxShadow: "0 0 40px rgba(232,84,26,0.15)",
             }}
             data-ocid="contact.emergency_box"
           >
             <div
               style={{
-                background: "rgba(248,131,121,0.12)",
+                background: "rgba(232,84,26,0.12)",
                 padding: "1.5rem 2rem",
                 display: "flex",
                 alignItems: "flex-start",
@@ -605,14 +604,14 @@ export default function ContactPage() {
             >
               <AlertTriangle
                 className="w-7 h-7 mt-0.5 flex-shrink-0"
-                style={{ color: "#F88379" }}
+                style={{ color: "#E8541A" }}
               />
               <div>
                 <h2
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "1.5rem",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     fontWeight: 700,
                     marginBottom: "0.25rem",
                   }}
@@ -621,7 +620,7 @@ export default function ContactPage() {
                 </h2>
                 <p
                   style={{
-                    color: "#4A4A4A",
+                    color: "#4A5E52",
                     fontFamily: "var(--font-body)",
                     fontSize: "0.875rem",
                     marginBottom: "1rem",
@@ -636,7 +635,7 @@ export default function ContactPage() {
                     display: "inline-block",
                     fontFamily: "var(--font-display)",
                     fontSize: "2rem",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     fontWeight: 700,
                     textDecoration: "none",
                     letterSpacing: "0.04em",
@@ -664,7 +663,7 @@ export default function ContactPage() {
                   />
                   <span
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                     }}

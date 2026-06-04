@@ -42,7 +42,7 @@ const packages = [
     duration: "2 Days",
     trek: "Nag Tibba",
     price: "Rs 8,999",
-    color: "#4A4A4A",
+    color: "#4A5E52",
     includes: [
       "Expert guide",
       "All meals",
@@ -57,7 +57,7 @@ const packages = [
     duration: "4 Days",
     trek: "Kedarkantha",
     price: "Rs 14,999",
-    color: "#F88379",
+    color: "#E8541A",
     includes: [
       "Expert guide",
       "All meals",
@@ -91,7 +91,7 @@ const packages = [
     duration: "Custom",
     trek: "Your choice",
     price: "Contact us",
-    color: "#82C8E5",
+    color: "#2E7D4F",
     includes: [
       "Fully tailored itinerary",
       "Custom branding on gear",
@@ -193,9 +193,9 @@ export default function CorporatePage() {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "#E6D8C4",
-    border: "1px solid rgba(232,160,170,0.25)",
-    color: "#1A1A1A",
+    background: "#EDF7F2",
+    border: "1px solid rgba(212,237,224,0.25)",
+    color: "#1A2A1E",
     borderRadius: 8,
     padding: "0.6rem 0.75rem",
     fontFamily: "var(--font-body)",
@@ -204,7 +204,7 @@ export default function CorporatePage() {
 
   return (
     <Layout>
-      <div style={{ background: "#E6D8C4", minHeight: "100vh" }}>
+      <div style={{ background: "#EDF7F2", minHeight: "100vh" }}>
         {/* Hero */}
         <section className="relative h-[75vh] min-h-[520px] flex items-center justify-center overflow-hidden">
           <img
@@ -222,8 +222,8 @@ export default function CorporatePage() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                border: "1px solid rgba(232,160,170,0.4)",
-                color: "#4A4A4A",
+                border: "1px solid rgba(212,237,224,0.4)",
+                color: "#4A5E52",
                 padding: "4px 16px",
                 borderRadius: 999,
                 fontFamily: "var(--font-body)",
@@ -243,7 +243,7 @@ export default function CorporatePage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(2.75rem, 7vw, 4.5rem)",
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 fontWeight: 700,
                 lineHeight: 1.05,
                 marginBottom: "1.25rem",
@@ -256,7 +256,7 @@ export default function CorporatePage() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45, duration: 0.6 }}
               style={{
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontFamily: "var(--font-body)",
                 fontSize: "1.1rem",
                 maxWidth: 500,
@@ -271,8 +271,7 @@ export default function CorporatePage() {
               data-ocid="corporate.hero_cta_button"
               style={{
                 display: "inline-block",
-                background: "#F88379",
-                color: "#1A1A1A",
+                background: "#E8541A", color: "#FFFFFF",
                 padding: "0.875rem 2.25rem",
                 borderRadius: 999,
                 fontFamily: "var(--font-body)",
@@ -296,7 +295,7 @@ export default function CorporatePage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "2.5rem",
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 textAlign: "center",
                 marginBottom: "3rem",
                 fontWeight: 700,
@@ -314,19 +313,19 @@ export default function CorporatePage() {
                   transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="p-6 rounded-2xl text-center"
                   style={{
-                    background: "#E6D8C4",
-                    border: "1px solid rgba(232,160,170,0.12)",
+                    background: "#EDF7F2",
+                    border: "1px solid rgba(212,237,224,0.12)",
                   }}
                 >
                   <b.icon
                     className="w-8 h-8 mx-auto mb-3"
-                    style={{ color: "#F88379" }}
+                    style={{ color: "#E8541A" }}
                   />
                   <h3
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "1.25rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontWeight: 700,
                       marginBottom: "0.5rem",
                     }}
@@ -335,7 +334,7 @@ export default function CorporatePage() {
                   </h3>
                   <p
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.875rem",
                       lineHeight: 1.65,
@@ -350,7 +349,7 @@ export default function CorporatePage() {
         </section>
 
         {/* Packages */}
-        <section className="py-20 px-4" style={{ background: "#E6D8C4" }}>
+        <section className="py-20 px-4" style={{ background: "#EDF7F2" }}>
           <div className="max-w-6xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -359,7 +358,7 @@ export default function CorporatePage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "2.5rem",
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 textAlign: "center",
                 marginBottom: "3rem",
                 fontWeight: 700,
@@ -378,21 +377,21 @@ export default function CorporatePage() {
                   className="rounded-2xl overflow-hidden flex flex-col"
                   style={{
                     background: "#FFFFFF",
-                    border: `2px solid ${pkg.highlight ? "#F88379" : "rgba(232,160,170,0.15)"}`,
+                    border: `2px solid ${pkg.highlight ? "#E8541A" : "rgba(212,237,224,0.15)"}`,
                     boxShadow: pkg.highlight
-                      ? "0 0 30px rgba(248,131,121,0.2)"
+                      ? "0 0 30px rgba(232,84,26,0.2)"
                       : "none",
                   }}
                 >
                   {pkg.highlight && (
                     <div
                       style={{
-                        background: "#F88379",
+                        background: "#E8541A",
                         textAlign: "center",
                         padding: "4px",
                         fontFamily: "var(--font-body)",
                         fontSize: "0.7rem",
-                        color: "#1A1A1A",
+                        color: "#1A2A1E",
                         letterSpacing: "0.1em",
                       }}
                     >
@@ -416,7 +415,7 @@ export default function CorporatePage() {
                       style={{
                         fontFamily: "var(--font-display)",
                         fontSize: "1.5rem",
-                        color: "#1A1A1A",
+                        color: "#1A2A1E",
                         fontWeight: 700,
                         marginBottom: "0.25rem",
                       }}
@@ -425,7 +424,7 @@ export default function CorporatePage() {
                     </h3>
                     <div
                       style={{
-                        color: "#4A4A4A",
+                        color: "#4A5E52",
                         fontFamily: "var(--font-body)",
                         fontSize: "0.85rem",
                         marginBottom: "0.75rem",
@@ -446,7 +445,7 @@ export default function CorporatePage() {
                       <span
                         style={{
                           fontSize: "0.875rem",
-                          color: "#4A4A4A",
+                          color: "#4A5E52",
                           fontFamily: "var(--font-body)",
                           fontWeight: 400,
                         }}
@@ -463,7 +462,7 @@ export default function CorporatePage() {
                           />
                           <span
                             style={{
-                              color: "#4A4A4A",
+                              color: "#4A5E52",
                               fontFamily: "var(--font-body)",
                               fontSize: "0.85rem",
                             }}
@@ -479,9 +478,9 @@ export default function CorporatePage() {
                       style={{
                         display: "block",
                         textAlign: "center",
-                        background: pkg.highlight ? "#F88379" : "transparent",
+                        background: pkg.highlight ? "#E8541A" : "transparent",
                         border: `1px solid ${pkg.color}`,
-                        color: pkg.highlight ? "#1A1A1A" : pkg.color,
+                        color: pkg.highlight ? "#1A2A1E" : pkg.color,
                         padding: "0.625rem",
                         borderRadius: 999,
                         fontFamily: "var(--font-body)",
@@ -509,7 +508,7 @@ export default function CorporatePage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "2rem",
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 textAlign: "center",
                 marginBottom: "0.5rem",
                 fontWeight: 700,
@@ -520,7 +519,7 @@ export default function CorporatePage() {
             <p
               style={{
                 textAlign: "center",
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontFamily: "var(--font-body)",
                 marginBottom: "2rem",
                 fontSize: "0.9rem",
@@ -531,8 +530,8 @@ export default function CorporatePage() {
             <div
               className="rounded-2xl p-7 flex flex-col gap-4"
               style={{
-                background: "#E6D8C4",
-                border: "1px solid rgba(248,131,121,0.25)",
+                background: "#EDF7F2",
+                border: "1px solid rgba(232,84,26,0.25)",
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -540,7 +539,7 @@ export default function CorporatePage() {
                   <label
                     htmlFor="corp-headcount"
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                       display: "block",
@@ -563,7 +562,7 @@ export default function CorporatePage() {
                   <label
                     htmlFor="corp-budget"
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                       display: "block",
@@ -586,7 +585,7 @@ export default function CorporatePage() {
                   <label
                     htmlFor="corp-month"
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                       display: "block",
@@ -629,8 +628,7 @@ export default function CorporatePage() {
                 onClick={calculatePackage}
                 data-ocid="corporate.planner_calculate_button"
                 style={{
-                  background: "#F88379",
-                  color: "#1A1A1A",
+                  background: "#E8541A", color: "#FFFFFF",
                   border: "none",
                   padding: "0.75rem 2rem",
                   borderRadius: 999,
@@ -650,11 +648,11 @@ export default function CorporatePage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                     style={{
-                      background: "rgba(248,131,121,0.12)",
-                      border: "1px solid rgba(248,131,121,0.35)",
+                      background: "rgba(232,84,26,0.12)",
+                      border: "1px solid rgba(232,84,26,0.35)",
                       borderRadius: 12,
                       padding: "1rem 1.25rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.9rem",
                     }}
@@ -670,7 +668,7 @@ export default function CorporatePage() {
         </section>
 
         {/* Post-Trek Deliverables */}
-        <section className="py-20 px-4" style={{ background: "#E6D8C4" }}>
+        <section className="py-20 px-4" style={{ background: "#EDF7F2" }}>
           <div className="max-w-5xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -679,7 +677,7 @@ export default function CorporatePage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "2.25rem",
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 textAlign: "center",
                 marginBottom: "3rem",
                 fontWeight: 700,
@@ -698,7 +696,7 @@ export default function CorporatePage() {
                   className="p-6 rounded-2xl"
                   style={{
                     background: "#FFFFFF",
-                    border: "1px solid rgba(232,160,170,0.12)",
+                    border: "1px solid rgba(212,237,224,0.12)",
                     textAlign: "center",
                   }}
                 >
@@ -709,7 +707,7 @@ export default function CorporatePage() {
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "1.125rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontWeight: 700,
                       marginBottom: "0.5rem",
                     }}
@@ -718,7 +716,7 @@ export default function CorporatePage() {
                   </h3>
                   <p
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.85rem",
                       lineHeight: 1.65,
@@ -737,7 +735,7 @@ export default function CorporatePage() {
           <div className="max-w-5xl mx-auto text-center">
             <p
               style={{
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontFamily: "var(--font-body)",
                 fontSize: "0.8rem",
                 letterSpacing: "0.15em",
@@ -754,12 +752,12 @@ export default function CorporatePage() {
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "1.5rem",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     opacity: 0.55,
                     fontWeight: 700,
                     letterSpacing: "0.04em",
                     padding: "0.5rem 1.25rem",
-                    border: "1px solid rgba(232,160,170,0.12)",
+                    border: "1px solid rgba(212,237,224,0.12)",
                     borderRadius: 8,
                   }}
                 >
@@ -771,7 +769,7 @@ export default function CorporatePage() {
         </section>
 
         {/* Case Study */}
-        <section className="py-16 px-4" style={{ background: "#E6D8C4" }}>
+        <section className="py-16 px-4" style={{ background: "#EDF7F2" }}>
           <div className="max-w-3xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -804,7 +802,7 @@ export default function CorporatePage() {
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "1.5rem",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     fontWeight: 700,
                     marginBottom: "0.75rem",
                   }}
@@ -830,7 +828,7 @@ export default function CorporatePage() {
                       </div>
                       <div
                         style={{
-                          color: "#4A4A4A",
+                          color: "#4A5E52",
                           fontFamily: "var(--font-body)",
                           fontSize: "0.8rem",
                         }}
@@ -842,7 +840,7 @@ export default function CorporatePage() {
                 </div>
                 <p
                   style={{
-                    color: "#4A4A4A",
+                    color: "#4A5E52",
                     fontFamily: "var(--font-body)",
                     lineHeight: 1.75,
                     fontSize: "0.9rem",
@@ -856,7 +854,7 @@ export default function CorporatePage() {
                     style={{
                       display: "block",
                       marginTop: "0.75rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontWeight: 600,
                     }}
                   >
@@ -880,9 +878,9 @@ export default function CorporatePage() {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                background: "#E6D8C4",
-                border: "1px solid rgba(248,131,121,0.3)",
-                color: "#1A1A1A",
+                background: "#EDF7F2",
+                border: "1px solid rgba(232,84,26,0.3)",
+                color: "#1A2A1E",
                 padding: "1.25rem 1.5rem",
                 borderRadius: insuranceOpen ? "12px 12px 0 0" : 12,
                 fontFamily: "var(--font-display)",
@@ -893,9 +891,9 @@ export default function CorporatePage() {
             >
               <span>Group Insurance Coverage</span>
               {insuranceOpen ? (
-                <ChevronUp className="w-5 h-5" style={{ color: "#F88379" }} />
+                <ChevronUp className="w-5 h-5" style={{ color: "#E8541A" }} />
               ) : (
-                <ChevronDown className="w-5 h-5" style={{ color: "#F88379" }} />
+                <ChevronDown className="w-5 h-5" style={{ color: "#E8541A" }} />
               )}
             </button>
             <AnimatePresence>
@@ -909,8 +907,8 @@ export default function CorporatePage() {
                 >
                   <div
                     style={{
-                      background: "#E6D8C4",
-                      border: "1px solid rgba(248,131,121,0.3)",
+                      background: "#EDF7F2",
+                      border: "1px solid rgba(232,84,26,0.3)",
                       borderTop: "none",
                       borderRadius: "0 0 12px 12px",
                       padding: "1.5rem",
@@ -923,13 +921,13 @@ export default function CorporatePage() {
                       >
                         <CheckCircle
                           className="w-4 h-4 mt-0.5 flex-shrink-0"
-                          style={{ color: "#F88379" }}
+                          style={{ color: "#E8541A" }}
                         />
                         <div>
                           <span
                             style={{
                               fontFamily: "var(--font-body)",
-                              color: "#1A1A1A",
+                              color: "#1A2A1E",
                               fontWeight: 600,
                               fontSize: "0.9rem",
                             }}
@@ -938,7 +936,7 @@ export default function CorporatePage() {
                           </span>
                           <span
                             style={{
-                              color: "#4A4A4A",
+                              color: "#4A5E52",
                               fontFamily: "var(--font-body)",
                               fontSize: "0.9rem",
                             }}
@@ -959,7 +957,7 @@ export default function CorporatePage() {
         <section
           id="quote"
           className="py-20 px-4"
-          style={{ background: "#E6D8C4" }}
+          style={{ background: "#EDF7F2" }}
         >
           <div className="max-w-2xl mx-auto">
             <motion.h2
@@ -969,7 +967,7 @@ export default function CorporatePage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "2.25rem",
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 textAlign: "center",
                 marginBottom: "0.5rem",
                 fontWeight: 700,
@@ -980,7 +978,7 @@ export default function CorporatePage() {
             <p
               style={{
                 textAlign: "center",
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontFamily: "var(--font-body)",
                 marginBottom: "2.5rem",
                 fontSize: "0.9rem",
@@ -996,7 +994,7 @@ export default function CorporatePage() {
                 className="text-center p-10 rounded-2xl"
                 style={{
                   background: "#FFFFFF",
-                  border: "1px solid rgba(248,131,121,0.3)",
+                  border: "1px solid rgba(232,84,26,0.3)",
                 }}
                 data-ocid="corporate.quote_success_state"
               >
@@ -1007,14 +1005,14 @@ export default function CorporatePage() {
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "1.5rem",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     marginBottom: "0.75rem",
                     fontWeight: 700,
                   }}
                 >
                   Quote Request Received!
                 </h3>
-                <p style={{ color: "#4A4A4A", fontFamily: "var(--font-body)" }}>
+                <p style={{ color: "#4A5E52", fontFamily: "var(--font-body)" }}>
                   Our corporate team will reach out within 4 hours with a
                   customised proposal for your team.
                 </p>
@@ -1025,7 +1023,7 @@ export default function CorporatePage() {
                 className="rounded-2xl p-7 flex flex-col gap-4"
                 style={{
                   background: "#FFFFFF",
-                  border: "1px solid rgba(232,160,170,0.12)",
+                  border: "1px solid rgba(212,237,224,0.12)",
                 }}
                 data-ocid="corporate.quote_form"
               >
@@ -1060,7 +1058,7 @@ export default function CorporatePage() {
                       <label
                         htmlFor={`corp-${field.id}`}
                         style={{
-                          color: "#4A4A4A",
+                          color: "#4A5E52",
                           fontFamily: "var(--font-body)",
                           fontSize: "0.8rem",
                           display: "block",
@@ -1091,7 +1089,7 @@ export default function CorporatePage() {
                   <label
                     htmlFor="corp-trek"
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                       display: "block",
@@ -1127,7 +1125,7 @@ export default function CorporatePage() {
                   <label
                     htmlFor="corp-message"
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontFamily: "var(--font-body)",
                       fontSize: "0.8rem",
                       display: "block",
@@ -1152,8 +1150,7 @@ export default function CorporatePage() {
                   type="submit"
                   data-ocid="corporate.quote_submit_button"
                   style={{
-                    background: "#F88379",
-                    color: "#1A1A1A",
+                    background: "#E8541A", color: "#FFFFFF",
                     border: "none",
                     padding: "0.875rem",
                     borderRadius: 999,

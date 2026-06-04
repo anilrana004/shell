@@ -46,11 +46,11 @@ function PageFallback() {
   return (
     <div
       className="min-h-[60vh] flex items-center justify-center"
-      style={{ background: "#E6D8C4" }}
+      style={{ background: "#EDF7F2" }}
     >
       <div
         className="w-8 h-8 rounded-full border-2 border-t-transparent animate-spin"
-        style={{ borderColor: "#F88379", borderTopColor: "transparent" }}
+        style={{ borderColor: "#E8541A", borderTopColor: "transparent" }}
       />
     </div>
   );

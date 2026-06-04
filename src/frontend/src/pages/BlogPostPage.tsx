@@ -38,7 +38,7 @@ function renderBody(body: string) {
         <h2
           key={lineKey}
           className="font-display text-2xl md:text-3xl font-semibold mt-10 mb-4"
-          style={{ color: "#1A1A1A" }}
+          style={{ color: "#1A2A1E" }}
         >
           {line.slice(3)}
         </h2>
@@ -49,7 +49,7 @@ function renderBody(body: string) {
         <h3
           key={lineKey}
           className="font-display text-xl font-semibold mt-8 mb-3"
-          style={{ color: "#4A4A4A" }}
+          style={{ color: "#4A5E52" }}
         >
           {line.slice(4)}
         </h3>
@@ -60,7 +60,7 @@ function renderBody(body: string) {
         <blockquote
           key={lineKey}
           className="my-6 pl-5 py-1"
-          style={{ borderLeft: "3px solid #F88379", color: "#4A4A4A" }}
+          style={{ borderLeft: "3px solid #E8541A", color: "#4A5E52" }}
         >
           <p className="text-base italic leading-relaxed">{line.slice(2)}</p>
         </blockquote>
@@ -71,7 +71,7 @@ function renderBody(body: string) {
       j % 2 === 1 ? (
         <strong
           key={`bold-${i}-${part}`}
-          style={{ color: "#1A1A1A", fontWeight: 700 }}
+          style={{ color: "#1A2A1E", fontWeight: 700 }}
         >
           {part}
         </strong>
@@ -102,18 +102,18 @@ export default function BlogPostPage() {
       <Layout>
         <div
           className="min-h-screen flex flex-col items-center justify-center gap-6"
-          style={{ background: "#E6D8C4" }}
+          style={{ background: "#EDF7F2" }}
         >
-          <h1 className="font-display text-4xl" style={{ color: "#1A1A1A" }}>
+          <h1 className="font-display text-4xl" style={{ color: "#1A2A1E" }}>
             Article Not Found
           </h1>
-          <p style={{ color: "#4A4A4A" }}>
+          <p style={{ color: "#4A5E52" }}>
             This post doesn’t exist or may have been removed.
           </p>
           <Link
             to="/blog"
             className="flex items-center gap-2 text-sm font-semibold"
-            style={{ color: "#F88379" }}
+            style={{ color: "#E8541A" }}
           >
             <ArrowLeft size={16} /> Back to Blog
           </Link>
@@ -137,7 +137,7 @@ export default function BlogPostPage() {
 
   return (
     <Layout>
-      <div style={{ background: "#E6D8C4", minHeight: "100vh" }}>
+      <div style={{ background: "#EDF7F2", minHeight: "100vh" }}>
         {/* Hero */}
         <div className="relative h-[50vh] md:h-[65vh] overflow-hidden">
           <img
@@ -149,14 +149,14 @@ export default function BlogPostPage() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(26,14,16,0.85) 80%, #E6D8C4 100%)",
+                "linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(26,42,30,0.85) 80%, #EDF7F2 100%)",
             }}
           />
           <div className="absolute bottom-0 left-0 right-0 max-w-4xl mx-auto px-4 md:px-6 pb-10">
             <Link
               to="/blog"
               className="inline-flex items-center gap-1.5 text-xs mb-5 transition-colors"
-              style={{ color: "#4A4A4A" }}
+              style={{ color: "#4A5E52" }}
             >
               <ArrowLeft size={13} /> Back to Blog
             </Link>
@@ -169,7 +169,7 @@ export default function BlogPostPage() {
               transition={{ duration: 0.6 }}
               className="font-display font-semibold leading-tight mb-5"
               style={{
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 fontSize: "clamp(1.8rem, 5vw, 3.5rem)",
               }}
             >
@@ -181,23 +181,23 @@ export default function BlogPostPage() {
                   src={post.author.avatar}
                   alt={post.author.name}
                   className="w-10 h-10 rounded-full object-cover"
-                  style={{ border: "2px solid #F88379" }}
+                  style={{ border: "2px solid #E8541A" }}
                 />
                 <div>
                   <p
                     className="text-sm font-semibold"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     {post.author.name}
                   </p>
-                  <p className="text-xs" style={{ color: "#4A4A4A88" }}>
+                  <p className="text-xs" style={{ color: "#4A5E5288" }}>
                     {post.author.role}
                   </p>
                 </div>
               </div>
               <div
                 className="flex flex-wrap items-center gap-4 text-xs"
-                style={{ color: "#4A4A4A88" }}
+                style={{ color: "#4A5E5288" }}
               >
                 <span>{post.date}</span>
                 <span className="flex items-center gap-1">
@@ -223,18 +223,18 @@ export default function BlogPostPage() {
               {/* Tags */}
               <div
                 className="mt-12 pt-8"
-                style={{ borderTop: "1px solid rgba(248,131,121,0.2)" }}
+                style={{ borderTop: "1px solid rgba(232,84,26,0.2)" }}
               >
                 <div className="flex items-center gap-2 flex-wrap">
-                  <Tag size={15} style={{ color: "#F88379" }} />
+                  <Tag size={15} style={{ color: "#E8541A" }} />
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
                       className="text-xs px-3 py-1.5 rounded-full"
                       style={{
-                        background: "rgba(248,131,121,0.12)",
-                        color: "#4A4A4A",
-                        border: "1px solid rgba(248,131,121,0.25)",
+                        background: "rgba(232,84,26,0.12)",
+                        color: "#4A5E52",
+                        border: "1px solid rgba(232,84,26,0.25)",
                       }}
                     >
                       {tag}
@@ -248,7 +248,7 @@ export default function BlogPostPage() {
                 <div className="mt-14">
                   <h2
                     className="font-display text-3xl font-semibold mb-6"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     Related Articles
                   </h2>
@@ -260,7 +260,7 @@ export default function BlogPostPage() {
                         className="group rounded-xl overflow-hidden block transition-transform hover:-translate-y-1"
                         style={{
                           background: "#FFFFFF",
-                          border: "1px solid rgba(248,131,121,0.2)",
+                          border: "1px solid rgba(232,84,26,0.2)",
                         }}
                         data-ocid={`blog_post.related.item.${i + 1}`}
                       >
@@ -273,13 +273,13 @@ export default function BlogPostPage() {
                           <CategoryBadge category={rp.category} />
                           <p
                             className="text-sm font-semibold mt-2 line-clamp-2"
-                            style={{ color: "#1A1A1A" }}
+                            style={{ color: "#1A2A1E" }}
                           >
                             {rp.title}
                           </p>
                           <p
                             className="text-xs mt-1 flex items-center gap-1"
-                            style={{ color: "#4A4A4A66" }}
+                            style={{ color: "#4A5E5266" }}
                           >
                             <Clock size={10} />
                             {rp.readTime}m read
@@ -300,12 +300,12 @@ export default function BlogPostPage() {
                   className="rounded-2xl p-5"
                   style={{
                     background: "#FFFFFF",
-                    border: "1px solid rgba(248,131,121,0.2)",
+                    border: "1px solid rgba(232,84,26,0.2)",
                   }}
                 >
                   <h3
                     className="font-display text-xl font-semibold mb-4"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     Planning This Trek?
                   </h3>
@@ -325,11 +325,11 @@ export default function BlogPostPage() {
                         <div className="flex-1 min-w-0">
                           <p
                             className="text-sm font-semibold truncate"
-                            style={{ color: "#1A1A1A" }}
+                            style={{ color: "#1A2A1E" }}
                           >
                             {trek.name}
                           </p>
-                          <p className="text-xs" style={{ color: "#4A4A4A66" }}>
+                          <p className="text-xs" style={{ color: "#4A5E5266" }}>
                             {trek.durationDays} days · {trek.difficulty}
                           </p>
                           <p
@@ -341,7 +341,7 @@ export default function BlogPostPage() {
                         </div>
                         <ChevronRight
                           size={14}
-                          style={{ color: "#F88379", flexShrink: 0 }}
+                          style={{ color: "#E8541A", flexShrink: 0 }}
                         />
                       </Link>
                     ))}
@@ -354,12 +354,12 @@ export default function BlogPostPage() {
                 className="rounded-2xl p-5"
                 style={{
                   background: "#FFFFFF",
-                  border: "1px solid rgba(248,131,121,0.2)",
+                  border: "1px solid rgba(232,84,26,0.2)",
                 }}
               >
                 <h3
                   className="font-display text-xl font-semibold mb-4"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   About the Author
                 </h3>
@@ -368,18 +368,18 @@ export default function BlogPostPage() {
                     src={post.author.avatar}
                     alt={post.author.name}
                     className="w-14 h-14 rounded-full object-cover flex-shrink-0"
-                    style={{ border: "2px solid #F88379" }}
+                    style={{ border: "2px solid #E8541A" }}
                   />
                   <div>
-                    <p className="font-semibold" style={{ color: "#1A1A1A" }}>
+                    <p className="font-semibold" style={{ color: "#1A2A1E" }}>
                       {post.author.name}
                     </p>
-                    <p className="text-xs mb-2" style={{ color: "#F88379" }}>
+                    <p className="text-xs mb-2" style={{ color: "#E8541A" }}>
                       {post.author.role}
                     </p>
                     <p
                       className="text-xs leading-relaxed"
-                      style={{ color: "#4A4A4A99" }}
+                      style={{ color: "#4A5E5299" }}
                     >
                       An experienced Himalayan guide with Shail Hikers, leading
                       treks across Uttarakhand since 2016.
@@ -393,17 +393,17 @@ export default function BlogPostPage() {
                 className="rounded-2xl p-5"
                 style={{
                   background: "#FFFFFF",
-                  border: "1px solid rgba(248,131,121,0.2)",
+                  border: "1px solid rgba(232,84,26,0.2)",
                 }}
               >
                 <h3
                   className="font-display text-xl font-semibold mb-4"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   <Share2
                     size={16}
                     className="inline mr-2"
-                    style={{ color: "#F88379" }}
+                    style={{ color: "#E8541A" }}
                   />
                   Share This Post
                 </h3>
@@ -413,7 +413,7 @@ export default function BlogPostPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium transition-all hover:scale-[1.02]"
-                    style={{ background: "#2D6A4F", color: "#1A1A1A" }}
+                    style={{ background: "#2E7D4F", color: "#FFFFFF" }}
                     data-ocid="blog_post.share_whatsapp"
                   >
                     <span style={{ fontSize: 18 }}>&#128172;</span> Share on
@@ -426,7 +426,7 @@ export default function BlogPostPage() {
                     className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium transition-all hover:scale-[1.02]"
                     style={{
                       background: "rgba(168,197,218,0.15)",
-                      color: "#82C8E5",
+                      color: "#2E7D4F",
                       border: "1px solid rgba(168,197,218,0.25)",
                     }}
                     data-ocid="blog_post.share_twitter"
@@ -438,9 +438,9 @@ export default function BlogPostPage() {
                     onClick={handleCopyLink}
                     className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium transition-all hover:scale-[1.02]"
                     style={{
-                      background: "rgba(248,131,121,0.12)",
-                      color: "#4A4A4A",
-                      border: "1px solid rgba(248,131,121,0.25)",
+                      background: "rgba(232,84,26,0.12)",
+                      color: "#4A5E52",
+                      border: "1px solid rgba(232,84,26,0.25)",
                     }}
                     data-ocid="blog_post.copy_link_button"
                   >
@@ -453,17 +453,17 @@ export default function BlogPostPage() {
               <div
                 className="rounded-2xl p-5"
                 style={{
-                  background: "linear-gradient(135deg, #FFFFFF, #E6D8C4)",
-                  border: "1px solid rgba(248,131,121,0.3)",
+                  background: "linear-gradient(135deg, #FFFFFF, #EDF7F2)",
+                  border: "1px solid rgba(232,84,26,0.3)",
                 }}
               >
                 <h3
                   className="font-display text-xl font-semibold mb-1"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   Trek Updates
                 </h3>
-                <p className="text-xs mb-4" style={{ color: "#4A4A4A88" }}>
+                <p className="text-xs mb-4" style={{ color: "#4A5E5288" }}>
                   Get new trek guides and batch alerts in your inbox.
                 </p>
                 <input
@@ -471,16 +471,16 @@ export default function BlogPostPage() {
                   placeholder="your@email.com"
                   className="w-full px-3 py-2.5 rounded-xl text-sm outline-none mb-3"
                   style={{
-                    background: "rgba(248,131,121,0.1)",
-                    border: "1px solid rgba(248,131,121,0.3)",
-                    color: "#1A1A1A",
+                    background: "rgba(232,84,26,0.1)",
+                    border: "1px solid rgba(232,84,26,0.3)",
+                    color: "#1A2A1E",
                   }}
                   data-ocid="blog_post.newsletter_input"
                 />
                 <button
                   type="button"
                   className="w-full py-2.5 rounded-xl text-sm font-semibold transition-opacity hover:opacity-90"
-                  style={{ background: "#F88379", color: "#1A1A1A" }}
+                  style={{ background: "#E8541A", color: "#FFFFFF" }}
                   data-ocid="blog_post.newsletter_submit"
                 >
                   Subscribe

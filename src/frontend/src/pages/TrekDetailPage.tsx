@@ -30,10 +30,10 @@ function getTrekData(slug: string): TrekData | null {
 }
 
 const DIFFICULTY_COLORS: Record<string, string> = {
-  Easy: "#2D6A4F",
+  Easy: "#2E7D4F",
   Moderate: "#D4A843",
-  Difficult: "#F88379",
-  Extreme: "#8B0000",
+  Difficult: "#E8541A",
+  Extreme: "#C94210",
 };
 
 export default function TrekDetailPage() {
@@ -51,7 +51,7 @@ export default function TrekDetailPage() {
     return (
       <div
         className="flex flex-col items-center justify-center min-h-screen"
-        style={{ background: "#E6D8C4", color: "#1A1A1A" }}
+        style={{ background: "#EDF7F2", color: "#1A2A1E" }}
       >
         <h1
           className="text-4xl font-bold mb-4"
@@ -59,13 +59,13 @@ export default function TrekDetailPage() {
         >
           Trek Not Found
         </h1>
-        <p className="mb-8" style={{ color: "#4A4A4A" }}>
+        <p className="mb-8" style={{ color: "#4A5E52" }}>
           We couldn't find the trek you're looking for.
         </p>
         <Link
           to="/treks"
           className="px-6 py-3 rounded-xl"
-          style={{ background: "#F88379", color: "#1A1A1A" }}
+          style={{ background: "#E8541A", color: "#FFFFFF" }}
         >
           View All Treks
         </Link>
@@ -74,9 +74,9 @@ export default function TrekDetailPage() {
   }
 
   return (
-    <div style={{ background: "#E6D8C4", minHeight: "100vh" }}>
+    <div style={{ background: "#EDF7F2", minHeight: "100vh" }}>
       {/* Breadcrumb */}
-      <div className="px-4 md:px-8 py-3 text-sm" style={{ color: "#4A4A4A" }}>
+      <div className="px-4 md:px-8 py-3 text-sm" style={{ color: "#4A5E52" }}>
         <Link to="/" className="hover:underline">
           Home
         </Link>
@@ -85,7 +85,7 @@ export default function TrekDetailPage() {
           Treks
         </Link>
         <span className="mx-2">/</span>
-        <span style={{ color: "#1A1A1A" }}>{trek.name}</span>
+        <span style={{ color: "#1A2A1E" }}>{trek.name}</span>
       </div>
 
       {/* Hero */}
@@ -100,15 +100,15 @@ export default function TrekDetailPage() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, transparent 40%, #E6D8C4 100%)",
+              "linear-gradient(to bottom, transparent 40%, #EDF7F2 100%)",
           }}
         />
         <div className="absolute bottom-0 left-0 right-0 px-4 md:px-12 pb-10">
           <div
             className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-3"
             style={{
-              background: DIFFICULTY_COLORS[trek.difficulty] ?? "#F88379",
-              color: "#1A1A1A",
+              background: DIFFICULTY_COLORS[trek.difficulty] ?? "#E8541A",
+              color: "#1A2A1E",
             }}
           >
             {trek.difficulty}
@@ -117,7 +117,7 @@ export default function TrekDetailPage() {
             className="text-4xl md:text-7xl font-bold mb-2"
             style={{
               fontFamily: "var(--font-display)",
-              color: "#1A1A1A",
+              color: "#1A2A1E",
               textShadow: "0 2px 20px rgba(0,0,0,0.5)",
             }}
           >
@@ -127,7 +127,7 @@ export default function TrekDetailPage() {
             className="text-lg md:text-xl mb-6"
             style={{
               fontFamily: "var(--font-accent, var(--font-display))",
-              color: "#4A4A4A",
+              color: "#4A5E52",
             }}
           >
             {trek.tagline}
@@ -151,15 +151,15 @@ export default function TrekDetailPage() {
                 key={s.label}
                 className="rounded-xl px-4 py-2 text-sm"
                 style={{
-                  background: "rgba(45,27,30,0.75)",
+                  background: "rgba(255,255,255,0.75)",
                   backdropFilter: "blur(8px)",
-                  border: "1px solid rgba(232,160,170,0.2)",
-                  color: "#1A1A1A",
+                  border: "1px solid rgba(212,237,224,0.2)",
+                  color: "#1A2A1E",
                 }}
               >
                 <span
                   style={{
-                    color: "#4A4A4A",
+                    color: "#4A5E52",
                     fontSize: "0.7rem",
                     display: "block",
                   }}
@@ -178,10 +178,10 @@ export default function TrekDetailPage() {
                 style={{
                   background:
                     trek.seatsAvailable <= 3
-                      ? "rgba(248,131,121,0.3)"
+                      ? "rgba(232,84,26,0.3)"
                       : "rgba(45,80,22,0.4)",
-                  color: trek.seatsAvailable <= 3 ? "#F88379" : "#A8D080",
-                  border: `1px solid ${trek.seatsAvailable <= 3 ? "#F8837955" : "#2D6A4F44"}`,
+                  color: trek.seatsAvailable <= 3 ? "#E8541A" : "#A8D080",
+                  border: `1px solid ${trek.seatsAvailable <= 3 ? "#E8541A55" : "#2E7D4F44"}`,
                 }}
               >
                 🪑 {trek.seatsAvailable} Seats Left
@@ -204,8 +204,8 @@ export default function TrekDetailPage() {
                 className="px-3 py-1 rounded-full text-xs font-medium"
                 style={{
                   background: "rgba(168,197,218,0.15)",
-                  color: "#82C8E5",
-                  border: "1px solid #82C8E533",
+                  color: "#2E7D4F",
+                  border: "1px solid #2E7D4F33",
                 }}
               >
                 👥 {trek.completedThisMonth} trekkers this month
@@ -219,7 +219,7 @@ export default function TrekDetailPage() {
               params={{ slug: trek.slug }}
               data-ocid="trek.book_button"
               className="px-8 py-3.5 rounded-xl font-semibold text-base transition-opacity hover:opacity-90"
-              style={{ background: "#F88379", color: "#1A1A1A" }}
+              style={{ background: "#E8541A", color: "#FFFFFF" }}
             >
               Book This Trek — ₹{trek.basePrice.toLocaleString()}
             </Link>
@@ -227,7 +227,7 @@ export default function TrekDetailPage() {
               href={`/assets/itinerary-${trek.slug}.pdf`}
               data-ocid="trek.download_itinerary_button"
               className="px-8 py-3.5 rounded-xl font-semibold text-base border transition-colors hover:bg-white/5"
-              style={{ borderColor: "#4A4A4A55", color: "#4A4A4A" }}
+              style={{ borderColor: "#4A5E5255", color: "#4A5E52" }}
             >
               Download Itinerary PDF
             </a>
@@ -238,7 +238,7 @@ export default function TrekDetailPage() {
       {/* Trust Bar */}
       <div
         className="border-y overflow-x-auto"
-        style={{ background: "#FFFFFF", borderColor: "#4A4A4A22" }}
+        style={{ background: "#FFFFFF", borderColor: "#4A5E5222" }}
       >
         <div className="flex gap-6 px-6 py-3 min-w-max">
           {[
@@ -254,9 +254,9 @@ export default function TrekDetailPage() {
             <span
               key={item}
               className="flex items-center gap-1.5 text-xs whitespace-nowrap"
-              style={{ color: "#4A4A4A" }}
+              style={{ color: "#4A5E52" }}
             >
-              <span style={{ color: "#2D6A4F" }}>✔</span> {item}
+              <span style={{ color: "#2E7D4F" }}>✔</span> {item}
             </span>
           ))}
         </div>
@@ -281,12 +281,12 @@ export default function TrekDetailPage() {
         <div
           className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 lg:hidden"
           style={{
-            background: "rgba(45,27,30,0.97)",
-            borderTop: "1px solid #4A4A4A33",
+            background: "rgba(255,255,255,0.97)",
+            borderTop: "1px solid #4A5E5233",
           }}
         >
           <div>
-            <div className="text-xs" style={{ color: "#4A4A4A" }}>
+            <div className="text-xs" style={{ color: "#4A5E52" }}>
               From
             </div>
             <div className="font-bold" style={{ color: "#D4A843" }}>
@@ -297,7 +297,7 @@ export default function TrekDetailPage() {
             <div
               className="text-xs"
               style={{
-                color: trek.seatsAvailable <= 3 ? "#F88379" : "#4A4A4A",
+                color: trek.seatsAvailable <= 3 ? "#E8541A" : "#4A5E52",
               }}
             >
               {trek.seatsAvailable} seats left
@@ -308,7 +308,7 @@ export default function TrekDetailPage() {
             params={{ slug: trek.slug }}
             data-ocid="trek.mobile_book_button"
             className="px-6 py-2.5 rounded-xl font-semibold text-sm"
-            style={{ background: "#F88379", color: "#1A1A1A" }}
+            style={{ background: "#E8541A", color: "#FFFFFF" }}
           >
             Book Now
           </Link>

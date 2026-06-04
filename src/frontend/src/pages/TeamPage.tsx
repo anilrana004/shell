@@ -129,7 +129,7 @@ export default function TeamPage() {
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2.5rem, 6vw, 3.75rem)",
-              color: "#1A1A1A",
+              color: "#1A2A1E",
               fontWeight: 700,
               letterSpacing: "0.04em",
               lineHeight: 1.1,
@@ -142,7 +142,7 @@ export default function TeamPage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             style={{
-              color: "#4A4A4A",
+              color: "#4A5E52",
               fontFamily: "var(--font-body)",
               marginTop: "1rem",
               fontSize: "1.125rem",
@@ -154,7 +154,7 @@ export default function TeamPage() {
         </section>
 
         {/* Stats Bar */}
-        <section style={{ background: "#F88379" }} className="py-5">
+        <section style={{ background: "#E8541A" }} className="py-5">
           <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {stats.map((s) => (
               <div key={s.label}>
@@ -162,7 +162,7 @@ export default function TeamPage() {
                   style={{
                     fontFamily: "var(--font-display)",
                     fontSize: "2rem",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     fontWeight: 700,
                   }}
                 >
@@ -176,7 +176,7 @@ export default function TeamPage() {
                 </div>
                 <div
                   style={{
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                     fontFamily: "var(--font-body)",
                     fontSize: "0.875rem",
                     opacity: 0.85,
@@ -204,8 +204,8 @@ export default function TeamPage() {
                 variants={cardVariants}
                 className="group relative rounded-2xl overflow-hidden"
                 style={{
-                  background: "#E6D8C4",
-                  border: "1px solid rgba(232,160,170,0.15)",
+                  background: "#EDF7F2",
+                  border: "1px solid rgba(212,237,224,0.15)",
                 }}
               >
                 {/* Availability dot */}
@@ -237,9 +237,9 @@ export default function TeamPage() {
                         width: 100,
                         height: 100,
                         borderRadius: "50%",
-                        border: "3px solid #F88379",
+                        border: "3px solid #E8541A",
                         overflow: "hidden",
-                        boxShadow: "0 0 0 4px rgba(248,131,121,0.2)",
+                        boxShadow: "0 0 0 4px rgba(232,84,26,0.2)",
                       }}
                     >
                       <img
@@ -260,7 +260,7 @@ export default function TeamPage() {
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "1.375rem",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                       fontWeight: 700,
                       marginBottom: "0.25rem",
                     }}
@@ -270,7 +270,7 @@ export default function TeamPage() {
                   <p
                     style={{
                       fontFamily: "var(--font-body)",
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       fontSize: "0.875rem",
                       marginBottom: "0.5rem",
                     }}
@@ -281,9 +281,9 @@ export default function TeamPage() {
                   {/* Years badge */}
                   <span
                     style={{
-                      background: "rgba(248,131,121,0.18)",
-                      border: "1px solid rgba(248,131,121,0.35)",
-                      color: "#1A1A1A",
+                      background: "rgba(232,84,26,0.18)",
+                      border: "1px solid rgba(232,84,26,0.35)",
+                      color: "#1A2A1E",
                       borderRadius: 999,
                       padding: "2px 12px",
                       fontSize: "0.75rem",
@@ -318,9 +318,9 @@ export default function TeamPage() {
                       <span
                         key={c}
                         style={{
-                          background: "#E6D8C4",
-                          border: "1px solid rgba(232,160,170,0.3)",
-                          color: "#4A4A4A",
+                          background: "#EDF7F2",
+                          border: "1px solid rgba(212,237,224,0.3)",
+                          color: "#4A5E52",
                           borderRadius: 999,
                           padding: "2px 10px",
                           fontSize: "0.7rem",
@@ -329,7 +329,7 @@ export default function TeamPage() {
                       >
                         <CheckCircle
                           className="inline w-3 h-3 mr-1"
-                          style={{ color: "#F88379" }}
+                          style={{ color: "#E8541A" }}
                         />
                         {c}
                       </span>
@@ -341,7 +341,7 @@ export default function TeamPage() {
                     className="absolute inset-0 flex items-end justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
                       background:
-                        "linear-gradient(to top, rgba(26,14,16,0.97) 60%, transparent)",
+                        "linear-gradient(to top, rgba(26,42,30,0.97) 60%, transparent)",
                     }}
                   >
                     <div className="text-center">
@@ -351,7 +351,7 @@ export default function TeamPage() {
                       />
                       <p
                         style={{
-                          color: "#1A1A1A",
+                          color: "#1A2A1E",
                           fontFamily: "var(--font-body)",
                           fontSize: "0.85rem",
                           lineHeight: 1.5,
@@ -375,8 +375,8 @@ export default function TeamPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             style={{
-              background: "#E6D8C4",
-              border: "1px solid rgba(248,131,121,0.3)",
+              background: "#EDF7F2",
+              border: "1px solid rgba(232,84,26,0.3)",
               borderRadius: 16,
               padding: "2.5rem",
               maxWidth: 600,
@@ -387,7 +387,7 @@ export default function TeamPage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "1.875rem",
-                color: "#1A1A1A",
+                color: "#1A2A1E",
                 marginBottom: "0.75rem",
               }}
             >
@@ -395,7 +395,7 @@ export default function TeamPage() {
             </h2>
             <p
               style={{
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontFamily: "var(--font-body)",
                 marginBottom: "1.5rem",
                 fontSize: "0.95rem",
@@ -408,8 +408,7 @@ export default function TeamPage() {
               href="/treks"
               style={{
                 display: "inline-block",
-                background: "#F88379",
-                color: "#1A1A1A",
+                background: "#E8541A", color: "#FFFFFF",
                 padding: "0.75rem 2rem",
                 borderRadius: 999,
                 fontFamily: "var(--font-body)",

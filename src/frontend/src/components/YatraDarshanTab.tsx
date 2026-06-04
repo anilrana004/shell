@@ -409,7 +409,7 @@ export default function YatraDarshanTab({ yatra }: Props) {
               key={note}
               className="flex items-start gap-2"
               style={{
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontSize: "0.875rem",
                 lineHeight: 1.6,
               }}
@@ -425,12 +425,12 @@ export default function YatraDarshanTab({ yatra }: Props) {
         <div
           key={temple.name}
           className="rounded-xl overflow-hidden"
-          style={{ border: "1px solid rgba(232,160,170,0.2)" }}
+          style={{ border: "1px solid rgba(212,237,224,0.2)" }}
         >
-          <div className="p-4" style={{ background: "rgba(248,131,121,0.15)" }}>
+          <div className="p-4" style={{ background: "rgba(232,84,26,0.15)" }}>
             <h3
               className="font-bold text-lg"
-              style={{ color: "#1A1A1A", fontFamily: "var(--font-display)" }}
+              style={{ color: "#1A2A1E", fontFamily: "var(--font-display)" }}
             >
               🛕 {temple.name}
             </h3>
@@ -448,14 +448,14 @@ export default function YatraDarshanTab({ yatra }: Props) {
                   key={item.label}
                   className="p-3 rounded-lg text-center"
                   style={{
-                    background: "rgba(250,212,216,0.04)",
-                    border: "1px solid rgba(232,160,170,0.1)",
+                    background: "rgba(212,237,224,0.04)",
+                    border: "1px solid rgba(212,237,224,0.1)",
                   }}
                 >
-                  <p className="text-xs mb-1" style={{ color: "#F88379" }}>
+                  <p className="text-xs mb-1" style={{ color: "#E8541A" }}>
                     {item.label}
                   </p>
-                  <p className="font-bold text-sm" style={{ color: "#1A1A1A" }}>
+                  <p className="font-bold text-sm" style={{ color: "#1A2A1E" }}>
                     {item.value}
                   </p>
                 </div>
@@ -467,17 +467,17 @@ export default function YatraDarshanTab({ yatra }: Props) {
               <div
                 className="p-4 rounded-lg"
                 style={{
-                  background: "rgba(248,131,121,0.06)",
-                  border: "1px solid rgba(248,131,121,0.2)",
+                  background: "rgba(232,84,26,0.06)",
+                  border: "1px solid rgba(232,84,26,0.2)",
                 }}
               >
                 <p
                   className="text-sm font-bold mb-1"
-                  style={{ color: "#F88379" }}
+                  style={{ color: "#E8541A" }}
                 >
                   ⏳ Peak Season Queue (Jan–Jun)
                 </p>
-                <p style={{ color: "#4A4A4A" }}>{temple.peakQueue}</p>
+                <p style={{ color: "#4A5E52" }}>{temple.peakQueue}</p>
               </div>
               <div
                 className="p-4 rounded-lg"
@@ -488,11 +488,11 @@ export default function YatraDarshanTab({ yatra }: Props) {
               >
                 <p
                   className="text-sm font-bold mb-1"
-                  style={{ color: "#82C8E5" }}
+                  style={{ color: "#2E7D4F" }}
                 >
                   🟢 Off-Peak Queue
                 </p>
-                <p style={{ color: "#4A4A4A" }}>{temple.offPeakQueue}</p>
+                <p style={{ color: "#4A5E52" }}>{temple.offPeakQueue}</p>
               </div>
             </div>
 
@@ -513,7 +513,7 @@ export default function YatraDarshanTab({ yatra }: Props) {
                   >
                     VIP Darshan
                   </p>
-                  <p style={{ color: "#4A4A4A", fontSize: "0.875rem" }}>
+                  <p style={{ color: "#4A5E52", fontSize: "0.875rem" }}>
                     {temple.vipDarshan}
                   </p>
                 </div>
@@ -522,7 +522,7 @@ export default function YatraDarshanTab({ yatra }: Props) {
 
             {/* Special Pujas */}
             <div>
-              <h4 className="font-bold mb-3" style={{ color: "#1A1A1A" }}>
+              <h4 className="font-bold mb-3" style={{ color: "#1A2A1E" }}>
                 Special Pujas & Rituals
               </h4>
               <div className="space-y-3">
@@ -531,8 +531,8 @@ export default function YatraDarshanTab({ yatra }: Props) {
                     key={puja.name}
                     className="p-4 rounded-lg"
                     style={{
-                      background: "rgba(250,212,216,0.03)",
-                      border: "1px solid rgba(232,160,170,0.1)",
+                      background: "rgba(212,237,224,0.03)",
+                      border: "1px solid rgba(212,237,224,0.1)",
                     }}
                   >
                     <div className="flex items-start justify-between gap-3 flex-wrap">
@@ -540,15 +540,15 @@ export default function YatraDarshanTab({ yatra }: Props) {
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span
                             className="font-bold"
-                            style={{ color: "#1A1A1A" }}
+                            style={{ color: "#1A2A1E" }}
                           >
                             {puja.name}
                           </span>
                           <span
                             className="text-xs px-2 py-0.5 rounded"
                             style={{
-                              background: "rgba(248,131,121,0.2)",
-                              color: "#F88379",
+                              background: "rgba(232,84,26,0.2)",
+                              color: "#E8541A",
                             }}
                           >
                             {puja.time}
@@ -556,7 +556,7 @@ export default function YatraDarshanTab({ yatra }: Props) {
                         </div>
                         <p
                           style={{
-                            color: "#4A4A4A",
+                            color: "#4A5E52",
                             fontSize: "0.85rem",
                             lineHeight: 1.6,
                           }}
@@ -583,14 +583,14 @@ export default function YatraDarshanTab({ yatra }: Props) {
       <div
         className="p-5 rounded-xl text-center"
         style={{
-          background: "rgba(248,131,121,0.1)",
-          border: "1px solid rgba(248,131,121,0.3)",
+          background: "rgba(232,84,26,0.1)",
+          border: "1px solid rgba(232,84,26,0.3)",
         }}
       >
-        <p className="font-bold mb-1" style={{ color: "#1A1A1A" }}>
+        <p className="font-bold mb-1" style={{ color: "#1A2A1E" }}>
           Book Pujas in Advance
         </p>
-        <p className="text-sm mb-3" style={{ color: "#4A4A4A" }}>
+        <p className="text-sm mb-3" style={{ color: "#4A5E52" }}>
           Shail Hikers coordinates all puja bookings on your behalf. Special
           pujas at Kedarnath and Badrinath must be booked 2–4 weeks in advance
           during peak season.
@@ -599,7 +599,7 @@ export default function YatraDarshanTab({ yatra }: Props) {
           href="tel:+918279888470"
           data-ocid="darshan.puja_book_button"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold"
-          style={{ background: "#F88379", color: "#1A1A1A" }}
+          style={{ background: "#E8541A", color: "#FFFFFF" }}
         >
           📞 Book Puja — Call +91-8279888470
         </a>

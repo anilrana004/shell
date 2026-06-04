@@ -44,7 +44,7 @@ export default function PaymentSuccessPage() {
       left: Math.random() * 100,
       delay: Math.random() * 2,
       duration: 2 + Math.random() * 3,
-      color: ["#1A1A1A", "#4A4A4A", "#F88379", "#D4A843", "#82C8E5"][
+      color: ["#1A2A1E", "#4A5E52", "#E8541A", "#D4A843", "#2E7D4F"][
         Math.floor(Math.random() * 5)
       ],
     }));
@@ -106,7 +106,7 @@ export default function PaymentSuccessPage() {
         className="min-h-screen flex items-center justify-center px-4 py-16"
         style={{
           background:
-            "linear-gradient(135deg, #E6D8C4 0%, #FFFFFF 50%, #E6D8C4 100%)",
+            "linear-gradient(135deg, #EDF7F2 0%, #FFFFFF 50%, #EDF7F2 100%)",
         }}
       >
         <motion.div
@@ -116,7 +116,7 @@ export default function PaymentSuccessPage() {
           className="max-w-lg w-full rounded-2xl p-8 md:p-10 text-center"
           style={{
             background: "rgba(255,255,255,0.95)",
-            border: "1px solid rgba(250,212,216,0.15)",
+            border: "1px solid rgba(212,237,224,0.15)",
           }}
         >
           {isLoading ? (
@@ -130,11 +130,11 @@ export default function PaymentSuccessPage() {
                 }}
                 className="w-12 h-12 rounded-full border-2 border-t-transparent mx-auto mb-4"
                 style={{
-                  borderColor: "#1A1A1A",
+                  borderColor: "#1A2A1E",
                   borderTopColor: "transparent",
                 }}
               />
-              <p className="font-body" style={{ color: "#4A4A4A" }}>
+              <p className="font-body" style={{ color: "#4A5E52" }}>
                 Confirming your booking...
               </p>
             </div>
@@ -142,23 +142,23 @@ export default function PaymentSuccessPage() {
             <>
               <div
                 className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
-                style={{ background: "rgba(248,131,121,0.2)" }}
+                style={{ background: "rgba(232,84,26,0.2)" }}
               >
                 <span className="text-4xl">⚠️</span>
               </div>
               <h1
                 className="font-display text-2xl md:text-3xl mb-3"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 Payment Received
               </h1>
-              <p className="font-body mb-2" style={{ color: "#4A4A4A" }}>
+              <p className="font-body mb-2" style={{ color: "#4A5E52" }}>
                 Your payment was successful, but we had trouble confirming it in
                 our system.
               </p>
               <p
                 className="font-body text-sm mb-6"
-                style={{ color: "#4A4A4A", opacity: 0.7 }}
+                style={{ color: "#4A5E52", opacity: 0.7 }}
               >
                 {confirmPayment.error instanceof Error
                   ? confirmPayment.error.message
@@ -168,7 +168,7 @@ export default function PaymentSuccessPage() {
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body text-sm transition-all duration-200 hover:opacity-90"
-                  style={{ background: "#F88379", color: "#1A1A1A" }}
+                  style={{ background: "#E8541A", color: "#FFFFFF" }}
                   data-ocid="payment.contact_support_button"
                 >
                   Contact Support
@@ -177,9 +177,9 @@ export default function PaymentSuccessPage() {
                   to="/dashboard"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body text-sm transition-all duration-200 hover:opacity-90"
                   style={{
-                    background: "rgba(250,212,216,0.1)",
-                    color: "#1A1A1A",
-                    border: "1px solid rgba(250,212,216,0.2)",
+                    background: "rgba(212,237,224,0.1)",
+                    color: "#1A2A1E",
+                    border: "1px solid rgba(212,237,224,0.2)",
                   }}
                   data-ocid="payment.go_to_dashboard_button"
                 >
@@ -202,10 +202,10 @@ export default function PaymentSuccessPage() {
                 className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center"
                 style={{
                   background: "rgba(45,80,22,0.3)",
-                  border: "2px solid #2D6A4F",
+                  border: "2px solid #2E7D4F",
                 }}
               >
-                <CheckCircle size={40} style={{ color: "#2D6A4F" }} />
+                <CheckCircle size={40} style={{ color: "#2E7D4F" }} />
               </motion.div>
 
               <motion.h1
@@ -213,7 +213,7 @@ export default function PaymentSuccessPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="font-display text-2xl md:text-3xl mb-3"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 Booking Confirmed!
               </motion.h1>
@@ -223,7 +223,7 @@ export default function PaymentSuccessPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 className="font-body mb-6"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 Your Himalayan adventure is officially booked. We have sent a
                 confirmation to your email with all the details.
@@ -237,17 +237,17 @@ export default function PaymentSuccessPage() {
                   className="rounded-xl p-5 mb-6 text-left"
                   style={{
                     background: "rgba(255,255,255,0.8)",
-                    border: "1px solid rgba(250,212,216,0.1)",
+                    border: "1px solid rgba(212,237,224,0.1)",
                   }}
                 >
                   <div
                     className="flex items-center gap-3 mb-4 pb-4"
-                    style={{ borderBottom: "1px solid rgba(250,212,216,0.1)" }}
+                    style={{ borderBottom: "1px solid rgba(212,237,224,0.1)" }}
                   >
-                    <Mountain size={20} style={{ color: "#F88379" }} />
+                    <Mountain size={20} style={{ color: "#E8541A" }} />
                     <span
                       className="font-display text-lg"
-                      style={{ color: "#1A1A1A" }}
+                      style={{ color: "#1A2A1E" }}
                     >
                       Booking #{booking.id.toString()}
                     </span>
@@ -255,10 +255,10 @@ export default function PaymentSuccessPage() {
 
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <Calendar size={16} style={{ color: "#4A4A4A" }} />
+                      <Calendar size={16} style={{ color: "#4A5E52" }} />
                       <span
                         className="font-body text-sm"
-                        style={{ color: "#4A4A4A" }}
+                        style={{ color: "#4A5E52" }}
                       >
                         Trek:{" "}
                         {booking.trekSlug
@@ -267,10 +267,10 @@ export default function PaymentSuccessPage() {
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Users size={16} style={{ color: "#4A4A4A" }} />
+                      <Users size={16} style={{ color: "#4A5E52" }} />
                       <span
                         className="font-body text-sm"
-                        style={{ color: "#4A4A4A" }}
+                        style={{ color: "#4A5E52" }}
                       >
                         Travelers: {booking.travelers.length}
                       </span>
@@ -297,7 +297,7 @@ export default function PaymentSuccessPage() {
                 <Link
                   to="/dashboard"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body text-sm transition-all duration-200 hover:opacity-90"
-                  style={{ background: "#F88379", color: "#1A1A1A" }}
+                  style={{ background: "#E8541A", color: "#FFFFFF" }}
                   data-ocid="payment.go_to_dashboard_button"
                 >
                   <Home size={16} />
@@ -309,9 +309,9 @@ export default function PaymentSuccessPage() {
                   onClick={() => window.print()}
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-body text-sm transition-all duration-200 hover:opacity-90"
                   style={{
-                    background: "rgba(250,212,216,0.1)",
-                    color: "#1A1A1A",
-                    border: "1px solid rgba(250,212,216,0.2)",
+                    background: "rgba(212,237,224,0.1)",
+                    color: "#1A2A1E",
+                    border: "1px solid rgba(212,237,224,0.2)",
                   }}
                   data-ocid="payment.download_receipt_button"
                 >
@@ -326,12 +326,12 @@ export default function PaymentSuccessPage() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.8 }}
                   className="mt-6 text-sm font-body"
-                  style={{ color: "#4A4A4A", opacity: 0.7 }}
+                  style={{ color: "#4A5E52", opacity: 0.7 }}
                 >
                   <Link
                     to="/auth/login"
                     className="underline hover:opacity-80"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     Create an account
                   </Link>{" "}

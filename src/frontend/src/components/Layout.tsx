@@ -1,4 +1,5 @@
 import { type ReactNode, useEffect, useState } from "react";
+import { ScrollHeaderProvider } from "@/context/scroll-header-context";
 import { Footer } from "./Footer";
 import { MobileNav } from "./MobileNav";
 import { Navbar } from "./Navbar";
@@ -31,16 +32,17 @@ function SocialProofToast({ message, onDismiss }: SocialProofToastProps) {
       className="fixed bottom-24 left-4 z-50 flex items-center gap-3 px-4 py-3 rounded-xl shadow-2xl max-w-xs animate-slide-up md:bottom-6"
       style={{
         background: "#FFFFFF",
-        border: "1px solid #F8837944",
-        boxShadow: "0 8px 32px rgba(248,131,121,0.18)",
+        border: "1px solid #C8E0D4",
+        borderLeft: "4px solid #2E7D4F",
+        boxShadow: "0 8px 32px rgba(46,125,79,0.12)",
       }}
     >
       <span
         className="w-2 h-2 rounded-full flex-shrink-0 animate-pulse"
-        style={{ background: "#2D6A4F" }}
+        style={{ background: "#2E7D4F" }}
       />
       <p
-        style={{ color: "#1A1A1A" }}
+        style={{ color: "#1A2A1E" }}
         className="text-xs font-medium leading-snug flex-1"
       >
         {message}
@@ -48,8 +50,8 @@ function SocialProofToast({ message, onDismiss }: SocialProofToastProps) {
       <button
         type="button"
         onClick={onDismiss}
-        style={{ color: "#4A4A4A" }}
-        className="text-xs hover:text-[#1A1A1A] transition-colors flex-shrink-0 leading-none"
+        style={{ color: "#4A5E52" }}
+        className="text-xs hover:text-[#1A2A1E] transition-colors flex-shrink-0 leading-none"
         aria-label="Dismiss notification"
       >
         ✕
@@ -84,20 +86,22 @@ export function Layout({ children }: LayoutProps) {
   }, [msgIndex]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
-      <MobileNav />
-      <main className="flex-1 md:pt-[calc(2rem+5rem)] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
-        <PageTransition>{children}</PageTransition>
-      </main>
-      <Footer />
-      <WhatsAppButton />
-      {toastMsg && (
-        <SocialProofToast
-          message={toastMsg}
-          onDismiss={() => setToastMsg(null)}
-        />
-      )}
-    </div>
+    <ScrollHeaderProvider>
+      <div className="min-h-screen flex flex-col bg-white">
+        <Navbar />
+        <MobileNav />
+        <main className="flex-1 md:pt-[calc(2rem+5rem)] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+        {toastMsg && (
+          <SocialProofToast
+            message={toastMsg}
+            onDismiss={() => setToastMsg(null)}
+          />
+        )}
+      </div>
+    </ScrollHeaderProvider>
   );
 }

@@ -49,7 +49,7 @@ export function CorporateCTASection() {
   return (
     <section
       data-ocid="corporate.section"
-      style={{ background: "#E6D8C4" }}
+      style={{ background: "#EDF7F2" }}
       className="py-20 relative overflow-hidden"
     >
       {/* Topographic SVG pattern */}
@@ -74,7 +74,7 @@ export function CorporateCTASection() {
                 cy="60"
                 r="50"
                 fill="none"
-                stroke="#1A1A1A"
+                stroke="#1A2A1E"
                 strokeWidth="1"
               />
               <circle
@@ -82,7 +82,7 @@ export function CorporateCTASection() {
                 cy="60"
                 r="35"
                 fill="none"
-                stroke="#1A1A1A"
+                stroke="#1A2A1E"
                 strokeWidth="1"
               />
               <circle
@@ -90,7 +90,7 @@ export function CorporateCTASection() {
                 cy="60"
                 r="20"
                 fill="none"
-                stroke="#1A1A1A"
+                stroke="#1A2A1E"
                 strokeWidth="1"
               />
             </pattern>
@@ -106,7 +106,7 @@ export function CorporateCTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs uppercase tracking-[0.4em] mb-3"
-            style={{ color: "#F88379" }}
+            style={{ color: "#E8541A" }}
           >
             Team Experiences
           </motion.p>
@@ -116,11 +116,11 @@ export function CorporateCTASection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-semibold mb-4"
-            style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+            style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
           >
             FORGE YOUR TEAM
             <br />
-            <span style={{ color: "#F88379", fontStyle: "italic" }}>
+            <span style={{ color: "#E8541A", fontStyle: "italic" }}>
               IN THE HIMALAYAS
             </span>
           </motion.h2>
@@ -131,7 +131,7 @@ export function CorporateCTASection() {
           <div>
             <p
               className="text-sm leading-relaxed mb-8"
-              style={{ color: "#4A4A4A" }}
+              style={{ color: "#4A5E52" }}
             >
               50+ corporate groups have transformed their team dynamics through
               our curated Himalayan experiences. From 10-person startup retreats
@@ -143,7 +143,7 @@ export function CorporateCTASection() {
                 <div
                   key={b.title}
                   className="rounded-xl overflow-hidden"
-                  style={{ border: "1px solid rgba(248,131,121,0.2)" }}
+                  style={{ border: "1px solid rgba(232,84,26,0.2)" }}
                 >
                   <button
                     type="button"
@@ -153,20 +153,20 @@ export function CorporateCTASection() {
                     style={{
                       background:
                         expanded === i
-                          ? "rgba(248,131,121,0.1)"
+                          ? "rgba(232,84,26,0.1)"
                           : "rgba(255,255,255,0.7)",
                     }}
                   >
                     <span
                       className="text-sm font-medium"
-                      style={{ color: "#1A1A1A" }}
+                      style={{ color: "#1A2A1E" }}
                     >
                       {b.title}
                     </span>
                     <ChevronDown
                       size={14}
                       style={{
-                        color: "#4A4A4A",
+                        color: "#4A5E52",
                         transform: expanded === i ? "rotate(180deg)" : "none",
                         transition: "transform 0.2s",
                       }}
@@ -176,7 +176,7 @@ export function CorporateCTASection() {
                     <p
                       className="px-4 py-3 text-xs leading-relaxed"
                       style={{
-                        color: "#4A4A4A",
+                        color: "#4A5E52",
                         background: "rgba(255,255,255,0.5)",
                       }}
                     >
@@ -191,26 +191,26 @@ export function CorporateCTASection() {
             <div
               className="p-5 rounded-2xl"
               style={{
-                background: "rgba(248,131,121,0.1)",
-                border: "1px solid rgba(248,131,121,0.3)",
+                background: "rgba(232,84,26,0.1)",
+                border: "1px solid rgba(232,84,26,0.3)",
               }}
             >
               <p
                 className="text-xs uppercase tracking-widest mb-2"
-                style={{ color: "#F88379" }}
+                style={{ color: "#E8541A" }}
               >
                 Case Study
               </p>
               <p
                 className="text-sm font-semibold mb-2"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 How Infosys Hyderabad (45 people) transformed team dynamics on
                 Kedarkantha
               </p>
               <p
                 className="text-xs leading-relaxed"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 "The Shail Hikers team created a private batch exclusively for
                 us. By Day 3, our entire team — across 5 departments that barely
@@ -229,7 +229,7 @@ export function CorporateCTASection() {
             className="p-6 rounded-2xl"
             style={{
               background: "#FFFFFF",
-              border: "1px solid rgba(248,131,121,0.25)",
+              border: "1px solid rgba(232,84,26,0.25)",
             }}
           >
             {!submitted ? (
@@ -238,7 +238,7 @@ export function CorporateCTASection() {
                   className="text-xl font-semibold mb-5"
                   style={{
                     fontFamily: "var(--font-display)",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                   }}
                 >
                   Get a Custom Quote
@@ -285,7 +285,7 @@ export function CorporateCTASection() {
                       <label
                         htmlFor={field.id}
                         className="block text-xs font-medium mb-1.5 uppercase tracking-wider"
-                        style={{ color: "#4A4A4A" }}
+                        style={{ color: "#4A5E52" }}
                       >
                         {field.label}
                       </label>
@@ -305,8 +305,8 @@ export function CorporateCTASection() {
                         className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-colors"
                         style={{
                           background: "rgba(255,255,255,0.9)",
-                          border: "1px solid rgba(232,160,170,0.2)",
-                          color: "#1A1A1A",
+                          border: "1px solid rgba(212,237,224,0.2)",
+                          color: "#1A2A1E",
                         }}
                       />
                     </div>
@@ -315,7 +315,7 @@ export function CorporateCTASection() {
                     type="submit"
                     data-ocid="corporate.submit_button"
                     className="w-full py-3.5 rounded-xl font-semibold tracking-wide text-sm transition-all hover:opacity-90 flex items-center justify-center gap-2"
-                    style={{ background: "#F88379", color: "#1A1A1A" }}
+                    style={{ background: "#E8541A", color: "#FFFFFF" }}
                   >
                     <Send size={15} />
                     Send Quote Request
@@ -326,19 +326,19 @@ export function CorporateCTASection() {
               <div className="text-center py-12">
                 <CheckCircle
                   size={48}
-                  style={{ color: "#2D6A4F" }}
+                  style={{ color: "#2E7D4F" }}
                   className="mx-auto mb-4"
                 />
                 <h3
                   className="text-xl font-semibold mb-2"
                   style={{
                     fontFamily: "var(--font-display)",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                   }}
                 >
                   Quote Request Sent!
                 </h3>
-                <p className="text-sm" style={{ color: "#4A4A4A" }}>
+                <p className="text-sm" style={{ color: "#4A5E52" }}>
                   Our corporate team will contact you within 4 hours with a
                   custom proposal.
                 </p>

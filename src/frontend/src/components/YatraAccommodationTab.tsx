@@ -323,11 +323,11 @@ export default function YatraAccommodationTab({ yatra }: Props) {
       <div
         className="p-5 rounded-xl"
         style={{
-          background: "rgba(248,131,121,0.08)",
-          borderLeft: "4px solid #F88379",
+          background: "rgba(232,84,26,0.08)",
+          borderLeft: "4px solid #E8541A",
         }}
       >
-        <p style={{ color: "#1A1A1A", lineHeight: 1.7 }}>{data.overview}</p>
+        <p style={{ color: "#1A2A1E", lineHeight: 1.7 }}>{data.overview}</p>
       </div>
 
       <div className="space-y-6">
@@ -335,7 +335,7 @@ export default function YatraAccommodationTab({ yatra }: Props) {
           <div
             key={tier.tier}
             className="rounded-xl overflow-hidden"
-            style={{ border: "1px solid rgba(232,160,170,0.2)" }}
+            style={{ border: "1px solid rgba(212,237,224,0.2)" }}
           >
             <div className="flex flex-col md:flex-row">
               <div className="md:w-48 h-40 md:h-auto flex-shrink-0">
@@ -351,8 +351,8 @@ export default function YatraAccommodationTab({ yatra }: Props) {
                     <span
                       className="px-3 py-1 rounded-full text-sm font-bold"
                       style={{
-                        background: "rgba(248,131,121,0.2)",
-                        color: "#F88379",
+                        background: "rgba(232,84,26,0.2)",
+                        color: "#E8541A",
                       }}
                     >
                       {tier.tier}
@@ -366,7 +366,7 @@ export default function YatraAccommodationTab({ yatra }: Props) {
                     from ₹{tier.pricePerNight.toLocaleString("en-IN")}
                     <span
                       className="text-sm font-normal"
-                      style={{ color: "#4A4A4A" }}
+                      style={{ color: "#4A5E52" }}
                     >
                       /night
                     </span>
@@ -375,7 +375,7 @@ export default function YatraAccommodationTab({ yatra }: Props) {
                 <p
                   className="mb-3"
                   style={{
-                    color: "#4A4A4A",
+                    color: "#4A5E52",
                     fontSize: "0.875rem",
                     lineHeight: 1.6,
                   }}
@@ -388,16 +388,16 @@ export default function YatraAccommodationTab({ yatra }: Props) {
                       key={f}
                       className="px-2 py-0.5 rounded text-xs"
                       style={{
-                        background: "rgba(250,212,216,0.06)",
-                        color: "#4A4A4A",
-                        border: "1px solid rgba(232,160,170,0.2)",
+                        background: "rgba(212,237,224,0.06)",
+                        color: "#4A5E52",
+                        border: "1px solid rgba(212,237,224,0.2)",
                       }}
                     >
                       {f}
                     </span>
                   ))}
                 </div>
-                <p className="text-xs" style={{ color: "#4A4A4A" }}>
+                <p className="text-xs" style={{ color: "#4A5E52" }}>
                   <span style={{ color: "#D4A843" }}>Sample:</span>{" "}
                   {tier.sampleHotels}
                 </p>
@@ -417,7 +417,7 @@ export default function YatraAccommodationTab({ yatra }: Props) {
         <p className="font-bold mb-1" style={{ color: "#D4A843" }}>
           Upgrade Accommodation
         </p>
-        <p className="text-sm mb-3" style={{ color: "#4A4A4A" }}>
+        <p className="text-sm mb-3" style={{ color: "#4A5E52" }}>
           Upgrade your accommodation tier at the time of booking or up to 30
           days before departure, subject to availability.
         </p>
@@ -425,7 +425,7 @@ export default function YatraAccommodationTab({ yatra }: Props) {
           href="tel:+918279888470"
           data-ocid="accommodation.upgrade_button"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold"
-          style={{ background: "#F88379", color: "#1A1A1A" }}
+          style={{ background: "#E8541A", color: "#FFFFFF" }}
         >
           📞 Call to Upgrade — +91-8279888470
         </a>

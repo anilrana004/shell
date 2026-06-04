@@ -336,27 +336,27 @@ const MOCK_WAITLIST: WaitlistEntry[] = [
 
 function StatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
-    confirmed: "bg-[#2D6A4F] text-white",
-    pending: "bg-[#FFEB3B] text-[#1A1A1A]",
-    cancelled: "bg-[#F88379] text-white",
-    completed: "bg-[#82C8E5] text-[#1A1A1A]",
-    paid: "bg-[#2D6A4F] text-white",
-    partial: "bg-[#FFEB3B] text-[#1A1A1A]",
-    open: "bg-[#2D6A4F] text-white",
-    full: "bg-[#F88379] text-white",
-    closed: "bg-[#7A7A7A] text-white",
-    Available: "bg-[#2D6A4F] text-white",
-    OnTrek: "bg-[#82C8E5] text-[#1A1A1A]",
-    OnLeave: "bg-[#E6D8C4] text-[#1A1A1A]",
-    Waiting: "bg-[#E6D8C4] text-[#1A1A1A]",
-    Notified: "bg-[#FFEB3B] text-[#1A1A1A]",
-    Booked: "bg-[#2D6A4F] text-white",
-    Expired: "bg-[#F88379] text-white",
+    confirmed: "bg-[#2E7D4F] text-white",
+    pending: "bg-[#FDE8DE] text-[#1A2A1E]",
+    cancelled: "bg-[#E8541A] text-white",
+    completed: "bg-[#2E7D4F] text-[#1A2A1E]",
+    paid: "bg-[#2E7D4F] text-white",
+    partial: "bg-[#FDE8DE] text-[#1A2A1E]",
+    open: "bg-[#2E7D4F] text-white",
+    full: "bg-[#E8541A] text-white",
+    closed: "bg-[#7A8E80] text-white",
+    Available: "bg-[#2E7D4F] text-white",
+    OnTrek: "bg-[#2E7D4F] text-[#1A2A1E]",
+    OnLeave: "bg-[#EDF7F2] text-[#1A2A1E]",
+    Waiting: "bg-[#EDF7F2] text-[#1A2A1E]",
+    Notified: "bg-[#FDE8DE] text-[#1A2A1E]",
+    Booked: "bg-[#2E7D4F] text-white",
+    Expired: "bg-[#E8541A] text-white",
   };
 
   return (
     <Badge
-      className={`${styles[status] || "bg-[#E6D8C4] text-[#1A1A1A]"} font-medium`}
+      className={`${styles[status] || "bg-[#EDF7F2] text-[#1A2A1E]"} font-medium`}
     >
       {status}
     </Badge>
@@ -375,11 +375,11 @@ function StatCard({
   color: string;
 }) {
   return (
-    <div className="rounded-xl border border-[#E6D8C4] bg-white p-5 shadow-sm">
+    <div className="rounded-xl border border-[#EDF7F2] bg-white p-5 shadow-sm">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm text-[#7A7A7A]">{label}</p>
-          <p className="mt-1 font-display text-2xl font-bold text-[#1A1A1A]">
+          <p className="text-sm text-[#7A8E80]">{label}</p>
+          <p className="mt-1 font-display text-2xl font-bold text-[#1A2A1E]">
             {value}
           </p>
         </div>
@@ -424,13 +424,13 @@ function BookingsTab() {
           label="Total Bookings"
           value={stats.total.toString()}
           icon={Calendar}
-          color="bg-[#F88379]"
+          color="bg-[#E8541A]"
         />
         <StatCard
           label="Confirmed"
           value={stats.confirmed.toString()}
           icon={CheckCircle2}
-          color="bg-[#2D6A4F]"
+          color="bg-[#2E7D4F]"
         />
         <StatCard
           label="Revenue (₹)"
@@ -442,30 +442,30 @@ function BookingsTab() {
           label="Pending"
           value={stats.pending.toString()}
           icon={Clock}
-          color="bg-[#82C8E5]"
+          color="bg-[#2E7D4F]"
         />
       </div>
 
-      <div className="rounded-xl border border-[#E6D8C4] bg-white shadow-sm">
-        <div className="flex flex-col gap-4 border-b border-[#E6D8C4] p-4 sm:flex-row sm:items-center sm:justify-between">
-          <h3 className="font-display text-lg font-semibold text-[#1A1A1A]">
+      <div className="rounded-xl border border-[#EDF7F2] bg-white shadow-sm">
+        <div className="flex flex-col gap-4 border-b border-[#EDF7F2] p-4 sm:flex-row sm:items-center sm:justify-between">
+          <h3 className="font-display text-lg font-semibold text-[#1A2A1E]">
             All Bookings
           </h3>
           <div className="flex flex-col gap-2 sm:flex-row">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7A7A7A]" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#7A8E80]" />
               <input
                 type="text"
                 placeholder="Search bookings..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="rounded-lg border border-[#E6D8C4] bg-white py-2 pl-9 pr-4 text-sm text-[#1A1A1A] placeholder:text-[#7A7A7A] focus:border-[#F88379] focus:outline-none"
+                className="rounded-lg border border-[#EDF7F2] bg-white py-2 pl-9 pr-4 text-sm text-[#1A2A1E] placeholder:text-[#7A8E80] focus:border-[#E8541A] focus:outline-none"
               />
             </div>
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value as typeof filter)}
-              className="rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+              className="rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
             >
               <option value="all">All Status</option>
               <option value="confirmed">Confirmed</option>
@@ -479,37 +479,37 @@ function BookingsTab() {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-[#F5EEE4]">
-                <TableHead className="text-[#1A1A1A]">Booking ID</TableHead>
-                <TableHead className="text-[#1A1A1A]">Trek</TableHead>
-                <TableHead className="text-[#1A1A1A]">Customer</TableHead>
-                <TableHead className="text-[#1A1A1A]">Batch Date</TableHead>
-                <TableHead className="text-[#1A1A1A]">Group</TableHead>
-                <TableHead className="text-[#1A1A1A]">Amount</TableHead>
-                <TableHead className="text-[#1A1A1A]">Status</TableHead>
-                <TableHead className="text-[#1A1A1A]">Payment</TableHead>
-                <TableHead className="text-[#1A1A1A]">Guide</TableHead>
+              <TableRow className="bg-[#FEF4F0]">
+                <TableHead className="text-[#1A2A1E]">Booking ID</TableHead>
+                <TableHead className="text-[#1A2A1E]">Trek</TableHead>
+                <TableHead className="text-[#1A2A1E]">Customer</TableHead>
+                <TableHead className="text-[#1A2A1E]">Batch Date</TableHead>
+                <TableHead className="text-[#1A2A1E]">Group</TableHead>
+                <TableHead className="text-[#1A2A1E]">Amount</TableHead>
+                <TableHead className="text-[#1A2A1E]">Status</TableHead>
+                <TableHead className="text-[#1A2A1E]">Payment</TableHead>
+                <TableHead className="text-[#1A2A1E]">Guide</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {filtered.map((booking) => (
                 <TableRow key={booking.id}>
-                  <TableCell className="font-mono text-sm text-[#1A1A1A]">
+                  <TableCell className="font-mono text-sm text-[#1A2A1E]">
                     {booking.id}
                   </TableCell>
-                  <TableCell className="text-[#1A1A1A]">
+                  <TableCell className="text-[#1A2A1E]">
                     {booking.trekName}
                   </TableCell>
                   <TableCell>
-                    <div className="text-[#1A1A1A]">{booking.customerName}</div>
-                    <div className="text-xs text-[#7A7A7A]">
+                    <div className="text-[#1A2A1E]">{booking.customerName}</div>
+                    <div className="text-xs text-[#7A8E80]">
                       {booking.email}
                     </div>
                   </TableCell>
-                  <TableCell className="text-[#1A1A1A]">
+                  <TableCell className="text-[#1A2A1E]">
                     {booking.batchDate}
                   </TableCell>
-                  <TableCell className="text-[#1A1A1A]">
+                  <TableCell className="text-[#1A2A1E]">
                     {booking.groupSize}
                   </TableCell>
                   <TableCell className="font-medium text-[#D4A843]">
@@ -521,7 +521,7 @@ function BookingsTab() {
                   <TableCell>
                     <StatusBadge status={booking.paymentStatus} />
                   </TableCell>
-                  <TableCell className="text-[#1A1A1A]">
+                  <TableCell className="text-[#1A2A1E]">
                     {booking.guideName || "—"}
                   </TableCell>
                 </TableRow>
@@ -657,10 +657,10 @@ function GuidesTab() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-display text-lg font-semibold text-[#1A1A1A]">
+          <h3 className="font-display text-lg font-semibold text-[#1A2A1E]">
             Guide Management
           </h3>
-          <p className="text-sm text-[#7A7A7A]">
+          <p className="text-sm text-[#7A8E80]">
             {guides.length} guides ·{" "}
             {
               guides.filter(
@@ -674,14 +674,14 @@ function GuidesTab() {
 
       {loading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-[#F88379]" />
+          <Loader2 className="h-6 w-6 animate-spin text-[#E8541A]" />
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {guides.map((guide) => (
             <div
               key={guide.id}
-              className="rounded-xl border border-[#E6D8C4] bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+              className="rounded-xl border border-[#EDF7F2] bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
@@ -692,15 +692,15 @@ function GuidesTab() {
                       className="h-12 w-12 rounded-full object-cover"
                     />
                   ) : (
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F88379] font-display text-lg font-bold text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#E8541A] font-display text-lg font-bold text-white">
                       {guide.name.charAt(0)}
                     </div>
                   )}
                   <div>
-                    <h4 className="font-display font-semibold text-[#1A1A1A]">
+                    <h4 className="font-display font-semibold text-[#1A2A1E]">
                       {guide.name}
                     </h4>
-                    <p className="text-sm text-[#7A7A7A]">
+                    <p className="text-sm text-[#7A8E80]">
                       {guide.designation}
                     </p>
                   </div>
@@ -723,7 +723,7 @@ function GuidesTab() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-[#F88379] text-[#F88379] hover:bg-[#F88379] hover:text-white text-xs h-7 px-2"
+                  className="border-[#E8541A] text-[#E8541A] hover:bg-[#E8541A] hover:text-white text-xs h-7 px-2"
                   onClick={() => fileInputRef.current?.click()}
                   disabled={uploadingId === guide.id}
                   data-ocid={`admin.upload_photo_button.${guide.id}`}
@@ -736,27 +736,27 @@ function GuidesTab() {
                   Upload Photo
                 </Button>
                 {uploadError && uploadingId === guide.id && (
-                  <span className="text-xs text-[#F88379]">{uploadError}</span>
+                  <span className="text-xs text-[#E8541A]">{uploadError}</span>
                 )}
                 {uploadSuccess[guide.id] && !uploadingId && (
-                  <span className="text-xs text-[#2D6A4F]">
+                  <span className="text-xs text-[#2E7D4F]">
                     {uploadSuccess[guide.id]}
                   </span>
                 )}
               </div>
 
               <div className="mt-3 space-y-2">
-                <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
-                  <Star className="h-4 w-4 text-[#82C8E5]" />
+                <div className="flex items-center gap-2 text-sm text-[#4A5E52]">
+                  <Star className="h-4 w-4 text-[#2E7D4F]" />
                   {guide.yearsExperience.toString()} years exp
                 </div>
-                <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
+                <div className="flex items-center gap-2 text-sm text-[#4A5E52]">
                   <Star className="h-4 w-4 text-[#D4A843]" />
                   {guide.rating}/5 · {Number(guide.totalTreksLed)} treks led
                 </div>
                 {guide.currentAssignment && (
-                  <div className="flex items-center gap-2 text-sm text-[#4A4A4A]">
-                    <MapPin className="h-4 w-4 text-[#F88379]" />
+                  <div className="flex items-center gap-2 text-sm text-[#4A5E52]">
+                    <MapPin className="h-4 w-4 text-[#E8541A]" />
                     {guide.currentAssignment}
                   </div>
                 )}
@@ -767,9 +767,9 @@ function GuidesTab() {
                   <Badge
                     key={cert}
                     variant="outline"
-                    className="border-[#82C8E5] text-[#1A1A1A]"
+                    className="border-[#2E7D4F] text-[#1A2A1E]"
                   >
-                    <Award className="mr-1 h-3 w-3 text-[#82C8E5]" />
+                    <Award className="mr-1 h-3 w-3 text-[#2E7D4F]" />
                     {cert}
                   </Badge>
                 ))}
@@ -779,7 +779,7 @@ function GuidesTab() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="flex-1 border-[#E6D8C4] text-[#1A1A1A] hover:bg-[#F5EEE4]"
+                  className="flex-1 border-[#EDF7F2] text-[#1A2A1E] hover:bg-[#FEF4F0]"
                   onClick={() => handleAvailabilityToggle(guide.id)}
                   data-ocid="admin.toggle_availability_button"
                 >
@@ -1029,17 +1029,17 @@ function BatchesTab() {
 
   const statusBadgeClass = (status: string) => {
     const s = status.toLowerCase();
-    if (s === "active" || s === "open") return "bg-[#F88379] text-white";
+    if (s === "active" || s === "open") return "bg-[#E8541A] text-white";
     if (s === "cancelled") return "bg-red-100 text-red-700";
-    if (s === "completed" || s === "full") return "bg-[#82C8E5] text-[#1A1A1A]";
-    return "bg-[#E6D8C4] text-[#1A1A1A]";
+    if (s === "completed" || s === "full") return "bg-[#2E7D4F] text-[#1A2A1E]";
+    return "bg-[#EDF7F2] text-[#1A2A1E]";
   };
 
   const seatsBarColor = (booked: bigint, total: bigint) => {
     const ratio = Number(booked) / Number(total);
-    if (ratio > 0.8) return "#F88379";
+    if (ratio > 0.8) return "#E8541A";
     if (ratio > 0.5) return "#D4A843";
-    return "#2D6A4F";
+    return "#2E7D4F";
   };
 
   const trekNameFromSlug = (slug: string) => {
@@ -1074,7 +1074,7 @@ function BatchesTab() {
           label="Total Batches"
           value={batches.length.toString()}
           icon={Calendar}
-          color="bg-[#F88379]"
+          color="bg-[#E8541A]"
         />
         <StatCard
           label="Open"
@@ -1082,7 +1082,7 @@ function BatchesTab() {
             .filter((b) => b.status === BatchStatus.Open)
             .length.toString()}
           icon={CheckCircle2}
-          color="bg-[#2D6A4F]"
+          color="bg-[#2E7D4F]"
         />
         <StatCard
           label="Full"
@@ -1096,19 +1096,19 @@ function BatchesTab() {
           label="With Guide"
           value={batches.filter((b) => b.guideId).length.toString()}
           icon={Users}
-          color="bg-[#82C8E5]"
+          color="bg-[#2E7D4F]"
         />
       </div>
 
-      <div className="rounded-xl border border-[#E6D8C4] bg-white shadow-sm">
-        <div className="flex flex-col gap-4 border-b border-[#E6D8C4] p-4 sm:flex-row sm:items-center sm:justify-between">
-          <h3 className="font-display text-lg font-semibold text-[#1A1A1A]">
+      <div className="rounded-xl border border-[#EDF7F2] bg-white shadow-sm">
+        <div className="flex flex-col gap-4 border-b border-[#EDF7F2] p-4 sm:flex-row sm:items-center sm:justify-between">
+          <h3 className="font-display text-lg font-semibold text-[#1A2A1E]">
             Batch Management
           </h3>
           <button
             type="button"
             onClick={openCreateModal}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#F88379] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#D9604F]"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#E8541A] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#C94210]"
             data-ocid="admin.create_batch_button"
           >
             <Plus className="h-4 w-4" />
@@ -1118,41 +1118,41 @@ function BatchesTab() {
 
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <Loader2 className="h-6 w-6 animate-spin text-[#F88379]" />
+            <Loader2 className="h-6 w-6 animate-spin text-[#E8541A]" />
           </div>
         ) : (
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="bg-[#F5EEE4]">
-                  <TableHead className="text-[#1A1A1A]">Batch ID</TableHead>
-                  <TableHead className="text-[#1A1A1A]">Trek</TableHead>
-                  <TableHead className="text-[#1A1A1A]">Dates</TableHead>
-                  <TableHead className="text-[#1A1A1A]">Seats</TableHead>
-                  <TableHead className="text-[#1A1A1A]">Price</TableHead>
-                  <TableHead className="text-[#1A1A1A]">Status</TableHead>
-                  <TableHead className="text-[#1A1A1A]">Guide</TableHead>
-                  <TableHead className="text-[#1A1A1A]">Actions</TableHead>
+                <TableRow className="bg-[#FEF4F0]">
+                  <TableHead className="text-[#1A2A1E]">Batch ID</TableHead>
+                  <TableHead className="text-[#1A2A1E]">Trek</TableHead>
+                  <TableHead className="text-[#1A2A1E]">Dates</TableHead>
+                  <TableHead className="text-[#1A2A1E]">Seats</TableHead>
+                  <TableHead className="text-[#1A2A1E]">Price</TableHead>
+                  <TableHead className="text-[#1A2A1E]">Status</TableHead>
+                  <TableHead className="text-[#1A2A1E]">Guide</TableHead>
+                  <TableHead className="text-[#1A2A1E]">Actions</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {batches.map((batch) => (
                   <TableRow key={String(batch.id)}>
-                    <TableCell className="font-mono text-sm text-[#1A1A1A]">
+                    <TableCell className="font-mono text-sm text-[#1A2A1E]">
                       {String(batch.id)}
                     </TableCell>
-                    <TableCell className="text-[#1A1A1A]">
+                    <TableCell className="text-[#1A2A1E]">
                       {trekNameFromSlug(batch.trekSlug)}
                     </TableCell>
-                    <TableCell className="text-[#1A1A1A]">
+                    <TableCell className="text-[#1A2A1E]">
                       <div className="text-sm">{batch.startDate}</div>
-                      <div className="text-xs text-[#7A7A7A]">
+                      <div className="text-xs text-[#7A8E80]">
                         to {batch.endDate}
                       </div>
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
-                        <div className="h-2 w-16 rounded-full bg-[#E6D8C4]">
+                        <div className="h-2 w-16 rounded-full bg-[#EDF7F2]">
                           <div
                             className="h-2 rounded-full"
                             style={{
@@ -1164,7 +1164,7 @@ function BatchesTab() {
                             }}
                           />
                         </div>
-                        <span className="text-sm text-[#1A1A1A]">
+                        <span className="text-sm text-[#1A2A1E]">
                           {String(batch.bookedSeats)}/{String(batch.totalSeats)}
                         </span>
                       </div>
@@ -1181,11 +1181,11 @@ function BatchesTab() {
                     </TableCell>
                     <TableCell>
                       {guideName(batch.guideId) ? (
-                        <span className="text-sm text-[#1A1A1A]">
+                        <span className="text-sm text-[#1A2A1E]">
                           {guideName(batch.guideId)}
                         </span>
                       ) : (
-                        <span className="text-sm text-[#7A7A7A]">
+                        <span className="text-sm text-[#7A8E80]">
                           Unassigned
                         </span>
                       )}
@@ -1195,7 +1195,7 @@ function BatchesTab() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-[#F88379] text-[#F88379] hover:bg-[#F88379] hover:text-white h-7 px-2 text-xs"
+                          className="border-[#E8541A] text-[#E8541A] hover:bg-[#E8541A] hover:text-white h-7 px-2 text-xs"
                           onClick={() => {
                             setAssigningBatch(batch);
                             setSelectedGuide(batch.guideId || "");
@@ -1207,7 +1207,7 @@ function BatchesTab() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-[#F88379] text-[#F88379] hover:bg-[#F88379] hover:text-white h-7 px-2 text-xs"
+                          className="border-[#E8541A] text-[#E8541A] hover:bg-[#E8541A] hover:text-white h-7 px-2 text-xs"
                           onClick={() => openEditModal(batch)}
                           data-ocid="admin.edit_batch_button"
                         >
@@ -1239,18 +1239,18 @@ function BatchesTab() {
       >
         <DialogContent className="bg-white">
           <DialogHeader>
-            <DialogTitle className="font-display text-[#1A1A1A]">
+            <DialogTitle className="font-display text-[#1A2A1E]">
               Assign Guide to{" "}
               {assigningBatch ? trekNameFromSlug(assigningBatch.trekSlug) : ""}
             </DialogTitle>
           </DialogHeader>
           <div className="py-4">
-            <p className="mb-3 text-sm text-[#4A4A4A]">
+            <p className="mb-3 text-sm text-[#4A5E52]">
               Batch: {assigningBatch?.startDate} to {assigningBatch?.endDate}
             </p>
             <label
               htmlFor="guide-select"
-              className="text-sm font-medium text-[#1A1A1A]"
+              className="text-sm font-medium text-[#1A2A1E]"
             >
               Select Guide
             </label>
@@ -1258,7 +1258,7 @@ function BatchesTab() {
               id="guide-select"
               value={selectedGuide}
               onChange={(e) => setSelectedGuide(e.target.value)}
-              className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
             >
               <option value="">Choose a guide...</option>
               {guides
@@ -1274,14 +1274,14 @@ function BatchesTab() {
             <Button
               variant="outline"
               onClick={() => setAssigningBatch(null)}
-              className="border-[#E6D8C4] text-[#1A1A1A]"
+              className="border-[#EDF7F2] text-[#1A2A1E]"
             >
               Cancel
             </Button>
             <Button
               onClick={handleAssignGuide}
               disabled={!selectedGuide}
-              className="bg-[#F88379] text-white hover:bg-[#D9604F]"
+              className="bg-[#E8541A] text-white hover:bg-[#C94210]"
             >
               Assign Guide
             </Button>
@@ -1301,7 +1301,7 @@ function BatchesTab() {
       >
         <DialogContent className="bg-white max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="font-display text-[#1A1A1A]">
+            <DialogTitle className="font-display text-[#1A2A1E]">
               {modalMode === "create" ? "Create New Batch" : "Edit Batch"}
             </DialogTitle>
           </DialogHeader>
@@ -1311,15 +1311,15 @@ function BatchesTab() {
             <div>
               <label
                 htmlFor="batch-trek"
-                className="text-sm font-medium text-[#1A1A1A]"
+                className="text-sm font-medium text-[#1A2A1E]"
               >
-                Trek <span className="text-[#F88379]">*</span>
+                Trek <span className="text-[#E8541A]">*</span>
               </label>
               <select
                 id="batch-trek"
                 value={formTrek}
                 onChange={(e) => setFormTrek(e.target.value)}
-                className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
               >
                 <option value="">Select a trek...</option>
                 {TREK_OPTIONS.map((t) => (
@@ -1338,16 +1338,16 @@ function BatchesTab() {
               <div>
                 <label
                   htmlFor="batch-start"
-                  className="text-sm font-medium text-[#1A1A1A]"
+                  className="text-sm font-medium text-[#1A2A1E]"
                 >
-                  Start Date <span className="text-[#F88379]">*</span>
+                  Start Date <span className="text-[#E8541A]">*</span>
                 </label>
                 <input
                   id="batch-start"
                   type="date"
                   value={formStartDate}
                   onChange={(e) => setFormStartDate(e.target.value)}
-                  className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
                 />
                 {formErrors.startDate && (
                   <p className="mt-1 text-xs text-red-500">
@@ -1358,16 +1358,16 @@ function BatchesTab() {
               <div>
                 <label
                   htmlFor="batch-end"
-                  className="text-sm font-medium text-[#1A1A1A]"
+                  className="text-sm font-medium text-[#1A2A1E]"
                 >
-                  End Date <span className="text-[#F88379]">*</span>
+                  End Date <span className="text-[#E8541A]">*</span>
                 </label>
                 <input
                   id="batch-end"
                   type="date"
                   value={formEndDate}
                   onChange={(e) => setFormEndDate(e.target.value)}
-                  className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
                 />
                 {formErrors.endDate && (
                   <p className="mt-1 text-xs text-red-500">
@@ -1382,9 +1382,9 @@ function BatchesTab() {
               <div>
                 <label
                   htmlFor="batch-price"
-                  className="text-sm font-medium text-[#1A1A1A]"
+                  className="text-sm font-medium text-[#1A2A1E]"
                 >
-                  Price Per Person (₹) <span className="text-[#F88379]">*</span>
+                  Price Per Person (₹) <span className="text-[#E8541A]">*</span>
                 </label>
                 <input
                   id="batch-price"
@@ -1393,7 +1393,7 @@ function BatchesTab() {
                   value={formPrice}
                   onChange={(e) => setFormPrice(e.target.value)}
                   placeholder="e.g. 5999"
-                  className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
                 />
                 {formErrors.price && (
                   <p className="mt-1 text-xs text-red-500">
@@ -1404,9 +1404,9 @@ function BatchesTab() {
               <div>
                 <label
                   htmlFor="batch-seats"
-                  className="text-sm font-medium text-[#1A1A1A]"
+                  className="text-sm font-medium text-[#1A2A1E]"
                 >
-                  Max Seats <span className="text-[#F88379]">*</span>
+                  Max Seats <span className="text-[#E8541A]">*</span>
                 </label>
                 <input
                   id="batch-seats"
@@ -1416,7 +1416,7 @@ function BatchesTab() {
                   value={formMaxSeats}
                   onChange={(e) => setFormMaxSeats(e.target.value)}
                   placeholder="e.g. 12"
-                  className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
                 />
                 {formErrors.maxSeats && (
                   <p className="mt-1 text-xs text-red-500">
@@ -1430,7 +1430,7 @@ function BatchesTab() {
             <div>
               <label
                 htmlFor="batch-meeting"
-                className="text-sm font-medium text-[#1A1A1A]"
+                className="text-sm font-medium text-[#1A2A1E]"
               >
                 Meeting Point
               </label>
@@ -1440,7 +1440,7 @@ function BatchesTab() {
                 value={formMeetingPoint}
                 onChange={(e) => setFormMeetingPoint(e.target.value)}
                 placeholder="e.g. Dehradun ISBT Gate 3"
-                className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
               />
             </div>
 
@@ -1449,7 +1449,7 @@ function BatchesTab() {
               <div>
                 <label
                   htmlFor="batch-guide"
-                  className="text-sm font-medium text-[#1A1A1A]"
+                  className="text-sm font-medium text-[#1A2A1E]"
                 >
                   Guide
                 </label>
@@ -1457,7 +1457,7 @@ function BatchesTab() {
                   id="batch-guide"
                   value={formGuide}
                   onChange={(e) => setFormGuide(e.target.value)}
-                  className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
                 >
                   <option value="">Unassigned</option>
                   {guides.map((g) => (
@@ -1470,7 +1470,7 @@ function BatchesTab() {
               <div>
                 <label
                   htmlFor="batch-status"
-                  className="text-sm font-medium text-[#1A1A1A]"
+                  className="text-sm font-medium text-[#1A2A1E]"
                 >
                   Status
                 </label>
@@ -1478,7 +1478,7 @@ function BatchesTab() {
                   id="batch-status"
                   value={formStatus}
                   onChange={(e) => setFormStatus(e.target.value)}
-                  className="mt-1 w-full rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+                  className="mt-1 w-full rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
                 >
                   <option value="active">Active</option>
                   <option value="completed">Completed</option>
@@ -1495,14 +1495,14 @@ function BatchesTab() {
                 setShowModal(false);
                 resetForm();
               }}
-              className="border-[#E6D8C4] text-[#1A1A1A]"
+              className="border-[#EDF7F2] text-[#1A2A1E]"
             >
               Cancel
             </Button>
             <Button
               onClick={handleSubmit}
               disabled={submitting}
-              className="bg-[#F88379] text-white hover:bg-[#D9604F]"
+              className="bg-[#E8541A] text-white hover:bg-[#C94210]"
               data-ocid="admin.submit_batch_button"
             >
               {submitting ? (
@@ -1572,7 +1572,7 @@ function WaitlistsTab() {
           label="Total Waitlisted"
           value={waitlist.length.toString()}
           icon={ListOrdered}
-          color="bg-[#F88379]"
+          color="bg-[#E8541A]"
         />
         <StatCard
           label="Waiting"
@@ -1580,7 +1580,7 @@ function WaitlistsTab() {
             .filter((w) => w.status === "Waiting")
             .length.toString()}
           icon={Clock}
-          color="bg-[#82C8E5]"
+          color="bg-[#2E7D4F]"
         />
         <StatCard
           label="Notified"
@@ -1592,15 +1592,15 @@ function WaitlistsTab() {
         />
       </div>
 
-      <div className="rounded-xl border border-[#E6D8C4] bg-white shadow-sm">
-        <div className="flex flex-col gap-4 border-b border-[#E6D8C4] p-4 sm:flex-row sm:items-center sm:justify-between">
-          <h3 className="font-display text-lg font-semibold text-[#1A1A1A]">
+      <div className="rounded-xl border border-[#EDF7F2] bg-white shadow-sm">
+        <div className="flex flex-col gap-4 border-b border-[#EDF7F2] p-4 sm:flex-row sm:items-center sm:justify-between">
+          <h3 className="font-display text-lg font-semibold text-[#1A2A1E]">
             Waitlist Entries
           </h3>
           <select
             value={filterBatch}
             onChange={(e) => setFilterBatch(e.target.value)}
-            className="rounded-lg border border-[#E6D8C4] bg-white px-3 py-2 text-sm text-[#1A1A1A] focus:border-[#F88379] focus:outline-none"
+            className="rounded-lg border border-[#EDF7F2] bg-white px-3 py-2 text-sm text-[#1A2A1E] focus:border-[#E8541A] focus:outline-none"
           >
             <option value="all">All Batches</option>
             {batches.map((b) => (
@@ -1614,45 +1614,45 @@ function WaitlistsTab() {
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
-              <TableRow className="bg-[#F5EEE4]">
-                <TableHead className="text-[#1A1A1A]">Entry ID</TableHead>
-                <TableHead className="text-[#1A1A1A]">Trek / Batch</TableHead>
-                <TableHead className="text-[#1A1A1A]">Name</TableHead>
-                <TableHead className="text-[#1A1A1A]">Position</TableHead>
-                <TableHead className="text-[#1A1A1A]">People</TableHead>
-                <TableHead className="text-[#1A1A1A]">Status</TableHead>
-                <TableHead className="text-[#1A1A1A]">Created</TableHead>
-                <TableHead className="text-[#1A1A1A]">Actions</TableHead>
+              <TableRow className="bg-[#FEF4F0]">
+                <TableHead className="text-[#1A2A1E]">Entry ID</TableHead>
+                <TableHead className="text-[#1A2A1E]">Trek / Batch</TableHead>
+                <TableHead className="text-[#1A2A1E]">Name</TableHead>
+                <TableHead className="text-[#1A2A1E]">Position</TableHead>
+                <TableHead className="text-[#1A2A1E]">People</TableHead>
+                <TableHead className="text-[#1A2A1E]">Status</TableHead>
+                <TableHead className="text-[#1A2A1E]">Created</TableHead>
+                <TableHead className="text-[#1A2A1E]">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {filtered.map((entry) => (
                 <TableRow key={entry.id}>
-                  <TableCell className="font-mono text-sm text-[#1A1A1A]">
+                  <TableCell className="font-mono text-sm text-[#1A2A1E]">
                     {entry.id}
                   </TableCell>
                   <TableCell>
-                    <div className="text-[#1A1A1A]">{entry.trekName}</div>
-                    <div className="text-xs text-[#7A7A7A]">
+                    <div className="text-[#1A2A1E]">{entry.trekName}</div>
+                    <div className="text-xs text-[#7A8E80]">
                       {entry.batchDate}
                     </div>
                   </TableCell>
                   <TableCell>
-                    <div className="text-[#1A1A1A]">{entry.name}</div>
-                    <div className="text-xs text-[#7A7A7A]">{entry.email}</div>
+                    <div className="text-[#1A2A1E]">{entry.name}</div>
+                    <div className="text-xs text-[#7A8E80]">{entry.email}</div>
                   </TableCell>
                   <TableCell>
-                    <span className="font-display text-lg font-bold text-[#F88379]">
+                    <span className="font-display text-lg font-bold text-[#E8541A]">
                       #{entry.position}
                     </span>
                   </TableCell>
-                  <TableCell className="text-[#1A1A1A]">
+                  <TableCell className="text-[#1A2A1E]">
                     {entry.numPeople}
                   </TableCell>
                   <TableCell>
                     <StatusBadge status={entry.status} />
                   </TableCell>
-                  <TableCell className="text-sm text-[#7A7A7A]">
+                  <TableCell className="text-sm text-[#7A8E80]">
                     {entry.createdAt}
                     {entry.notifiedAt && (
                       <div className="text-xs text-[#D4A843]">
@@ -1666,7 +1666,7 @@ function WaitlistsTab() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-[#2D6A4F] text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white"
+                          className="border-[#2E7D4F] text-[#2E7D4F] hover:bg-[#2E7D4F] hover:text-white"
                           onClick={() => handlePromote(entry.id)}
                           data-ocid="admin.promote_waitlist_button"
                         >
@@ -1677,7 +1677,7 @@ function WaitlistsTab() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-[#82C8E5] text-[#82C8E5] hover:bg-[#82C8E5] hover:text-white"
+                        className="border-[#2E7D4F] text-[#2E7D4F] hover:bg-[#2E7D4F] hover:text-white"
                         onClick={() => handleNotifyNext(entry.batchId)}
                         data-ocid="admin.notify_next_button"
                       >
@@ -1778,16 +1778,16 @@ function AnnouncementsTab() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-display text-lg font-semibold text-[#1A1A1A]">
+          <h3 className="font-display text-lg font-semibold text-[#1A2A1E]">
             Announcements
           </h3>
-          <p className="text-sm text-[#7A7A7A]">
+          <p className="text-sm text-[#7A8E80]">
             {announcements.length} total · {activeCount} active
           </p>
         </div>
         <Button
           onClick={() => setShowAddForm((v) => !v)}
-          className="bg-[#F88379] text-white hover:bg-[#D9604F]"
+          className="bg-[#E8541A] text-white hover:bg-[#C94210]"
           data-ocid="admin.add_announcement_button"
         >
           <Plus className="mr-2 h-4 w-4" />
@@ -1796,10 +1796,10 @@ function AnnouncementsTab() {
       </div>
 
       {showAddForm && (
-        <div className="rounded-xl border border-[#E6D8C4] bg-white p-5 shadow-sm">
+        <div className="rounded-xl border border-[#EDF7F2] bg-white p-5 shadow-sm">
           <label
             htmlFor="announcement-text"
-            className="text-sm font-medium text-[#1A1A1A]"
+            className="text-sm font-medium text-[#1A2A1E]"
           >
             Announcement Text
           </label>
@@ -1817,14 +1817,14 @@ function AnnouncementsTab() {
                 setShowAddForm(false);
                 setNewText("");
               }}
-              className="border-[#E6D8C4] text-[#1A1A1A]"
+              className="border-[#EDF7F2] text-[#1A2A1E]"
             >
               Cancel
             </Button>
             <Button
               onClick={handleCreate}
               disabled={!newText.trim() || submitting}
-              className="bg-[#F88379] text-white hover:bg-[#D9604F]"
+              className="bg-[#E8541A] text-white hover:bg-[#C94210]"
               data-ocid="admin.submit_announcement_button"
             >
               {submitting ? (
@@ -1840,12 +1840,12 @@ function AnnouncementsTab() {
 
       {loading ? (
         <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-[#F88379]" />
+          <Loader2 className="h-6 w-6 animate-spin text-[#E8541A]" />
         </div>
       ) : announcements.length === 0 ? (
-        <div className="rounded-xl border border-[#E6D8C4] bg-white p-8 text-center shadow-sm">
-          <Megaphone className="mx-auto h-8 w-8 text-[#7A7A7A]" />
-          <p className="mt-3 text-sm text-[#7A7A7A]">
+        <div className="rounded-xl border border-[#EDF7F2] bg-white p-8 text-center shadow-sm">
+          <Megaphone className="mx-auto h-8 w-8 text-[#7A8E80]" />
+          <p className="mt-3 text-sm text-[#7A8E80]">
             No announcements yet. Create one to show in the navbar ticker.
           </p>
         </div>
@@ -1856,12 +1856,12 @@ function AnnouncementsTab() {
               key={a.id}
               className={`rounded-xl border bg-white p-4 shadow-sm transition-shadow hover:shadow-md ${
                 a.isActive
-                  ? "border-l-4 border-[#F88379] border-t border-r border-b border-[#E6D8C4]"
-                  : "border-[#E6D8C4]"
+                  ? "border-l-4 border-[#E8541A] border-t border-r border-b border-[#EDF7F2]"
+                  : "border-[#EDF7F2]"
               }`}
               style={
                 a.isActive
-                  ? { borderLeftWidth: 4, borderLeftColor: "#F88379" }
+                  ? { borderLeftWidth: 4, borderLeftColor: "#E8541A" }
                   : undefined
               }
             >
@@ -1869,25 +1869,25 @@ function AnnouncementsTab() {
                 <div className="min-w-0 flex-1">
                   <p
                     className={`text-sm font-medium ${
-                      a.isActive ? "text-[#1A1A1A]" : "text-[#7A7A7A]"
+                      a.isActive ? "text-[#1A2A1E]" : "text-[#7A8E80]"
                     }`}
                   >
                     {a.text}
                   </p>
                   <div className="mt-1.5 flex items-center gap-2">
                     {a.isActive ? (
-                      <Badge className="bg-[#F88379] text-white font-medium">
+                      <Badge className="bg-[#E8541A] text-white font-medium">
                         Active
                       </Badge>
                     ) : (
                       <Badge
                         variant="outline"
-                        className="border-[#7A7A7A] text-[#7A7A7A] font-medium"
+                        className="border-[#7A8E80] text-[#7A8E80] font-medium"
                       >
                         Inactive
                       </Badge>
                     )}
-                    <span className="text-xs text-[#7A7A7A] font-mono">
+                    <span className="text-xs text-[#7A8E80] font-mono">
                       ID: {a.id}
                     </span>
                   </div>
@@ -1898,8 +1898,8 @@ function AnnouncementsTab() {
                     onClick={() => handleToggle(a)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                       a.isActive
-                        ? "bg-[#E6D8C4] text-[#1A1A1A] hover:bg-[#D9604F] hover:text-white"
-                        : "bg-[#2D6A4F] text-white hover:bg-[#1A4A2F]"
+                        ? "bg-[#EDF7F2] text-[#1A2A1E] hover:bg-[#C94210] hover:text-white"
+                        : "bg-[#2E7D4F] text-white hover:bg-[#1A4A2F]"
                     }`}
                     data-ocid={`admin.toggle_announcement.${a.id}`}
                   >
@@ -1908,7 +1908,7 @@ function AnnouncementsTab() {
                   <button
                     type="button"
                     onClick={() => handleDelete(a.id)}
-                    className="p-1.5 rounded-lg text-[#F88379] hover:bg-[#F88379] hover:text-white transition-colors"
+                    className="p-1.5 rounded-lg text-[#E8541A] hover:bg-[#E8541A] hover:text-white transition-colors"
                     aria-label="Delete announcement"
                     data-ocid={`admin.delete_announcement.${a.id}`}
                   >
@@ -1973,24 +1973,24 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="border-b border-[#E6D8C4] bg-white">
+      <div className="border-b border-[#EDF7F2] bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#F88379]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#E8541A]">
               <Shield className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h1 className="font-display text-xl font-bold text-[#1A1A1A]">
+              <h1 className="font-display text-xl font-bold text-[#1A2A1E]">
                 Admin Dashboard
               </h1>
-              <p className="text-xs text-[#7A7A7A]">Shail Hikers Management</p>
+              <p className="text-xs text-[#7A8E80]">Shail Hikers Management</p>
             </div>
           </div>
           {isAdminInitialized === false && (
             <Button
               onClick={handleInitAdmin}
               disabled={isInitializing}
-              className="bg-[#F88379] text-white hover:bg-[#D9604F]"
+              className="bg-[#E8541A] text-white hover:bg-[#C94210]"
               data-ocid="admin.init_admin_button"
             >
               {isInitializing ? (
@@ -2006,7 +2006,7 @@ export default function AdminPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         {/* Mobile Tab Bar */}
-        <div className="mb-6 flex overflow-x-auto border-b border-[#E6D8C4] lg:hidden">
+        <div className="mb-6 flex overflow-x-auto border-b border-[#EDF7F2] lg:hidden">
           {tabs.map((tab) => (
             <button
               type="button"
@@ -2014,8 +2014,8 @@ export default function AdminPage() {
               onClick={() => setActiveTab(tab.key)}
               className={`flex items-center gap-2 whitespace-nowrap border-b-2 px-4 py-3 text-sm font-medium transition-colors ${
                 activeTab === tab.key
-                  ? "border-[#F88379] text-[#F88379]"
-                  : "border-transparent text-[#7A7A7A] hover:text-[#1A1A1A]"
+                  ? "border-[#E8541A] text-[#E8541A]"
+                  : "border-transparent text-[#7A8E80] hover:text-[#1A2A1E]"
               }`}
               data-ocid={`admin.tab.${tab.key}`}
             >
@@ -2036,15 +2036,15 @@ export default function AdminPage() {
                   onClick={() => setActiveTab(tab.key)}
                   className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors ${
                     activeTab === tab.key
-                      ? "bg-[#F5EEE4] text-[#F88379]"
-                      : "text-[#4A4A4A] hover:bg-[#F5EEE4] hover:text-[#1A1A1A]"
+                      ? "bg-[#FEF4F0] text-[#E8541A]"
+                      : "text-[#4A5E52] hover:bg-[#FEF4F0] hover:text-[#1A2A1E]"
                   }`}
                   data-ocid={`admin.sidebar.${tab.key}`}
                 >
                   <tab.icon className="h-4 w-4" />
                   {tab.label}
                   {tab.key === "waitlists" && (
-                    <Badge className="ml-auto bg-[#F88379] text-white">
+                    <Badge className="ml-auto bg-[#E8541A] text-white">
                       {MOCK_WAITLIST.length}
                     </Badge>
                   )}

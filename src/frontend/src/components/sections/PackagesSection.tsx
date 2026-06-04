@@ -84,7 +84,7 @@ export function PackagesSection() {
   return (
     <section
       data-ocid="packages.section"
-      style={{ background: "#E6D8C4" }}
+      style={{ background: "#EDF7F2" }}
       className="py-20"
     >
       <div className="max-w-7xl mx-auto px-4">
@@ -94,7 +94,7 @@ export function PackagesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs uppercase tracking-[0.4em] mb-3"
-            style={{ color: "#F88379" }}
+            style={{ color: "#E8541A" }}
           >
             Bundle & Save
           </motion.p>
@@ -104,7 +104,7 @@ export function PackagesSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-semibold"
-            style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+            style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
           >
             EXCLUSIVE PACKAGES
           </motion.h2>
@@ -120,7 +120,7 @@ export function PackagesSection() {
               transition={{ delay: i * 0.12 }}
               data-ocid={`packages.card.${i + 1}`}
               className="rounded-2xl overflow-hidden group"
-              style={{ border: "1px solid rgba(248,131,121,0.25)" }}
+              style={{ border: "1px solid rgba(232,84,26,0.25)" }}
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -138,7 +138,7 @@ export function PackagesSection() {
                 <div className="absolute top-3 left-3 flex gap-2">
                   <span
                     className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide"
-                    style={{ background: "#F88379", color: "#1A1A1A" }}
+                    style={{ background: "#E8541A", color: "#FFFFFF" }}
                   >
                     {pkg.tag}
                   </span>
@@ -173,12 +173,12 @@ export function PackagesSection() {
                   className="text-lg font-semibold mb-1"
                   style={{
                     fontFamily: "var(--font-display)",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                   }}
                 >
                   {pkg.name}
                 </h3>
-                <p className="text-xs mb-4" style={{ color: "#4A4A4A" }}>
+                <p className="text-xs mb-4" style={{ color: "#4A5E52" }}>
                   {pkg.subtitle}
                 </p>
 
@@ -187,18 +187,18 @@ export function PackagesSection() {
                   className="rounded-lg p-3 mb-4 space-y-1"
                   style={{
                     background: "rgba(255,255,255,0.8)",
-                    border: "1px solid rgba(248,131,121,0.15)",
+                    border: "1px solid rgba(232,84,26,0.15)",
                   }}
                 >
                   {pkg.includes.slice(0, 3).map((item) => (
                     <div
                       key={item}
                       className="flex items-center gap-2 text-xs"
-                      style={{ color: "#4A4A4A" }}
+                      style={{ color: "#4A5E52" }}
                     >
                       <Check
                         size={12}
-                        style={{ color: "#2D6A4F", flexShrink: 0 }}
+                        style={{ color: "#2E7D4F", flexShrink: 0 }}
                       />
                       {item}
                     </div>
@@ -207,11 +207,11 @@ export function PackagesSection() {
                     <div
                       key={item}
                       className="flex items-center gap-2 text-xs"
-                      style={{ color: "#4A4A4A70" }}
+                      style={{ color: "#4A5E5270" }}
                     >
                       <X
                         size={12}
-                        style={{ color: "#F8837970", flexShrink: 0 }}
+                        style={{ color: "#E8541A70", flexShrink: 0 }}
                       />
                       {item}
                     </div>
@@ -222,7 +222,7 @@ export function PackagesSection() {
                   <div>
                     <p
                       className="text-xs line-through"
-                      style={{ color: "#4A4A4A50" }}
+                      style={{ color: "#4A5E5250" }}
                     >
                       ₹{pkg.originalPrice.toLocaleString()}
                     </p>
@@ -240,7 +240,7 @@ export function PackagesSection() {
                     to={`/${pkg.slug}` as "/"}
                     data-ocid={`packages.book.${i + 1}`}
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all hover:opacity-90"
-                    style={{ background: "#F88379", color: "#1A1A1A" }}
+                    style={{ background: "#E8541A", color: "#FFFFFF" }}
                   >
                     Book <ArrowRight size={14} />
                   </Link>

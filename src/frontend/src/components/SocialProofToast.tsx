@@ -58,28 +58,28 @@ export function SocialProofToast() {
           className="fixed bottom-24 left-4 z-50 flex items-center gap-3 px-4 py-3 rounded-xl shadow-2xl md:bottom-6"
           style={{
             background: "#FFFFFF",
-            border: "1px solid #F8837944",
+            border: "1px solid #E8541A44",
             maxWidth: 280,
           }}
           data-ocid="social_proof.toast"
         >
           <div
             className="w-9 h-9 rounded-full flex items-center justify-center text-base font-bold flex-shrink-0"
-            style={{ background: "#F8837922", color: "#F88379" }}
+            style={{ background: "#E8541A22", color: "#E8541A" }}
           >
             {p.name[0]}
           </div>
           <div className="min-w-0">
             <p
               className="text-xs font-semibold truncate"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "#1A2A1E" }}
             >
               {p.name} from {p.city}
             </p>
-            <p className="text-[10px] truncate" style={{ color: "#4A4A4A" }}>
+            <p className="text-[10px] truncate" style={{ color: "#4A5E52" }}>
               just booked <span style={{ color: "#D4A843" }}>{p.trek}</span> ✓
             </p>
-            <p className="text-[10px]" style={{ color: "#4A4A4A66" }}>
+            <p className="text-[10px]" style={{ color: "#4A5E5266" }}>
               {p.time}
             </p>
           </div>

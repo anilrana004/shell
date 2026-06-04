@@ -393,7 +393,7 @@ mixin (
 
     // ── Shared HTML helpers ─────────────────────────────────────────────────
     let headerHtml =
-      "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#F88379;\">" #
+      "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#2E7D4F;\">" #
       "  <tr><td align=\"center\" style=\"padding:28px 24px 20px;\">" #
       "    <p style=\"margin:0;font-family:Georgia,serif;font-size:28px;font-weight:bold;color:#FFFFFF;letter-spacing:2px;\">" #
       "      \u{26F0}\u{FE0F} SHAIL HIKERS" #
@@ -405,50 +405,50 @@ mixin (
     let detailsTable : (Bool) -> Text = func (showTrekker : Bool) : Text {
       let trekkerRow = if (showTrekker) {
         "<tr>" #
-        "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;width:40%;\">Trekker Name</td>" #
-        "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">" # trekkerName # "</td>" #
+        "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;width:40%;\">Trekker Name</td>" #
+        "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">" # trekkerName # "</td>" #
         "</tr>";
       } else { "" };
-      "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;border:1px solid #E6D8C4;\">" #
+      "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:collapse;border:1px solid #EDF7F2;\">" #
       trekkerRow #
       "<tr>" #
-      "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;width:40%;\">Booking Reference</td>" #
-      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">" # bookingRef # "</td>" #
+      "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;width:40%;\">Booking Reference</td>" #
+      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">" # bookingRef # "</td>" #
       "</tr>" #
       "<tr>" #
-      "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;\">Trek Name</td>" #
-      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">" # trekSlug # "</td>" #
+      "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;\">Trek Name</td>" #
+      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">" # trekSlug # "</td>" #
       "</tr>" #
       "<tr>" #
-      "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;\">Batch Date</td>" #
-      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">" # startDate # "</td>" #
+      "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;\">Batch Date</td>" #
+      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">" # startDate # "</td>" #
       "</tr>" #
       "<tr>" #
-      "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;\">Guide</td>" #
-      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">" # guideName # "</td>" #
+      "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;\">Guide</td>" #
+      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">" # guideName # "</td>" #
       "</tr>" #
       "<tr>" #
-      "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;\">Pickup Point</td>" #
-      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">Dehradun ISBT</td>" #
+      "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;\">Pickup Point</td>" #
+      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">Dehradun ISBT</td>" #
       "</tr>" #
       "<tr>" #
-      "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;\">Payment Amount</td>" #
-      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">" # amountText # "</td>" #
+      "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;\">Payment Amount</td>" #
+      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">" # amountText # "</td>" #
       "</tr>" #
       "<tr>" #
-      "  <td style=\"background-color:#E6D8C4;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A1A1A;\">Payment Status</td>" #
-      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#52B788;font-weight:bold;\">Paid \u{2714}</td>" #
+      "  <td style=\"background-color:#EDF7F2;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;font-weight:bold;color:#1A2A1E;\">Payment Status</td>" #
+      "  <td style=\"background-color:#FFFFFF;padding:10px 14px;font-family:Arial,sans-serif;font-size:13px;color:#1A5C3A;font-weight:bold;\">Paid \u{2714}</td>" #
       "</tr>" #
       "</table>";
     };
 
     let footerHtml =
-      "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#E6D8C4;margin-top:24px;\">" #
+      "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#EDF7F2;margin-top:24px;\">" #
       "  <tr><td align=\"center\" style=\"padding:20px 24px;\">" #
-      "    <p style=\"margin:0;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">" #
+      "    <p style=\"margin:0;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">" #
       "      Questions? Call <strong>+91-8279888470</strong> or email <strong>Shailhikers@gmail.com</strong> | Mon\u{2013}Sun 7AM\u{2013}10PM" #
       "    </p>" #
-      "    <p style=\"margin:8px 0 0;font-family:Arial,sans-serif;font-size:12px;color:#4A4A4A;\">Shail Hikers, Dehradun, Uttarakhand, India</p>" #
+      "    <p style=\"margin:8px 0 0;font-family:Arial,sans-serif;font-size:12px;color:#4A5E52;\">Shail Hikers, Dehradun, Uttarakhand, India</p>" #
       "  </td></tr>" #
       "</table>";
 
@@ -458,26 +458,26 @@ mixin (
       "<table align=\"center\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;width:100%;background-color:#FFFFFF;\">" #
       "  <tr><td>" # headerHtml # "</td></tr>" #
       "  <tr><td>" #
-      "    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#52B788;\">" #
+      "    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#1A5C3A;\">" #
       "      <tr><td align=\"center\" style=\"padding:14px 24px;\">" #
       "        <p style=\"margin:0;font-family:Arial,sans-serif;font-size:18px;font-weight:bold;color:#FFFFFF;\">\u{2713} Booking Confirmed!</p>" #
       "      </td></tr>" #
       "    </table>" #
       "  </td></tr>" #
       "  <tr><td style=\"padding:24px;\">" #
-      "    <p style=\"margin:0 0 16px;font-family:Arial,sans-serif;font-size:15px;color:#1A1A1A;\">Dear " # trekkerName # ",</p>" #
-      "    <p style=\"margin:0 0 20px;font-family:Arial,sans-serif;font-size:15px;color:#1A1A1A;\">Your trek booking has been confirmed. Here are your details:</p>" #
+      "    <p style=\"margin:0 0 16px;font-family:Arial,sans-serif;font-size:15px;color:#1A2A1E;\">Dear " # trekkerName # ",</p>" #
+      "    <p style=\"margin:0 0 20px;font-family:Arial,sans-serif;font-size:15px;color:#1A2A1E;\">Your trek booking has been confirmed. Here are your details:</p>" #
       detailsTable(false) #
-      "    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#E6D8C4;margin-top:24px;border-radius:4px;\">" #
+      "    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#EDF7F2;margin-top:24px;border-radius:4px;\">" #
       "      <tr><td style=\"padding:16px 20px;\">" #
-      "        <p style=\"margin:0 0 12px;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;color:#1A1A1A;\">Before Your Trek:</p>" #
-      "        <p style=\"margin:0 0 8px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">\u{2022} Upload your Aadhaar/medical documents at your dashboard</p>" #
-      "        <p style=\"margin:0 0 8px;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">\u{2022} Pack according to the gear list (see your trek page for details)</p>" #
-      "        <p style=\"margin:0;font-family:Arial,sans-serif;font-size:13px;color:#1A1A1A;\">\u{2022} Be at Dehradun ISBT at 6:00 AM on the departure date</p>" #
+      "        <p style=\"margin:0 0 12px;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;color:#1A2A1E;\">Before Your Trek:</p>" #
+      "        <p style=\"margin:0 0 8px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">\u{2022} Upload your Aadhaar/medical documents at your dashboard</p>" #
+      "        <p style=\"margin:0 0 8px;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">\u{2022} Pack according to the gear list (see your trek page for details)</p>" #
+      "        <p style=\"margin:0;font-family:Arial,sans-serif;font-size:13px;color:#1A2A1E;\">\u{2022} Be at Dehradun ISBT at 6:00 AM on the departure date</p>" #
       "      </td></tr>" #
       "    </table>" #
-      "    <p style=\"margin:20px 0 0;font-family:Arial,sans-serif;font-size:14px;color:#1A1A1A;\">Pack your bags and get ready for an unforgettable Himalayan adventure!</p>" #
-      "    <p style=\"margin:16px 0 0;font-family:Arial,sans-serif;font-size:14px;color:#1A1A1A;\">Warm regards,<br/><strong>Team Shail Hikers</strong></p>" #
+      "    <p style=\"margin:20px 0 0;font-family:Arial,sans-serif;font-size:14px;color:#1A2A1E;\">Pack your bags and get ready for an unforgettable Himalayan adventure!</p>" #
+      "    <p style=\"margin:16px 0 0;font-family:Arial,sans-serif;font-size:14px;color:#1A2A1E;\">Warm regards,<br/><strong>Team Shail Hikers</strong></p>" #
       "  </td></tr>" #
       "  <tr><td>" # footerHtml # "</td></tr>" #
       "</table></body></html>";
@@ -487,18 +487,18 @@ mixin (
       "<!DOCTYPE html><html><head><meta charset=\"utf-8\"></head><body style=\"margin:0;padding:20px;background-color:#F5F5F5;\">" #
       "<table align=\"center\" width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;width:100%;background-color:#FFFFFF;\">" #
       "  <tr><td>" #
-      "    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#F88379;\">" #
+      "    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color:#2E7D4F;\">" #
       "      <tr><td align=\"center\" style=\"padding:20px 24px;\">" #
       "        <p style=\"margin:0;font-family:Georgia,serif;font-size:22px;font-weight:bold;color:#FFFFFF;letter-spacing:1px;\">New Booking \u{2014} Shail Hikers</p>" #
       "      </td></tr>" #
       "    </table>" #
       "  </td></tr>" #
       "  <tr><td style=\"padding:24px;\">" #
-      "    <p style=\"margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;color:#1A1A1A;\">A new booking has been received. Full details below:</p>" #
+      "    <p style=\"margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;color:#1A2A1E;\">A new booking has been received. Full details below:</p>" #
       detailsTable(true) #
-      "    <p style=\"margin:16px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#4A4A4A;\"><strong>Trekker Email:</strong> " # userEmail # "</p>" #
-      "    <p style=\"margin:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#4A4A4A;\"><strong>Batch ID:</strong> " # debug_show booking.batchId # "</p>" #
-      "    <p style=\"margin:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#4A4A4A;\"><strong>Travelers:</strong> " # debug_show (booking.travelers.size()) # "</p>" #
+      "    <p style=\"margin:16px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#4A5E52;\"><strong>Trekker Email:</strong> " # userEmail # "</p>" #
+      "    <p style=\"margin:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#4A5E52;\"><strong>Batch ID:</strong> " # debug_show booking.batchId # "</p>" #
+      "    <p style=\"margin:8px 0 0;font-family:Arial,sans-serif;font-size:13px;color:#4A5E52;\"><strong>Travelers:</strong> " # debug_show (booking.travelers.size()) # "</p>" #
       "  </td></tr>" #
       "  <tr><td>" # footerHtml # "</td></tr>" #
       "</table></body></html>";

@@ -16,11 +16,11 @@ const BATCHES = [
 ];
 
 const PRICE_BREAKDOWN = [
-  { label: "Expert Guides", pct: 30, color: "#F88379" },
+  { label: "Expert Guides", pct: 30, color: "#E8541A" },
   { label: "Permits & Fees", pct: 10, color: "#D4A843" },
-  { label: "Meals", pct: 25, color: "#2D6A4F" },
-  { label: "Transport", pct: 20, color: "#82C8E5" },
-  { label: "Gear & Equipment", pct: 15, color: "#4A4A4A" },
+  { label: "Meals", pct: 25, color: "#2E7D4F" },
+  { label: "Transport", pct: 20, color: "#2E7D4F" },
+  { label: "Gear & Equipment", pct: 15, color: "#4A5E52" },
 ];
 
 export default function TrekPricingTab({ trek }: Props) {
@@ -62,7 +62,7 @@ export default function TrekPricingTab({ trek }: Props) {
   const getBatchStatus = (booked: number, seats: number) => {
     const pct = booked / seats;
     if (booked >= seats)
-      return { label: "Sold Out", color: "#F88379", dot: "#F88379" };
+      return { label: "Sold Out", color: "#E8541A", dot: "#E8541A" };
     if (pct >= 0.7)
       return { label: "Filling Fast", color: "#D4A843", dot: "#D4A843" };
     return { label: "Available", color: "#4A7C2F", dot: "#4A7C2F" };
@@ -104,7 +104,7 @@ export default function TrekPricingTab({ trek }: Props) {
     <div className="py-8 space-y-10">
       <section>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="font-display text-3xl" style={{ color: "#1A1A1A" }}>
+          <h2 className="font-display text-3xl" style={{ color: "#1A2A1E" }}>
             Pricing
           </h2>
           <span
@@ -116,26 +116,26 @@ export default function TrekPricingTab({ trek }: Props) {
         </div>
         <div
           className="rounded-2xl overflow-hidden border"
-          style={{ borderColor: "#4A4A4A33" }}
+          style={{ borderColor: "#4A5E5233" }}
         >
           <table className="w-full text-sm">
             <thead>
-              <tr style={{ background: "rgba(248,131,121,0.2)" }}>
+              <tr style={{ background: "rgba(232,84,26,0.2)" }}>
                 <th
                   className="px-5 py-3 text-left"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   Group Size
                 </th>
                 <th
                   className="px-5 py-3 text-right"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   Price/Person
                 </th>
                 <th
                   className="px-5 py-3 text-right"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   Savings
                 </th>
@@ -178,7 +178,7 @@ export default function TrekPricingTab({ trek }: Props) {
                         : "rgba(255,255,255,0.9)",
                   }}
                 >
-                  <td className="px-5 py-3" style={{ color: "#1A1A1A" }}>
+                  <td className="px-5 py-3" style={{ color: "#1A2A1E" }}>
                     {row.label}
                   </td>
                   <td
@@ -198,28 +198,28 @@ export default function TrekPricingTab({ trek }: Props) {
             </tbody>
           </table>
         </div>
-        <div className="mt-4 text-xs" style={{ color: "#4A4A4A" }}>
+        <div className="mt-4 text-xs" style={{ color: "#4A5E52" }}>
           All prices include 5% GST. Early bird: 10% off if booked 60+ days
           ahead.
         </div>
       </section>
 
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Group Price Calculator
         </h2>
         <div
           className="rounded-2xl p-6 border"
           style={{
             background: "rgba(255,255,255,0.9)",
-            borderColor: "#4A4A4A33",
+            borderColor: "#4A5E5233",
           }}
         >
           <div className="flex items-center gap-4 mb-5">
             <label
               htmlFor="group-size-range"
               className="text-sm"
-              style={{ color: "#4A4A4A" }}
+              style={{ color: "#4A5E52" }}
             >
               Group Size:
             </label>
@@ -230,11 +230,11 @@ export default function TrekPricingTab({ trek }: Props) {
               max={20}
               value={groupSize}
               onChange={(e) => setGroupSize(Number(e.target.value))}
-              className="flex-1 accent-[#F88379]"
+              className="flex-1 accent-[#E8541A]"
             />
             <span
               className="font-bold text-lg w-12 text-center"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "#1A2A1E" }}
             >
               {groupSize}
             </span>
@@ -244,7 +244,7 @@ export default function TrekPricingTab({ trek }: Props) {
               className="text-center rounded-xl p-4"
               style={{ background: "rgba(255,255,255,0.9)" }}
             >
-              <div className="text-xs mb-1" style={{ color: "#4A4A4A" }}>
+              <div className="text-xs mb-1" style={{ color: "#4A5E52" }}>
                 Per Person
               </div>
               <div className="font-bold text-xl" style={{ color: "#D4A843" }}>
@@ -255,24 +255,24 @@ export default function TrekPricingTab({ trek }: Props) {
               className="text-center rounded-xl p-4"
               style={{ background: "rgba(255,255,255,0.9)" }}
             >
-              <div className="text-xs mb-1" style={{ color: "#4A4A4A" }}>
+              <div className="text-xs mb-1" style={{ color: "#4A5E52" }}>
                 Group Discount
               </div>
               <div
                 className="font-bold text-xl"
-                style={{ color: discount > 0 ? "#4A7C2F" : "#4A4A4A" }}
+                style={{ color: discount > 0 ? "#4A7C2F" : "#4A5E52" }}
               >
                 {discount > 0 ? `${(discount * 100).toFixed(0)}%` : "--"}
               </div>
             </div>
             <div
               className="text-center rounded-xl p-4"
-              style={{ background: "rgba(248,131,121,0.15)" }}
+              style={{ background: "rgba(232,84,26,0.15)" }}
             >
-              <div className="text-xs mb-1" style={{ color: "#4A4A4A" }}>
+              <div className="text-xs mb-1" style={{ color: "#4A5E52" }}>
                 Total
               </div>
-              <div className="font-bold text-xl" style={{ color: "#F88379" }}>
+              <div className="font-bold text-xl" style={{ color: "#E8541A" }}>
                 Rs.{totalPrice.toLocaleString()}
               </div>
             </div>
@@ -285,7 +285,7 @@ export default function TrekPricingTab({ trek }: Props) {
           type="button"
           onClick={() => setShowBreakdown(!showBreakdown)}
           className="text-sm underline mb-4"
-          style={{ color: "#4A4A4A" }}
+          style={{ color: "#4A5E52" }}
         >
           {showBreakdown ? "Hide" : "Show"} where your money goes
         </button>
@@ -294,12 +294,12 @@ export default function TrekPricingTab({ trek }: Props) {
             className="rounded-2xl p-6 border"
             style={{
               background: "rgba(255,255,255,0.9)",
-              borderColor: "#4A4A4A33",
+              borderColor: "#4A5E5233",
             }}
           >
             {PRICE_BREAKDOWN.map((item) => (
               <div key={item.label} className="flex items-center gap-4 mb-3">
-                <div className="w-32 text-sm" style={{ color: "#1A1A1A" }}>
+                <div className="w-32 text-sm" style={{ color: "#1A2A1E" }}>
                   {item.label}
                 </div>
                 <div
@@ -324,7 +324,7 @@ export default function TrekPricingTab({ trek }: Props) {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Upcoming Batches
         </h2>
         <div className="space-y-3">
@@ -339,23 +339,23 @@ export default function TrekPricingTab({ trek }: Props) {
                 style={{
                   background:
                     selectedBatch === i
-                      ? "rgba(248,131,121,0.15)"
+                      ? "rgba(232,84,26,0.15)"
                       : "rgba(255,255,255,0.9)",
-                  borderColor: selectedBatch === i ? "#F88379" : "#4A4A4A22",
+                  borderColor: selectedBatch === i ? "#E8541A" : "#4A5E5222",
                 }}
                 onClick={() => setSelectedBatch(selectedBatch === i ? null : i)}
               >
                 <div className="flex items-center gap-4 px-5 py-4">
                   <div
                     className="w-14 h-14 rounded-xl flex flex-col items-center justify-center flex-shrink-0"
-                    style={{ background: "rgba(248,131,121,0.2)" }}
+                    style={{ background: "rgba(232,84,26,0.2)" }}
                   >
-                    <div className="text-xs" style={{ color: "#4A4A4A" }}>
+                    <div className="text-xs" style={{ color: "#4A5E52" }}>
                       {date.toLocaleString("default", { month: "short" })}
                     </div>
                     <div
                       className="text-xl font-bold"
-                      style={{ color: "#1A1A1A" }}
+                      style={{ color: "#1A2A1E" }}
                     >
                       {date.getDate()}
                     </div>
@@ -363,24 +363,24 @@ export default function TrekPricingTab({ trek }: Props) {
                   <div className="flex-1">
                     <div
                       className="font-semibold text-sm"
-                      style={{ color: "#1A1A1A" }}
+                      style={{ color: "#1A2A1E" }}
                     >
                       Guide: {batch.guide}
                     </div>
-                    <div className="text-xs mt-1" style={{ color: "#4A4A4A" }}>
+                    <div className="text-xs mt-1" style={{ color: "#4A5E52" }}>
                       {isBatchFull(batch.booked, batch.seats) ? (
                         <span
                           className="inline-flex items-center gap-1"
-                          style={{ color: "#F88379" }}
+                          style={{ color: "#E8541A" }}
                         >
                           <span
                             className="w-2 h-2 rounded-full inline-block animate-pulse"
-                            style={{ background: "#F88379" }}
+                            style={{ background: "#E8541A" }}
                           />
                           Sold Out
                         </span>
                       ) : seatsLeft(batch.booked, batch.seats) <= 3 ? (
-                        <span style={{ color: "#F88379" }}>
+                        <span style={{ color: "#E8541A" }}>
                           Only {seatsLeft(batch.booked, batch.seats)} seats
                           left!
                         </span>
@@ -410,9 +410,9 @@ export default function TrekPricingTab({ trek }: Props) {
                 {selectedBatch === i && (
                   <div
                     className="border-t px-5 py-4 space-y-3"
-                    style={{ borderColor: "#4A4A4A22" }}
+                    style={{ borderColor: "#4A5E5222" }}
                   >
-                    <div className="text-sm" style={{ color: "#4A4A4A" }}>
+                    <div className="text-sm" style={{ color: "#4A5E52" }}>
                       Trek duration: {trek.durationDays} days /{" "}
                       {trek.durationNights} nights
                     </div>
@@ -421,7 +421,7 @@ export default function TrekPricingTab({ trek }: Props) {
                         <a
                           href={`/book/${trek.slug}`}
                           className="px-5 py-2 rounded-lg text-sm font-semibold"
-                          style={{ background: "#F88379", color: "#1A1A1A" }}
+                          style={{ background: "#E8541A", color: "#FFFFFF" }}
                           data-ocid="trek.reserve_batch_button"
                         >
                           Reserve This Batch
@@ -434,8 +434,8 @@ export default function TrekPricingTab({ trek }: Props) {
                                 type="button"
                                 className="px-5 py-2 rounded-lg text-sm font-semibold border-2"
                                 style={{
-                                  borderColor: "#F88379",
-                                  color: "#F88379",
+                                  borderColor: "#E8541A",
+                                  color: "#E8541A",
                                   background: "transparent",
                                 }}
                                 data-ocid="trek.join_waitlist_button"
@@ -450,8 +450,8 @@ export default function TrekPricingTab({ trek }: Props) {
                                   onChange={(e) => setWlName(e.target.value)}
                                   className="w-full px-3 py-2 rounded-lg text-sm border bg-transparent"
                                   style={{
-                                    borderColor: "#4A4A4A44",
-                                    color: "#1A1A1A",
+                                    borderColor: "#4A5E5244",
+                                    color: "#1A2A1E",
                                   }}
                                   data-ocid="trek.waitlist_name_input"
                                 />
@@ -462,8 +462,8 @@ export default function TrekPricingTab({ trek }: Props) {
                                   onChange={(e) => setWlEmail(e.target.value)}
                                   className="w-full px-3 py-2 rounded-lg text-sm border bg-transparent"
                                   style={{
-                                    borderColor: "#4A4A4A44",
-                                    color: "#1A1A1A",
+                                    borderColor: "#4A5E5244",
+                                    color: "#1A2A1E",
                                   }}
                                   data-ocid="trek.waitlist_email_input"
                                 />
@@ -474,8 +474,8 @@ export default function TrekPricingTab({ trek }: Props) {
                                   onChange={(e) => setWlPhone(e.target.value)}
                                   className="w-full px-3 py-2 rounded-lg text-sm border bg-transparent"
                                   style={{
-                                    borderColor: "#4A4A4A44",
-                                    color: "#1A1A1A",
+                                    borderColor: "#4A5E5244",
+                                    color: "#1A2A1E",
                                   }}
                                   data-ocid="trek.waitlist_phone_input"
                                 />
@@ -485,8 +485,7 @@ export default function TrekPricingTab({ trek }: Props) {
                                   disabled={joinWaitlistMutation.isPending}
                                   className="w-full px-5 py-2 rounded-lg text-sm font-semibold"
                                   style={{
-                                    background: "#F88379",
-                                    color: "#1A1A1A",
+                                    background: "#E8541A", color: "#FFFFFF",
                                   }}
                                   data-ocid="trek.waitlist_submit_button"
                                 >
@@ -498,8 +497,8 @@ export default function TrekPricingTab({ trek }: Props) {
                                   <div
                                     className="text-sm px-3 py-2 rounded-lg"
                                     style={{
-                                      background: "rgba(248,131,121,0.15)",
-                                      color: "#B84030",
+                                      background: "rgba(232,84,26,0.15)",
+                                      color: "#C94210",
                                     }}
                                     data-ocid="trek.waitlist_error"
                                   >
@@ -512,25 +511,25 @@ export default function TrekPricingTab({ trek }: Props) {
                             <div
                               className="rounded-xl p-4 border"
                               style={{
-                                background: "#E6D8C4",
-                                borderColor: "#C9B99A",
+                                background: "#EDF7F2",
+                                borderColor: "#D4EDE0",
                               }}
                               data-ocid="trek.waitlist_success_card"
                             >
                               <div
                                 className="font-semibold text-sm mb-1"
-                                style={{ color: "#1A1A1A" }}
+                                style={{ color: "#1A2A1E" }}
                               >
                                 You are on the waitlist!
                               </div>
                               <div
                                 className="text-sm"
-                                style={{ color: "#4A4A4A" }}
+                                style={{ color: "#4A5E52" }}
                               >
                                 We will email you at{" "}
                                 <span
                                   className="font-semibold"
-                                  style={{ color: "#1A1A1A" }}
+                                  style={{ color: "#1A2A1E" }}
                                 >
                                   {submittedEmail}
                                 </span>{" "}
@@ -555,7 +554,7 @@ export default function TrekPricingTab({ trek }: Props) {
       </section>
 
       <section>
-        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-2xl mb-5" style={{ color: "#1A2A1E" }}>
           Payment Options
         </h2>
         <div className="grid md:grid-cols-3 gap-4">
@@ -584,11 +583,11 @@ export default function TrekPricingTab({ trek }: Props) {
               className="rounded-2xl p-5 border flex flex-col"
               style={{
                 background: "rgba(255,255,255,0.9)",
-                borderColor: opt.title === "Pay Full" ? "#D4A843" : "#4A4A4A33",
+                borderColor: opt.title === "Pay Full" ? "#D4A843" : "#4A5E5233",
               }}
             >
               <div className="flex items-center justify-between mb-3">
-                <div className="font-semibold" style={{ color: "#1A1A1A" }}>
+                <div className="font-semibold" style={{ color: "#1A2A1E" }}>
                   {opt.title}
                 </div>
                 <span
@@ -602,7 +601,7 @@ export default function TrekPricingTab({ trek }: Props) {
                   {opt.badge}
                 </span>
               </div>
-              <div className="text-sm flex-1 mb-4" style={{ color: "#4A4A4A" }}>
+              <div className="text-sm flex-1 mb-4" style={{ color: "#4A5E52" }}>
                 {opt.desc}
               </div>
               <button
@@ -611,12 +610,12 @@ export default function TrekPricingTab({ trek }: Props) {
                 style={{
                   background:
                     opt.title === "Pay Full"
-                      ? "#F88379"
-                      : "rgba(248,131,121,0.2)",
-                  color: "#1A1A1A",
+                      ? "#E8541A"
+                      : "rgba(232,84,26,0.2)",
+                  color: "#1A2A1E",
                   border:
                     opt.title !== "Pay Full"
-                      ? "1px solid #F8837966"
+                      ? "1px solid #E8541A66"
                       : undefined,
                 }}
               >
@@ -634,7 +633,7 @@ export default function TrekPricingTab({ trek }: Props) {
         <div className="font-semibold mb-2" style={{ color: "#D4A843" }}>
           Early Bird - 10% Off
         </div>
-        <div className="text-sm" style={{ color: "#1A1A1A" }}>
+        <div className="text-sm" style={{ color: "#1A2A1E" }}>
           Book 60+ days ahead to unlock 10% savings. Refer a friend and both get
           Rs.500 off your next trek.
         </div>

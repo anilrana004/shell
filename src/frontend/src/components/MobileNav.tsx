@@ -19,9 +19,10 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { useScrollHeader } from "@/hooks/use-scroll-header";
+import { Logo } from "@/components/Logo";
+import { useScrollHeaderContext } from "@/context/scroll-header-context";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const _trekLinks = [
   { name: "Kedarkantha", slug: "kedarkantha" },
@@ -54,9 +55,9 @@ const ALL_MOBILE_TREKS = [
     name: "Kedarkantha",
     slug: "kedarkantha",
     price: "₹5,999",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
   },
-  { name: "Har Ki Dun", slug: "har-ki-dun", price: "₹6,499", color: "#2D6A4F" },
+  { name: "Har Ki Dun", slug: "har-ki-dun", price: "₹6,499", color: "#2E7D4F" },
   {
     name: "Valley of Flowers",
     slug: "valley-of-flowers",
@@ -67,9 +68,9 @@ const ALL_MOBILE_TREKS = [
     name: "Dayara Bugyal",
     slug: "dayara-bugyal",
     price: "₹5,499",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
   },
-  { name: "Nag Tibba", slug: "nag-tibba", price: "₹3,499", color: "#2D6A4F" },
+  { name: "Nag Tibba", slug: "nag-tibba", price: "₹3,499", color: "#2E7D4F" },
   {
     name: "Chopta Chandrashila",
     slug: "chopta-chandrashila",
@@ -92,7 +93,7 @@ const ALL_MOBILE_TREKS = [
     name: "Chaainsheel Bugyal",
     slug: "chaainsheel-bugyal",
     price: "₹5,999",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
   },
   {
     name: "Ruinsara Tal",
@@ -104,15 +105,15 @@ const ALL_MOBILE_TREKS = [
     name: "Buran Ghati",
     slug: "buran-ghati",
     price: "₹8,999",
-    color: "#F88379",
+    color: "#E8541A",
   },
-  { name: "Rupin Pass", slug: "rupin-pass", price: "₹7,999", color: "#F88379" },
-  { name: "Bali Pass", slug: "bali-pass", price: "₹9,499", color: "#F88379" },
+  { name: "Rupin Pass", slug: "rupin-pass", price: "₹7,999", color: "#E8541A" },
+  { name: "Bali Pass", slug: "bali-pass", price: "₹9,499", color: "#E8541A" },
   {
     name: "Borasu Pass",
     slug: "borasu-pass",
     price: "₹9,999",
-    color: "#F88379",
+    color: "#E8541A",
   },
 ];
 
@@ -132,13 +133,21 @@ const BOTTOM_NAV = [
 ];
 
 export function MobileNav() {
+  const { visible: headerVisible, pin, unpin } = useScrollHeaderContext();
   const [open, setOpen] = useState(false);
   const [trekExpanded, setTrekExpanded] = useState(false);
   const [yatraExpanded, setYatraExpanded] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const routerState = useRouterState();
   const pathname = routerState.location.pathname;
-  const headerVisible = useScrollHeader(open);
+
+  useEffect(() => {
+    if (open) {
+      pin("mobile-nav");
+      return () => unpin("mobile-nav");
+    }
+    unpin("mobile-nav");
+  }, [open, pin, unpin]);
 
   const close = () => setOpen(false);
 
@@ -156,42 +165,17 @@ export function MobileNav() {
           headerVisible ? "translate-y-0" : "-translate-y-full"
         }`}
         style={{
-          background: "rgba(45,27,30,0.98)",
+          background: "rgba(255,255,255,0.98)",
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
-          borderBottom: "1px solid rgba(248,131,121,0.25)",
+          borderBottom: "1px solid rgba(232,84,26,0.25)",
           paddingTop: "env(safe-area-inset-top, 0px)",
           minHeight: "calc(3.5rem + env(safe-area-inset-top, 0px))",
         }}
         data-ocid="mobile_nav.header"
       >
-        <Link to="/" className="flex items-center gap-2 min-w-0">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 40 40"
-            fill="none"
-            role="img"
-            aria-label="Shail Hikers"
-            className="flex-shrink-0"
-          >
-            <path d="M20 3L38 36H2L20 3Z" fill="#F88379" />
-            <path
-              d="M20 13L30 36H10L20 13Z"
-              fill="#E6D8C4"
-              opacity="0.5"
-            />
-            <circle cx="20" cy="36" r="2" fill="#D4A843" />
-          </svg>
-          <span
-            style={{
-              fontFamily: "var(--font-display)",
-              color: "#FFFFFF",
-            }}
-            className="font-semibold tracking-widest uppercase text-sm truncate"
-          >
-            Shail Hikers
-          </span>
+        <Link to="/" className="flex items-center min-w-0">
+          <Logo size={36} showWordmark className="text-sm" />
         </Link>
         <button
           type="button"
@@ -199,12 +183,12 @@ export function MobileNav() {
           onClick={() => setOpen(true)}
           className="p-2.5 rounded-xl flex-shrink-0"
           style={{
-            background: "rgba(248,131,121,0.15)",
-            border: "1px solid rgba(248,131,121,0.4)",
+            background: "rgba(232,84,26,0.15)",
+            border: "1px solid rgba(232,84,26,0.4)",
           }}
           aria-label="Open navigation menu"
         >
-          <Menu size={20} style={{ color: "#FFFFFF" }} />
+          <Menu size={20} style={{ color: "#1A2A1E" }} />
         </button>
       </header>
 
@@ -229,50 +213,27 @@ export function MobileNav() {
               className="fixed inset-y-0 left-0 z-50 w-[85vw] max-w-sm flex flex-col md:hidden"
               style={{
                 background: "#FFFFFF",
-                borderRight: "1px solid #F8837933",
+                borderRight: "1px solid #E8541A33",
               }}
               data-ocid="mobile_nav.dialog"
             >
               {/* Header */}
               <div
                 className="flex items-center justify-between px-5 py-4"
-                style={{ borderBottom: "1px solid #F8837922" }}
+                style={{ borderBottom: "1px solid #E8541A22" }}
               >
                 <Link
                   to="/"
                   onClick={close}
                   className="flex items-center gap-2"
                 >
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    role="img"
-                    aria-label="Shail Hikers"
-                  >
-                    <path d="M20 3L38 36H2L20 3Z" fill="#F88379" />
-                    <path
-                      d="M20 13L30 36H10L20 13Z"
-                      fill="#E6D8C4"
-                      opacity="0.5"
-                    />
-                  </svg>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      color: "#1A1A1A",
-                    }}
-                    className="text-lg font-semibold tracking-widest uppercase"
-                  >
-                    Shail Hikers
-                  </span>
+                  <Logo size={32} showWordmark className="text-base" />
                 </Link>
                 <button
                   type="button"
                   onClick={close}
                   className="p-1.5 rounded-md"
-                  style={{ color: "#4A4A4A" }}
+                  style={{ color: "#4A5E52" }}
                   aria-label="Close menu"
                 >
                   <X size={20} />
@@ -282,13 +243,13 @@ export function MobileNav() {
               {/* Search bar */}
               <div
                 className="px-4 pt-4 pb-3"
-                style={{ borderBottom: "1px solid #F8837915" }}
+                style={{ borderBottom: "1px solid #E8541A15" }}
               >
                 <div className="relative">
                   <Search
                     size={14}
                     className="absolute left-3 top-1/2 -translate-y-1/2"
-                    style={{ color: "#4A4A4A" }}
+                    style={{ color: "#4A5E52" }}
                   />
                   <input
                     type="text"
@@ -297,9 +258,9 @@ export function MobileNav() {
                     placeholder="Search treks, yatras..."
                     className="w-full pl-8 pr-3 py-2.5 rounded-xl text-sm outline-none"
                     style={{
-                      background: "#E6D8C4",
-                      border: "1px solid #F8837933",
-                      color: "#1A1A1A",
+                      background: "#EDF7F2",
+                      border: "1px solid #E8541A33",
+                      color: "#1A2A1E",
                     }}
                     data-ocid="mobile_nav.search_input"
                   />
@@ -313,10 +274,10 @@ export function MobileNav() {
                         params={{ slug: t.slug }}
                         onClick={close}
                         className="flex items-center justify-between px-3 py-2 rounded-lg"
-                        style={{ background: "#E6D8C4" }}
+                        style={{ background: "#EDF7F2" }}
                       >
                         <span
-                          style={{ color: "#1A1A1A" }}
+                          style={{ color: "#1A2A1E" }}
                           className="text-xs font-medium"
                         >
                           {t.name}
@@ -341,13 +302,13 @@ export function MobileNav() {
                   onClick={() => setTrekExpanded(!trekExpanded)}
                   className="w-full flex items-center justify-between px-3 py-3 rounded-xl transition-colors"
                   style={{
-                    background: trekExpanded ? "#E6D8C4" : "transparent",
-                    color: "#1A1A1A",
+                    background: trekExpanded ? "#EDF7F2" : "transparent",
+                    color: "#1A2A1E",
                   }}
                   data-ocid="mobile_nav.treks_menu"
                 >
                   <div className="flex items-center gap-2.5">
-                    <Mountain size={16} style={{ color: "#F88379" }} />
+                    <Mountain size={16} style={{ color: "#E8541A" }} />
                     <span className="font-semibold text-sm tracking-wide">
                       TREKS
                     </span>
@@ -355,7 +316,7 @@ export function MobileNav() {
                   <ChevronDown
                     size={15}
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       transform: trekExpanded ? "rotate(180deg)" : "none",
                       transition: "transform 0.2s",
                     }}
@@ -378,7 +339,7 @@ export function MobileNav() {
                             params={{ slug: t.slug }}
                             onClick={close}
                             className="flex items-center justify-between px-3 py-2 rounded-lg transition-colors"
-                            style={{ color: "#4A4A4A" }}
+                            style={{ color: "#4A5E52" }}
                           >
                             <div className="flex items-center gap-2">
                               <span
@@ -399,7 +360,7 @@ export function MobileNav() {
                           to="/treks"
                           onClick={close}
                           className="block px-3 py-2 text-xs font-semibold transition-colors"
-                          style={{ color: "#F88379" }}
+                          style={{ color: "#E8541A" }}
                         >
                           View All 14 Treks →
                         </Link>
@@ -414,13 +375,13 @@ export function MobileNav() {
                   onClick={() => setYatraExpanded(!yatraExpanded)}
                   className="w-full flex items-center justify-between px-3 py-3 rounded-xl transition-colors"
                   style={{
-                    background: yatraExpanded ? "#E6D8C4" : "transparent",
-                    color: "#1A1A1A",
+                    background: yatraExpanded ? "#EDF7F2" : "transparent",
+                    color: "#1A2A1E",
                   }}
                   data-ocid="mobile_nav.yatras_menu"
                 >
                   <div className="flex items-center gap-2.5">
-                    <Compass size={16} style={{ color: "#F88379" }} />
+                    <Compass size={16} style={{ color: "#E8541A" }} />
                     <span className="font-semibold text-sm tracking-wide">
                       YATRAS & TOURS
                     </span>
@@ -428,7 +389,7 @@ export function MobileNav() {
                   <ChevronDown
                     size={15}
                     style={{
-                      color: "#4A4A4A",
+                      color: "#4A5E52",
                       transform: yatraExpanded ? "rotate(180deg)" : "none",
                       transition: "transform 0.2s",
                     }}
@@ -451,7 +412,7 @@ export function MobileNav() {
                             params={{ slug: y.slug }}
                             onClick={close}
                             className="block px-3 py-2 rounded-lg text-xs transition-colors"
-                            style={{ color: "#4A4A4A" }}
+                            style={{ color: "#4A5E52" }}
                           >
                             {y.name}
                           </Link>
@@ -476,14 +437,14 @@ export function MobileNav() {
                     onClick={close}
                     className="flex items-center gap-2.5 px-3 py-3 rounded-xl text-sm font-medium transition-colors"
                     style={{
-                      color: pathname === to ? "#1A1A1A" : "#4A4A4A",
-                      background: pathname === to ? "#E6D8C4" : "transparent",
+                      color: pathname === to ? "#1A2A1E" : "#4A5E52",
+                      background: pathname === to ? "#EDF7F2" : "transparent",
                     }}
                   >
                     <Icon
                       size={16}
                       style={{
-                        color: pathname === to ? "#F88379" : "#4A4A4A77",
+                        color: pathname === to ? "#E8541A" : "#4A5E5277",
                       }}
                     />
                     {label}
@@ -493,10 +454,10 @@ export function MobileNav() {
                 {/* Quick action cards */}
                 <div
                   className="mt-4 pt-4"
-                  style={{ borderTop: "1px solid #F8837922" }}
+                  style={{ borderTop: "1px solid #E8541A22" }}
                 >
                   <p
-                    style={{ color: "#4A4A4A66" }}
+                    style={{ color: "#4A5E5266" }}
                     className="text-[10px] uppercase tracking-widest px-3 mb-3"
                   >
                     Quick Actions
@@ -507,20 +468,20 @@ export function MobileNav() {
                       onClick={close}
                       className="flex flex-col items-center gap-1.5 p-3 rounded-2xl text-center transition-all hover:scale-[1.02]"
                       style={{
-                        background: "#F8837918",
-                        border: "1px solid #F8837944",
+                        background: "#E8541A18",
+                        border: "1px solid #E8541A44",
                       }}
                       data-ocid="mobile_nav.trek_finder_button"
                     >
-                      <Sparkles size={18} style={{ color: "#F88379" }} />
+                      <Sparkles size={18} style={{ color: "#E8541A" }} />
                       <span
-                        style={{ color: "#1A1A1A" }}
+                        style={{ color: "#1A2A1E" }}
                         className="text-[10px] font-semibold leading-tight"
                       >
                         Trek Finder Quiz
                       </span>
                       <span
-                        style={{ color: "#4A4A4A66" }}
+                        style={{ color: "#4A5E5266" }}
                         className="text-[9px]"
                       >
                         2-min AI quiz
@@ -531,20 +492,20 @@ export function MobileNav() {
                       onClick={close}
                       className="flex flex-col items-center gap-1.5 p-3 rounded-2xl text-center transition-all hover:scale-[1.02]"
                       style={{
-                        background: "#F8837918",
-                        border: "1px solid #F8837944",
+                        background: "#E8541A18",
+                        border: "1px solid #E8541A44",
                       }}
                       data-ocid="mobile_nav.compare_button"
                     >
-                      <BarChart2 size={18} style={{ color: "#F88379" }} />
+                      <BarChart2 size={18} style={{ color: "#E8541A" }} />
                       <span
-                        style={{ color: "#1A1A1A" }}
+                        style={{ color: "#1A2A1E" }}
                         className="text-[10px] font-semibold leading-tight"
                       >
                         Compare Treks
                       </span>
                       <span
-                        style={{ color: "#4A4A4A66" }}
+                        style={{ color: "#4A5E5266" }}
                         className="text-[9px]"
                       >
                         Side-by-side
@@ -554,14 +515,14 @@ export function MobileNav() {
                       href="tel:+918279888470"
                       className="col-span-2 flex items-center justify-center gap-2 p-3 rounded-2xl transition-all"
                       style={{
-                        background: "#F8837918",
-                        border: "1px solid #F8837955",
+                        background: "#E8541A18",
+                        border: "1px solid #E8541A55",
                       }}
                       data-ocid="mobile_nav.emergency_button"
                     >
-                      <PhoneCall size={16} style={{ color: "#F88379" }} />
+                      <PhoneCall size={16} style={{ color: "#E8541A" }} />
                       <span
-                        style={{ color: "#1A1A1A" }}
+                        style={{ color: "#1A2A1E" }}
                         className="text-xs font-semibold"
                       >
                         Emergency Helpline: +91-8279888470
@@ -583,8 +544,8 @@ export function MobileNav() {
                     <a
                       key={s.label}
                       href={s.href}
-                      style={{ color: "#4A4A4A77" }}
-                      className="text-[10px] hover:text-[#1A1A1A] transition-colors"
+                      style={{ color: "#4A5E5277" }}
+                      className="text-[10px] hover:text-[#1A2A1E] transition-colors"
                     >
                       {s.label}
                     </a>
@@ -596,7 +557,7 @@ export function MobileNav() {
               <div
                 className="px-4 pb-safe pt-3"
                 style={{
-                  borderTop: "1px solid #F8837922",
+                  borderTop: "1px solid #E8541A22",
                   paddingBottom: "max(1.5rem, env(safe-area-inset-bottom))",
                 }}
               >
@@ -605,7 +566,7 @@ export function MobileNav() {
                   params={{ slug: "kedarkantha" }}
                   onClick={close}
                   className="block w-full py-4 rounded-2xl text-center font-bold text-sm uppercase tracking-widest transition-all hover:opacity-90 active:scale-[0.98]"
-                  style={{ background: "#F88379", color: "#1A1A1A" }}
+                  style={{ background: "#E8541A", color: "#FFFFFF" }}
                   data-ocid="mobile_nav.book_now_button"
                 >
                   Book Your Trek Now
@@ -614,7 +575,7 @@ export function MobileNav() {
                   to="/auth/login"
                   onClick={close}
                   className="block w-full py-3 mt-2.5 rounded-2xl text-center font-medium text-sm transition-colors"
-                  style={{ color: "#4A4A4A", border: "1px solid #F8837944" }}
+                  style={{ color: "#4A5E52", border: "1px solid #E8541A44" }}
                   data-ocid="mobile_nav.login_button"
                 >
                   Login / Register
@@ -629,14 +590,15 @@ export function MobileNav() {
       <nav
         className="md:hidden fixed bottom-0 inset-x-0 z-50 flex shadow-[0_-4px_16px_rgba(26,26,26,0.08)]"
         style={{
-          background: "#E6D8C4",
-          borderTop: "1px solid #F8837966",
+          background: "#EDF7F2",
+          borderTop: "1px solid #E8541A66",
           paddingBottom: "env(safe-area-inset-bottom, 0px)",
         }}
         aria-label="Bottom navigation"
       >
         {BOTTOM_NAV.map((item) => {
           const Icon = item.icon;
+          const isBook = item.label === "Book";
           const isActive =
             pathname === item.to ||
             (item.to !== "/" && pathname.startsWith(item.to));
@@ -644,21 +606,30 @@ export function MobileNav() {
             <Link
               key={item.to}
               to={item.to as "/"}
-              className="relative flex-1 flex flex-col items-center gap-1 py-2.5 transition-colors"
-              style={{ color: isActive ? "#F88379" : "#4A4A4A" }}
+              className={`relative flex-1 flex flex-col items-center gap-1 py-2.5 transition-colors ${
+                isBook ? "mx-1 my-1 rounded-xl" : ""
+              }`}
+              style={{
+                color: isBook
+                  ? "#FFFFFF"
+                  : isActive
+                    ? "#2E7D4F"
+                    : "#4A5E52",
+                background: isBook ? "#E8541A" : undefined,
+              }}
               data-ocid={`bottom_nav.${item.label.toLowerCase()}`}
             >
-              <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+              <Icon size={20} strokeWidth={isActive || isBook ? 2.5 : 2} />
               <span
                 className="text-[10px] font-medium"
-                style={{ opacity: isActive ? 1 : 0.85 }}
+                style={{ opacity: isActive || isBook ? 1 : 0.85 }}
               >
                 {item.label}
               </span>
-              {isActive && (
+              {isActive && !isBook && (
                 <span
                   className="absolute bottom-0 w-8 h-0.5 rounded-full"
-                  style={{ background: "#F88379" }}
+                  style={{ background: "#2E7D4F" }}
                 />
               )}
             </Link>

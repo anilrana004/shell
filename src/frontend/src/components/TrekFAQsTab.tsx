@@ -36,14 +36,14 @@ export default function TrekFAQsTab({ trek }: Props) {
   return (
     <div className="py-8 space-y-8">
       <div className="flex items-center justify-between">
-        <h2 className="font-display text-3xl" style={{ color: "#1A1A1A" }}>
+        <h2 className="font-display text-3xl" style={{ color: "#1A2A1E" }}>
           Frequently Asked Questions
         </h2>
         <button
           type="button"
           onClick={() => setShowAskModal(true)}
           className="text-sm px-4 py-2 rounded-xl border"
-          style={{ borderColor: "#4A4A4A44", color: "#4A4A4A" }}
+          style={{ borderColor: "#4A5E5244", color: "#4A5E52" }}
         >
           Ask a Question
         </button>
@@ -57,7 +57,7 @@ export default function TrekFAQsTab({ trek }: Props) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full px-5 py-3 rounded-xl border bg-transparent text-sm"
-          style={{ borderColor: "#4A4A4A44", color: "#1A1A1A" }}
+          style={{ borderColor: "#4A5E5244", color: "#1A2A1E" }}
         />
       </div>
 
@@ -71,9 +71,9 @@ export default function TrekFAQsTab({ trek }: Props) {
             className="text-xs px-3 py-1.5 rounded-full"
             style={{
               background:
-                catFilter === cat ? "#F88379" : "rgba(255,255,255,0.9)",
-              color: "#1A1A1A",
-              border: `1px solid ${catFilter === cat ? "#F88379" : "#4A4A4A33"}`,
+                catFilter === cat ? "#E8541A" : "rgba(255,255,255,0.9)",
+              color: "#1A2A1E",
+              border: `1px solid ${catFilter === cat ? "#E8541A" : "#4A5E5233"}`,
             }}
           >
             {cat}
@@ -87,7 +87,7 @@ export default function TrekFAQsTab({ trek }: Props) {
           <div
             key={faq.question}
             className="rounded-xl border"
-            style={{ borderColor: open === i ? "#F8837966" : "#4A4A4A22" }}
+            style={{ borderColor: open === i ? "#E8541A66" : "#4A5E5222" }}
           >
             <button
               type="button"
@@ -96,14 +96,14 @@ export default function TrekFAQsTab({ trek }: Props) {
               style={{
                 background:
                   open === i
-                    ? "rgba(248,131,121,0.08)"
+                    ? "rgba(232,84,26,0.08)"
                     : "rgba(255,255,255,0.9)",
               }}
             >
               <div className="flex-1">
                 <div
                   className="font-medium text-sm"
-                  style={{ color: "#1A1A1A" }}
+                  style={{ color: "#1A2A1E" }}
                 >
                   {faq.question}
                 </div>
@@ -111,14 +111,14 @@ export default function TrekFAQsTab({ trek }: Props) {
                   className="text-xs mt-0.5 px-2 py-0.5 rounded-full inline-block"
                   style={{
                     background: "rgba(255,255,255,0.9)",
-                    color: "#4A4A4A",
-                    border: "1px solid #4A4A4A33",
+                    color: "#4A5E52",
+                    border: "1px solid #4A5E5233",
                   }}
                 >
                   {faq.category}
                 </div>
               </div>
-              <span className="text-sm" style={{ color: "#F88379" }}>
+              <span className="text-sm" style={{ color: "#E8541A" }}>
                 {open === i ? "-" : "+"}
               </span>
             </button>
@@ -137,12 +137,12 @@ export default function TrekFAQsTab({ trek }: Props) {
                   >
                     <div
                       className="text-sm leading-relaxed mb-4"
-                      style={{ color: "#1A1A1A" }}
+                      style={{ color: "#1A2A1E" }}
                     >
                       {faq.answer}
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="text-xs" style={{ color: "#4A4A4A" }}>
+                      <span className="text-xs" style={{ color: "#4A5E52" }}>
                         Was this helpful?
                       </span>
                       <button
@@ -150,7 +150,7 @@ export default function TrekFAQsTab({ trek }: Props) {
                         onClick={() => setHelpful((h) => ({ ...h, [i]: true }))}
                         className="text-lg"
                         style={{
-                          color: helpful[i] === true ? "#2D6A4F" : "#4A4A4A",
+                          color: helpful[i] === true ? "#2E7D4F" : "#4A5E52",
                         }}
                       >
                         &#128077;
@@ -162,7 +162,7 @@ export default function TrekFAQsTab({ trek }: Props) {
                         }
                         className="text-lg"
                         style={{
-                          color: helpful[i] === false ? "#F88379" : "#4A4A4A",
+                          color: helpful[i] === false ? "#E8541A" : "#4A5E52",
                         }}
                       >
                         &#128078;
@@ -175,7 +175,7 @@ export default function TrekFAQsTab({ trek }: Props) {
           </div>
         ))}
         {filtered.length === 0 && (
-          <div className="text-center py-12" style={{ color: "#4A4A4A" }}>
+          <div className="text-center py-12" style={{ color: "#4A5E52" }}>
             No FAQs found matching your search.
           </div>
         )}
@@ -194,14 +194,14 @@ export default function TrekFAQsTab({ trek }: Props) {
             <div className="flex items-center justify-between mb-6">
               <h3
                 className="font-display text-2xl"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 Ask a Question
               </h3>
               <button
                 type="button"
                 onClick={() => setShowAskModal(false)}
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 &#10005;
               </button>
@@ -212,12 +212,12 @@ export default function TrekFAQsTab({ trek }: Props) {
               placeholder="What would you like to know about this trek?"
               rows={4}
               className="w-full px-4 py-3 rounded-xl border bg-transparent text-sm mb-4 resize-none"
-              style={{ borderColor: "#4A4A4A44", color: "#1A1A1A" }}
+              style={{ borderColor: "#4A5E5244", color: "#1A2A1E" }}
             />
             <button
               type="button"
               className="w-full py-3 rounded-xl font-semibold text-sm"
-              style={{ background: "#F88379", color: "#1A1A1A" }}
+              style={{ background: "#E8541A", color: "#FFFFFF" }}
               onClick={() => {
                 setShowAskModal(false);
                 setAskQuestion("");

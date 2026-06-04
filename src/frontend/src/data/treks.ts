@@ -410,10 +410,10 @@ export const TREKS: Trek[] = [
 ];
 
 export const DIFFICULTY_COLORS: Record<string, string> = {
-  Easy: "#2D6A4F",
+  Easy: "#2E7D4F",
   Moderate: "#D4A843",
-  Difficult: "#F88379",
-  Extreme: "#8B0000",
+  Difficult: "#E8541A",
+  Extreme: "#C94210",
 };
 
 export const YATRAS = [

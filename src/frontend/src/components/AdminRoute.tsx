@@ -43,7 +43,7 @@ export function AdminRoute({ children }: AdminRouteProps) {
   if (isLoading) {
     return (
       <div className="flex h-screen items-center justify-center bg-white">
-        <Loader2 className="h-8 w-8 animate-spin text-[#F88379]" />
+        <Loader2 className="h-8 w-8 animate-spin text-[#E8541A]" />
       </div>
     );
   }
@@ -55,10 +55,10 @@ export function AdminRoute({ children }: AdminRouteProps) {
   if (!isAdmin) {
     return (
       <div className="flex h-screen flex-col items-center justify-center bg-white px-4">
-        <h1 className="font-display text-3xl font-bold text-[#1A1A1A]">
+        <h1 className="font-display text-3xl font-bold text-[#1A2A1E]">
           Access Denied
         </h1>
-        <p className="mt-2 text-center text-[#4A4A4A]">
+        <p className="mt-2 text-center text-[#4A5E52]">
           You do not have permission to access the admin area.
         </p>
       </div>

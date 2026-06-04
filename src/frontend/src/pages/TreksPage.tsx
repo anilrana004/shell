@@ -91,7 +91,7 @@ function applyQuickFilter(trek: Trek, key: string): boolean {
 
 function TrekCard({ trek }: { trek: Trek }) {
   const [wishlisted, setWishlisted] = useState(false);
-  const diffColor = DIFFICULTY_COLORS[trek.difficulty] ?? "#F88379";
+  const diffColor = DIFFICULTY_COLORS[trek.difficulty] ?? "#E8541A";
   const seatsLow = (trek.seatsAvailable ?? 10) <= 3;
 
   return (
@@ -99,8 +99,8 @@ function TrekCard({ trek }: { trek: Trek }) {
       data-ocid={`treks.item.${trek.id}`}
       className="relative rounded-xl overflow-hidden flex flex-col"
       style={{
-        background: "#E6D8C4",
-        border: "1px solid rgba(232,160,170,0.15)",
+        background: "#EDF7F2",
+        border: "1px solid rgba(212,237,224,0.15)",
       }}
     >
       {/* Image */}
@@ -120,21 +120,21 @@ function TrekCard({ trek }: { trek: Trek }) {
         >
           <Heart
             size={16}
-            fill={wishlisted ? "#F88379" : "none"}
-            stroke={wishlisted ? "#F88379" : "#1A1A1A"}
+            fill={wishlisted ? "#E8541A" : "none"}
+            stroke={wishlisted ? "#E8541A" : "#1A2A1E"}
           />
         </button>
         <div className="absolute top-3 left-3 flex gap-1 flex-wrap">
           <span
             className="text-xs font-semibold px-2 py-0.5 rounded-full"
-            style={{ background: diffColor, color: "#1A1A1A" }}
+            style={{ background: "#E8541A", color: "#FFFFFF" }}
           >
             {trek.difficulty}
           </span>
           {trek.slug === "valley-of-flowers" && (
             <span
               className="text-xs font-semibold px-2 py-0.5 rounded-full"
-              style={{ background: "#D4A843", color: "#E6D8C4" }}
+              style={{ background: "#D4A843", color: "#EDF7F2" }}
             >
               UNESCO
             </span>
@@ -143,7 +143,7 @@ function TrekCard({ trek }: { trek: Trek }) {
         {seatsLow && (
           <div
             className="absolute bottom-3 left-3 text-xs px-2 py-0.5 rounded-full font-medium"
-            style={{ background: "#F88379", color: "#1A1A1A" }}
+            style={{ background: "#E8541A", color: "#FFFFFF" }}
           >
             Only {trek.seatsAvailable} seats left!
           </div>
@@ -154,17 +154,17 @@ function TrekCard({ trek }: { trek: Trek }) {
       <div className="flex flex-col flex-1 p-4 gap-2">
         <h3
           className="text-lg leading-tight"
-          style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+          style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
         >
           {trek.name}
         </h3>
-        <p className="text-xs line-clamp-2" style={{ color: "#4A4A4A" }}>
+        <p className="text-xs line-clamp-2" style={{ color: "#4A5E52" }}>
           {trek.shortDescription}
         </p>
 
         <div
           className="flex flex-wrap gap-x-4 gap-y-1 text-xs mt-1"
-          style={{ color: "#4A4A4A" }}
+          style={{ color: "#4A5E52" }}
         >
           <span>
             ⏱ {trek.durationDays}D/{trek.durationNights}N
@@ -180,7 +180,7 @@ function TrekCard({ trek }: { trek: Trek }) {
           >
             <Star size={12} fill="#D4A843" />
             <span>{trek.rating}</span>
-            <span style={{ color: "#4A4A4A" }}>
+            <span style={{ color: "#4A5E52" }}>
               ({trek.reviewCount} reviews)
             </span>
           </div>
@@ -188,10 +188,10 @@ function TrekCard({ trek }: { trek: Trek }) {
 
         <div
           className="flex items-center justify-between mt-auto pt-2"
-          style={{ borderTop: "1px solid rgba(232,160,170,0.1)" }}
+          style={{ borderTop: "1px solid rgba(212,237,224,0.1)" }}
         >
           <div>
-            <span className="text-xs" style={{ color: "#4A4A4A" }}>
+            <span className="text-xs" style={{ color: "#4A5E52" }}>
               From{" "}
             </span>
             <span
@@ -207,8 +207,7 @@ function TrekCard({ trek }: { trek: Trek }) {
               data-ocid={`treks.book_button.${trek.id}`}
               className="text-xs px-3"
               style={{
-                background: "#F88379",
-                color: "#1A1A1A",
+                background: "#E8541A", color: "#FFFFFF",
                 border: "none",
               }}
             >
@@ -257,10 +256,10 @@ function FilterPanel({
   }
 
   return (
-    <div className="space-y-6 text-sm" style={{ color: "#1A1A1A" }}>
+    <div className="space-y-6 text-sm" style={{ color: "#1A2A1E" }}>
       {/* Difficulty */}
       <div>
-        <p className="font-semibold mb-2" style={{ color: "#4A4A4A" }}>
+        <p className="font-semibold mb-2" style={{ color: "#4A5E52" }}>
           Difficulty
         </p>
         {DIFFICULTIES.map((d) => (
@@ -271,7 +270,7 @@ function FilterPanel({
               onCheckedChange={() => toggleDiff(d)}
               data-ocid={`treks.filter.diff.${d.toLowerCase()}`}
             />
-            <Label htmlFor={`diff-${d}`} style={{ color: "#1A1A1A" }}>
+            <Label htmlFor={`diff-${d}`} style={{ color: "#1A2A1E" }}>
               {d}
             </Label>
           </div>
@@ -280,7 +279,7 @@ function FilterPanel({
 
       {/* Duration */}
       <div>
-        <p className="font-semibold mb-2" style={{ color: "#4A4A4A" }}>
+        <p className="font-semibold mb-2" style={{ color: "#4A5E52" }}>
           Max Duration: {maxDuration} days
         </p>
         <input
@@ -294,7 +293,7 @@ function FilterPanel({
         />
         <div
           className="flex justify-between text-xs"
-          style={{ color: "#4A4A4A" }}
+          style={{ color: "#4A5E52" }}
         >
           <span>2 days</span>
           <span>12 days</span>
@@ -303,7 +302,7 @@ function FilterPanel({
 
       {/* Altitude */}
       <div>
-        <p className="font-semibold mb-2" style={{ color: "#4A4A4A" }}>
+        <p className="font-semibold mb-2" style={{ color: "#4A5E52" }}>
           Max Altitude: {maxAlt.toLocaleString()} ft
         </p>
         <input
@@ -318,7 +317,7 @@ function FilterPanel({
         />
         <div
           className="flex justify-between text-xs"
-          style={{ color: "#4A4A4A" }}
+          style={{ color: "#4A5E52" }}
         >
           <span>9,000 ft</span>
           <span>18,000 ft</span>
@@ -327,7 +326,7 @@ function FilterPanel({
 
       {/* Budget */}
       <div>
-        <p className="font-semibold mb-2" style={{ color: "#4A4A4A" }}>
+        <p className="font-semibold mb-2" style={{ color: "#4A5E52" }}>
           Max Budget: ₹{maxBudget.toLocaleString()}
         </p>
         <input
@@ -342,7 +341,7 @@ function FilterPanel({
         />
         <div
           className="flex justify-between text-xs"
-          style={{ color: "#4A4A4A" }}
+          style={{ color: "#4A5E52" }}
         >
           <span>₹2,000</span>
           <span>₹20,000+</span>
@@ -351,7 +350,7 @@ function FilterPanel({
 
       {/* Season */}
       <div>
-        <p className="font-semibold mb-2" style={{ color: "#4A4A4A" }}>
+        <p className="font-semibold mb-2" style={{ color: "#4A5E52" }}>
           Best Season
         </p>
         <div className="flex flex-wrap gap-1">
@@ -362,9 +361,9 @@ function FilterPanel({
               onClick={() => setSeason(season === s ? "" : s)}
               className="text-xs px-2 py-1 rounded-full border transition-colors"
               style={{
-                borderColor: season === s ? "#F88379" : "rgba(232,160,170,0.3)",
-                background: season === s ? "#F88379" : "transparent",
-                color: "#1A1A1A",
+                borderColor: season === s ? "#E8541A" : "rgba(212,237,224,0.3)",
+                background: season === s ? "#E8541A" : "transparent",
+                color: season === s ? "#FFFFFF" : "#1A2A1E",
               }}
             >
               {s}
@@ -375,7 +374,7 @@ function FilterPanel({
 
       {/* Group Type */}
       <div>
-        <p className="font-semibold mb-2" style={{ color: "#4A4A4A" }}>
+        <p className="font-semibold mb-2" style={{ color: "#4A5E52" }}>
           Group Type
         </p>
         <div className="flex flex-wrap gap-1">
@@ -387,9 +386,9 @@ function FilterPanel({
               className="text-xs px-2 py-1 rounded-full border transition-colors"
               style={{
                 borderColor:
-                  groupType === g ? "#F88379" : "rgba(232,160,170,0.3)",
-                background: groupType === g ? "#F88379" : "transparent",
-                color: "#1A1A1A",
+                  groupType === g ? "#E8541A" : "rgba(212,237,224,0.3)",
+                background: groupType === g ? "#E8541A" : "transparent",
+                color: groupType === g ? "#FFFFFF" : "#1A2A1E",
               }}
             >
               {g}
@@ -510,12 +509,12 @@ export default function TreksPage() {
         <div
           className="py-16 px-6 text-center"
           style={{
-            background: "linear-gradient(180deg, #E6D8C4 0%, #FFFFFF 100%)",
+            background: "linear-gradient(180deg, #EDF7F2 0%, #FFFFFF 100%)",
           }}
         >
           <p
             className="text-xs tracking-widest uppercase mb-3"
-            style={{ color: "#4A4A4A" }}
+            style={{ color: "#4A5E52" }}
           >
             Uttarakhand's Finest
           </p>
@@ -523,13 +522,13 @@ export default function TreksPage() {
             className="text-5xl md:text-7xl mb-4"
             style={{
               fontFamily: "var(--font-display)",
-              color: "#1A1A1A",
+              color: "#1A2A1E",
               letterSpacing: "-0.02em",
             }}
           >
             ALL TREKS
           </h1>
-          <p className="text-base" style={{ color: "#4A4A4A" }}>
+          <p className="text-base" style={{ color: "#4A5E52" }}>
             14 legendary trails · handpicked routes · expert guides
           </p>
         </div>
@@ -538,8 +537,8 @@ export default function TreksPage() {
         <div
           className="px-6 py-4 overflow-x-auto"
           style={{
-            background: "#E6D8C4",
-            borderBottom: "1px solid rgba(232,160,170,0.15)",
+            background: "#EDF7F2",
+            borderBottom: "1px solid rgba(212,237,224,0.15)",
           }}
         >
           <div className="flex gap-2 min-w-max mx-auto max-w-6xl">
@@ -552,12 +551,12 @@ export default function TreksPage() {
                 className="text-xs px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors"
                 style={{
                   borderColor: activeQuick.includes(f.key)
-                    ? "#F88379"
-                    : "rgba(232,160,170,0.3)",
+                    ? "#E8541A"
+                    : "rgba(212,237,224,0.3)",
                   background: activeQuick.includes(f.key)
-                    ? "#F88379"
+                    ? "#E8541A"
                     : "transparent",
-                  color: "#1A1A1A",
+                  color: "#1A2A1E",
                 }}
               >
                 {f.label}
@@ -572,14 +571,14 @@ export default function TreksPage() {
           <aside
             className="hidden lg:block w-64 shrink-0 rounded-xl p-5 self-start sticky top-24"
             style={{
-              background: "#E6D8C4",
-              border: "1px solid rgba(232,160,170,0.15)",
+              background: "#EDF7F2",
+              border: "1px solid rgba(212,237,224,0.15)",
             }}
           >
             <div className="flex items-center justify-between mb-5">
               <span
                 className="font-semibold"
-                style={{ color: "#1A1A1A", fontFamily: "var(--font-display)" }}
+                style={{ color: "#1A2A1E", fontFamily: "var(--font-display)" }}
               >
                 Filters
               </span>
@@ -588,7 +587,7 @@ export default function TreksPage() {
                   type="button"
                   onClick={clearAll}
                   className="text-xs"
-                  style={{ color: "#4A4A4A" }}
+                  style={{ color: "#4A5E52" }}
                 >
                   Clear all
                 </button>
@@ -611,8 +610,8 @@ export default function TreksPage() {
                       className="lg:hidden gap-2"
                       data-ocid="treks.filter_sheet_open"
                       style={{
-                        borderColor: "rgba(232,160,170,0.3)",
-                        color: "#1A1A1A",
+                        borderColor: "rgba(212,237,224,0.3)",
+                        color: "#1A2A1E",
                         background: "transparent",
                       }}
                     >
@@ -625,15 +624,15 @@ export default function TreksPage() {
                     side="left"
                     className="overflow-y-auto"
                     style={{
-                      background: "#E6D8C4",
+                      background: "#EDF7F2",
                       border: "none",
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                     }}
                   >
                     <SheetHeader className="mb-6">
                       <SheetTitle
                         style={{
-                          color: "#1A1A1A",
+                          color: "#1A2A1E",
                           fontFamily: "var(--font-display)",
                         }}
                       >
@@ -644,9 +643,9 @@ export default function TreksPage() {
                   </SheetContent>
                 </Sheet>
 
-                <span className="text-sm" style={{ color: "#4A4A4A" }}>
+                <span className="text-sm" style={{ color: "#4A5E52" }}>
                   Showing{" "}
-                  <strong style={{ color: "#1A1A1A" }}>
+                  <strong style={{ color: "#1A2A1E" }}>
                     {filtered.length}
                   </strong>{" "}
                   treks
@@ -660,9 +659,9 @@ export default function TreksPage() {
                     key={d}
                     className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full"
                     style={{
-                      background: "rgba(248,131,121,0.2)",
-                      color: "#1A1A1A",
-                      border: "1px solid #F88379",
+                      background: "rgba(232,84,26,0.2)",
+                      color: "#1A2A1E",
+                      border: "1px solid #E8541A",
                     }}
                   >
                     {d}
@@ -680,9 +679,9 @@ export default function TreksPage() {
                   <span
                     className="inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-full"
                     style={{
-                      background: "rgba(248,131,121,0.2)",
-                      color: "#1A1A1A",
-                      border: "1px solid #F88379",
+                      background: "rgba(232,84,26,0.2)",
+                      color: "#1A2A1E",
+                      border: "1px solid #E8541A",
                     }}
                   >
                     {season}
@@ -700,9 +699,9 @@ export default function TreksPage() {
                 data-ocid="treks.sort_select"
                 className="text-sm rounded-lg px-3 py-1.5 border"
                 style={{
-                  background: "#E6D8C4",
-                  color: "#1A1A1A",
-                  borderColor: "rgba(232,160,170,0.3)",
+                  background: "#EDF7F2",
+                  color: "#1A2A1E",
+                  borderColor: "rgba(212,237,224,0.3)",
                 }}
               >
                 {SORT_OPTIONS.map((o) => (
@@ -719,8 +718,8 @@ export default function TreksPage() {
                 data-ocid="treks.empty_state"
                 className="py-20 text-center rounded-xl"
                 style={{
-                  background: "#E6D8C4",
-                  border: "1px solid rgba(232,160,170,0.15)",
+                  background: "#EDF7F2",
+                  border: "1px solid rgba(212,237,224,0.15)",
                 }}
               >
                 <p className="text-4xl mb-4">🏔</p>
@@ -728,18 +727,18 @@ export default function TreksPage() {
                   className="text-lg mb-2"
                   style={{
                     fontFamily: "var(--font-display)",
-                    color: "#1A1A1A",
+                    color: "#1A2A1E",
                   }}
                 >
                   No treks match your filters
                 </p>
-                <p className="text-sm mb-5" style={{ color: "#4A4A4A" }}>
+                <p className="text-sm mb-5" style={{ color: "#4A5E52" }}>
                   Try broadening your search criteria
                 </p>
                 <Button
                   onClick={clearAll}
                   data-ocid="treks.clear_filters_button"
-                  style={{ background: "#F88379", color: "#1A1A1A" }}
+                  style={{ background: "#E8541A", color: "#FFFFFF" }}
                 >
                   Clear All Filters
                 </Button>

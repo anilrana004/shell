@@ -186,18 +186,18 @@ export default function YatraSpiritualTab({ yatra }: Props) {
       <div
         className="p-6 rounded-xl"
         style={{
-          background: "rgba(248,131,121,0.08)",
-          borderLeft: "4px solid #F88379",
+          background: "rgba(232,84,26,0.08)",
+          borderLeft: "4px solid #E8541A",
         }}
       >
-        <p style={{ color: "#1A1A1A", lineHeight: 1.8 }}>{content.intro}</p>
+        <p style={{ color: "#1A2A1E", lineHeight: 1.8 }}>{content.intro}</p>
       </div>
 
       {/* Sacred Sites */}
       <div>
         <h3
           className="text-xl font-bold mb-4"
-          style={{ color: "#1A1A1A", fontFamily: "var(--font-display)" }}
+          style={{ color: "#1A2A1E", fontFamily: "var(--font-display)" }}
         >
           Sacred Sites & Their Significance
         </h3>
@@ -207,8 +207,8 @@ export default function YatraSpiritualTab({ yatra }: Props) {
               key={site.name}
               className="group rounded-xl overflow-hidden"
               style={{
-                background: "rgba(250,212,216,0.04)",
-                border: "1px solid rgba(232,160,170,0.2)",
+                background: "rgba(212,237,224,0.04)",
+                border: "1px solid rgba(212,237,224,0.2)",
               }}
             >
               <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
@@ -216,14 +216,14 @@ export default function YatraSpiritualTab({ yatra }: Props) {
                   <span className="text-2xl">🛕</span>
                   <span
                     className="font-bold text-lg"
-                    style={{ color: "#1A1A1A" }}
+                    style={{ color: "#1A2A1E" }}
                   >
                     {site.name}
                   </span>
                 </div>
                 <span
                   className="text-xl transition-transform group-open:rotate-180"
-                  style={{ color: "#F88379" }}
+                  style={{ color: "#E8541A" }}
                 >
                   ›
                 </span>
@@ -232,13 +232,13 @@ export default function YatraSpiritualTab({ yatra }: Props) {
                 <div>
                   <span
                     className="text-xs font-bold uppercase tracking-wider"
-                    style={{ color: "#F88379" }}
+                    style={{ color: "#E8541A" }}
                   >
                     Spiritual Significance
                   </span>
                   <p
                     className="mt-1"
-                    style={{ color: "#4A4A4A", lineHeight: 1.7 }}
+                    style={{ color: "#4A5E52", lineHeight: 1.7 }}
                   >
                     {site.significance}
                   </p>
@@ -252,7 +252,7 @@ export default function YatraSpiritualTab({ yatra }: Props) {
                   </span>
                   <p
                     className="mt-1"
-                    style={{ color: "#4A4A4A", lineHeight: 1.7 }}
+                    style={{ color: "#4A5E52", lineHeight: 1.7 }}
                   >
                     {site.mythology}
                   </p>
@@ -268,13 +268,13 @@ export default function YatraSpiritualTab({ yatra }: Props) {
         <div
           className="p-5 rounded-xl"
           style={{
-            background: "rgba(250,212,216,0.04)",
-            border: "1px solid rgba(232,160,170,0.15)",
+            background: "rgba(212,237,224,0.04)",
+            border: "1px solid rgba(212,237,224,0.15)",
           }}
         >
           <h4
             className="font-bold mb-3 flex items-center gap-2"
-            style={{ color: "#1A1A1A" }}
+            style={{ color: "#1A2A1E" }}
           >
             <span>🙏</span> Conduct Guidelines
           </h4>
@@ -284,14 +284,14 @@ export default function YatraSpiritualTab({ yatra }: Props) {
                 key={item}
                 className="flex items-start gap-2"
                 style={{
-                  color: "#4A4A4A",
+                  color: "#4A5E52",
                   fontSize: "0.875rem",
                   lineHeight: 1.6,
                 }}
               >
                 <span
                   className="mt-1 flex-shrink-0"
-                  style={{ color: "#F88379" }}
+                  style={{ color: "#E8541A" }}
                 >
                   ✓
                 </span>
@@ -305,19 +305,19 @@ export default function YatraSpiritualTab({ yatra }: Props) {
           <div
             className="p-5 rounded-xl"
             style={{
-              background: "rgba(250,212,216,0.04)",
-              border: "1px solid rgba(232,160,170,0.15)",
+              background: "rgba(212,237,224,0.04)",
+              border: "1px solid rgba(212,237,224,0.15)",
             }}
           >
             <h4
               className="font-bold mb-2 flex items-center gap-2"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "#1A2A1E" }}
             >
               <span>👗</span> Dress Code
             </h4>
             <p
               style={{
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontSize: "0.875rem",
                 lineHeight: 1.6,
               }}
@@ -328,19 +328,19 @@ export default function YatraSpiritualTab({ yatra }: Props) {
           <div
             className="p-5 rounded-xl"
             style={{
-              background: "rgba(250,212,216,0.04)",
-              border: "1px solid rgba(232,160,170,0.15)",
+              background: "rgba(212,237,224,0.04)",
+              border: "1px solid rgba(212,237,224,0.15)",
             }}
           >
             <h4
               className="font-bold mb-2 flex items-center gap-2"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "#1A2A1E" }}
             >
               <span>📷</span> Photography Rules
             </h4>
             <p
               style={{
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontSize: "0.875rem",
                 lineHeight: 1.6,
               }}
@@ -363,7 +363,7 @@ export default function YatraSpiritualTab({ yatra }: Props) {
             </h4>
             <p
               style={{
-                color: "#4A4A4A",
+                color: "#4A5E52",
                 fontSize: "0.875rem",
                 lineHeight: 1.6,
               }}
@@ -378,15 +378,15 @@ export default function YatraSpiritualTab({ yatra }: Props) {
       <div
         className="p-5 rounded-xl text-center"
         style={{
-          background: "rgba(248,131,121,0.12)",
-          border: "1px solid rgba(248,131,121,0.3)",
+          background: "rgba(232,84,26,0.12)",
+          border: "1px solid rgba(232,84,26,0.3)",
         }}
       >
         <div className="text-4xl mb-3">🕉</div>
-        <p className="font-bold mb-1" style={{ color: "#1A1A1A" }}>
+        <p className="font-bold mb-1" style={{ color: "#1A2A1E" }}>
           Pilgrimage Importance to Hindu Faith
         </p>
-        <p style={{ color: "#4A4A4A", fontSize: "0.9rem", lineHeight: 1.7 }}>
+        <p style={{ color: "#4A5E52", fontSize: "0.9rem", lineHeight: 1.7 }}>
           The Chardham Yatra is believed to grant salvation (moksha) to
           devotees. Scriptures declare that a person who completes the Chardham
           Yatra in their lifetime is freed from the cycle of birth and death.

@@ -56,7 +56,7 @@ export function StatsSection() {
     <section
       ref={ref}
       data-ocid="stats.section"
-      style={{ background: "#F88379" }}
+      style={{ background: "#E8541A" }}
       className="py-10"
     >
       <div className="max-w-7xl mx-auto px-4">

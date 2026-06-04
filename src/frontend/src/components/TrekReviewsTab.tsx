@@ -155,14 +155,14 @@ export default function TrekReviewsTab({ trek }: Props) {
                       color:
                         s <= Math.round(trek.rating || 0)
                           ? "#D4A843"
-                          : "#4A4A4A44",
+                          : "#4A5E5244",
                     }}
                   >
                     &#9733;
                   </span>
                 ))}
               </div>
-              <div className="text-sm" style={{ color: "#4A4A4A" }}>
+              <div className="text-sm" style={{ color: "#4A5E52" }}>
                 {trek.reviewCount} verified reviews
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function TrekReviewsTab({ trek }: Props) {
             <div key={star} className="flex items-center gap-3 mb-2">
               <div
                 className="text-sm w-6 text-right"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 {star}
               </div>
@@ -188,21 +188,21 @@ export default function TrekReviewsTab({ trek }: Props) {
                   }}
                 />
               </div>
-              <div className="text-xs w-6" style={{ color: "#4A4A4A" }}>
+              <div className="text-xs w-6" style={{ color: "#4A5E52" }}>
                 {starCounts[i]}
               </div>
             </div>
           ))}
         </div>
         <div>
-          <div className="font-semibold mb-4" style={{ color: "#1A1A1A" }}>
+          <div className="font-semibold mb-4" style={{ color: "#1A2A1E" }}>
             Category Ratings
           </div>
           {CATEGORY_RATINGS.map((cat, i) => (
             <div key={cat} className="flex items-center gap-3 mb-2">
               <div
                 className="text-xs w-28 flex-shrink-0"
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 {cat}
               </div>
@@ -213,14 +213,14 @@ export default function TrekReviewsTab({ trek }: Props) {
                 <div
                   className="h-2 rounded-full"
                   style={{
-                    background: "#F88379",
+                    background: "#E8541A",
                     width: `${(Number(categoryAvgs[i]) / 5) * 100}%`,
                   }}
                 />
               </div>
               <div
                 className="text-xs w-8 text-right font-semibold"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 {categoryAvgs[i]}
               </div>
@@ -238,9 +238,9 @@ export default function TrekReviewsTab({ trek }: Props) {
             onClick={() => setFilter(f)}
             className="text-xs px-3 py-1.5 rounded-full"
             style={{
-              background: filter === f ? "#F88379" : "rgba(255,255,255,0.9)",
-              color: "#1A1A1A",
-              border: `1px solid ${filter === f ? "#F88379" : "#4A4A4A33"}`,
+              background: filter === f ? "#E8541A" : "rgba(255,255,255,0.9)",
+              color: "#1A2A1E",
+              border: `1px solid ${filter === f ? "#E8541A" : "#4A5E5233"}`,
             }}
           >
             {f}
@@ -251,9 +251,9 @@ export default function TrekReviewsTab({ trek }: Props) {
           onClick={() => setShowWriteReview(true)}
           className="ml-auto text-xs px-4 py-1.5 rounded-full"
           style={{
-            background: "rgba(248,131,121,0.2)",
-            color: "#F88379",
-            border: "1px solid #F8837966",
+            background: "rgba(232,84,26,0.2)",
+            color: "#E8541A",
+            border: "1px solid #E8541A66",
           }}
         >
           Write a Review
@@ -268,19 +268,19 @@ export default function TrekReviewsTab({ trek }: Props) {
             className="rounded-2xl p-6 border"
             style={{
               background: "rgba(255,255,255,0.9)",
-              borderColor: "#4A4A4A22",
+              borderColor: "#4A5E5222",
             }}
           >
             <div className="flex items-start gap-4 mb-4">
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 font-bold"
-                style={{ background: "#F88379", color: "#1A1A1A" }}
+                style={{ background: "#E8541A", color: "#FFFFFF" }}
               >
                 {review.name[0]}
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <div className="font-semibold" style={{ color: "#1A1A1A" }}>
+                  <div className="font-semibold" style={{ color: "#1A2A1E" }}>
                     {review.name}
                   </div>
                   {review.verified && (
@@ -295,7 +295,7 @@ export default function TrekReviewsTab({ trek }: Props) {
                     </span>
                   )}
                 </div>
-                <div className="text-xs mt-0.5" style={{ color: "#4A4A4A" }}>
+                <div className="text-xs mt-0.5" style={{ color: "#4A5E52" }}>
                   {review.city} / {review.date} / {review.group}
                 </div>
               </div>
@@ -304,7 +304,7 @@ export default function TrekReviewsTab({ trek }: Props) {
                   <span
                     key={s}
                     style={{
-                      color: s <= review.overall ? "#D4A843" : "#4A4A4A44",
+                      color: s <= review.overall ? "#D4A843" : "#4A5E5244",
                     }}
                   >
                     &#9733;
@@ -314,7 +314,7 @@ export default function TrekReviewsTab({ trek }: Props) {
             </div>
             <div
               className="text-sm leading-relaxed mb-4"
-              style={{ color: "#1A1A1A" }}
+              style={{ color: "#1A2A1E" }}
             >
               {expanded.has(i) || review.body.length <= 200
                 ? review.body
@@ -324,7 +324,7 @@ export default function TrekReviewsTab({ trek }: Props) {
                   type="button"
                   onClick={() => toggleExpand(i)}
                   className="ml-2 text-xs underline"
-                  style={{ color: "#4A4A4A" }}
+                  style={{ color: "#4A5E52" }}
                 >
                   {expanded.has(i) ? "Show less" : "Read more"}
                 </button>
@@ -335,7 +335,7 @@ export default function TrekReviewsTab({ trek }: Props) {
                 type="button"
                 onClick={() => toggleHelpful(i)}
                 className="text-xs flex items-center gap-1"
-                style={{ color: helpful.has(i) ? "#F88379" : "#4A4A4A" }}
+                style={{ color: helpful.has(i) ? "#E8541A" : "#4A5E52" }}
               >
                 &#128077; Helpful ({review.helpful + (helpful.has(i) ? 1 : 0)})
               </button>
@@ -357,21 +357,21 @@ export default function TrekReviewsTab({ trek }: Props) {
             <div className="flex items-center justify-between mb-6">
               <h3
                 className="font-display text-2xl"
-                style={{ color: "#1A1A1A" }}
+                style={{ color: "#1A2A1E" }}
               >
                 Write a Review
               </h3>
               <button
                 type="button"
                 onClick={() => setShowWriteReview(false)}
-                style={{ color: "#4A4A4A" }}
+                style={{ color: "#4A5E52" }}
               >
                 &#10005;
               </button>
             </div>
             <div
               className="text-sm mb-4 px-4 py-3 rounded-xl"
-              style={{ background: "rgba(248,131,121,0.1)", color: "#4A4A4A" }}
+              style={{ background: "rgba(232,84,26,0.1)", color: "#4A5E52" }}
             >
               Please log in to write a review. Your experience helps future
               trekkers!
@@ -379,7 +379,7 @@ export default function TrekReviewsTab({ trek }: Props) {
             <a
               href="/auth/login"
               className="block w-full text-center py-3 rounded-xl font-semibold"
-              style={{ background: "#F88379", color: "#1A1A1A" }}
+              style={{ background: "#E8541A", color: "#FFFFFF" }}
             >
               Log In to Write Review
             </a>

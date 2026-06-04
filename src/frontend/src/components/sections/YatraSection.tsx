@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 import { useState } from "react";
 
 const PILGRIMAGE_COLORS: Record<string, string> = {
-  Easy: "#2D6A4F",
+  Easy: "#2E7D4F",
   Moderate: "#D4A843",
-  Challenging: "#F88379",
+  Challenging: "#E8541A",
 };
 
 function getDaysUntil(dateStr: string) {
@@ -24,7 +24,7 @@ export function YatraSection() {
   return (
     <section
       data-ocid="yatras.section"
-      style={{ background: "#E6D8C4" }}
+      style={{ background: "#EDF7F2" }}
       className="py-20"
     >
       {/* Om watermark */}
@@ -35,7 +35,7 @@ export function YatraSection() {
             opacity: 0.04,
             fontSize: "24rem",
             fontFamily: "serif",
-            color: "#1A1A1A",
+            color: "#1A2A1E",
             zIndex: 0,
           }}
           aria-hidden="true"
@@ -50,7 +50,7 @@ export function YatraSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-xs uppercase tracking-[0.4em] mb-3"
-              style={{ color: "#F88379" }}
+              style={{ color: "#E8541A" }}
             >
               Sacred Journeys
             </motion.p>
@@ -60,11 +60,11 @@ export function YatraSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl font-semibold"
-              style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+              style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
             >
               YATRAS & SACRED TOURS
             </motion.h2>
-            <p className="mt-4 text-sm" style={{ color: "#4A4A4A" }}>
+            <p className="mt-4 text-sm" style={{ color: "#4A5E52" }}>
               Experience the divine — Uttarakhand's most revered pilgrimages
             </p>
           </div>
@@ -83,7 +83,7 @@ export function YatraSection() {
                   transition={{ delay: i * 0.12, duration: 0.6 }}
                   data-ocid={`yatras.card.${i + 1}`}
                   className="group rounded-2xl overflow-hidden"
-                  style={{ border: "1px solid rgba(248,131,121,0.2)" }}
+                  style={{ border: "1px solid rgba(232,84,26,0.2)" }}
                 >
                   {/* Image */}
                   <div className="relative h-52 overflow-hidden">
@@ -96,7 +96,7 @@ export function YatraSection() {
                       className="absolute inset-0"
                       style={{
                         background:
-                          "linear-gradient(180deg, rgba(26,14,16,0) 40%, rgba(255,255,255,0.95) 100%)",
+                          "linear-gradient(180deg, rgba(26,42,30,0) 40%, rgba(255,255,255,0.95) 100%)",
                       }}
                     />
                     {/* Badges */}
@@ -115,8 +115,8 @@ export function YatraSection() {
                         <span
                           className="px-2 py-0.5 rounded-full text-[10px] font-bold"
                           style={{
-                            background: "rgba(248,131,121,0.35)",
-                            color: "#1A1A1A",
+                            background: "rgba(232,84,26,0.35)",
+                            color: "#1A2A1E",
                           }}
                         >
                           Reg Required
@@ -142,9 +142,9 @@ export function YatraSection() {
                       <span
                         className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold"
                         style={{
-                          background: "rgba(26,14,16,0.85)",
-                          border: "1px solid rgba(232,160,170,0.3)",
-                          color: "#4A4A4A",
+                          background: "rgba(26,42,30,0.85)",
+                          border: "1px solid rgba(212,237,224,0.3)",
+                          color: "#4A5E52",
                         }}
                       >
                         <Calendar size={10} />
@@ -161,21 +161,21 @@ export function YatraSection() {
                       className="text-base font-semibold mb-1 leading-tight"
                       style={{
                         fontFamily: "var(--font-display)",
-                        color: "#1A1A1A",
+                        color: "#1A2A1E",
                       }}
                     >
                       {yatra.name}
                     </h3>
                     <p
                       className="text-xs mb-3 line-clamp-2"
-                      style={{ color: "#4A4A4A" }}
+                      style={{ color: "#4A5E52" }}
                     >
                       {yatra.tagline}
                     </p>
                     <div className="flex items-center gap-3 mb-3">
                       <span
                         className="flex items-center gap-1 text-xs"
-                        style={{ color: "#4A4A4A80" }}
+                        style={{ color: "#4A5E5280" }}
                       >
                         <Clock size={11} /> {yatra.durationDays}D/
                         {yatra.durationNights}N
@@ -185,7 +185,7 @@ export function YatraSection() {
                       <div>
                         <span
                           className="text-[10px] uppercase"
-                          style={{ color: "#4A4A4A50" }}
+                          style={{ color: "#4A5E5250" }}
                         >
                           From
                         </span>
@@ -205,9 +205,9 @@ export function YatraSection() {
                         data-ocid={`yatras.explore.${i + 1}`}
                         className="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all hover:opacity-80"
                         style={{
-                          background: "rgba(248,131,121,0.2)",
-                          border: "1px solid rgba(248,131,121,0.35)",
-                          color: "#F88379",
+                          background: "rgba(232,84,26,0.2)",
+                          border: "1px solid rgba(232,84,26,0.35)",
+                          color: "#E8541A",
                         }}
                       >
                         Explore →

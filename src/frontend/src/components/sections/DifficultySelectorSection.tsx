@@ -7,7 +7,7 @@ const DIFFICULTIES = [
   {
     level: "Beginner",
     sublabel: "Easy",
-    color: "#2D6A4F",
+    color: "#2E7D4F",
     fitnessNote: "Can walk 8 km/day on flat terrain",
     trainingWeeks: 2,
     ageRange: "12–65",
@@ -38,7 +38,7 @@ const DIFFICULTIES = [
   {
     level: "Difficult",
     sublabel: "Challenging",
-    color: "#F88379",
+    color: "#E8541A",
     fitnessNote: "Regular runner or gym-goer, trekking experience",
     trainingWeeks: 10,
     ageRange: "18–50",
@@ -79,7 +79,7 @@ export function DifficultySelectorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-xs uppercase tracking-[0.4em] mb-3"
-            style={{ color: "#F88379" }}
+            style={{ color: "#E8541A" }}
           >
             Find Your Level
           </motion.p>
@@ -89,7 +89,7 @@ export function DifficultySelectorSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-semibold"
-            style={{ fontFamily: "var(--font-display)", color: "#1A1A1A" }}
+            style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
           >
             CHOOSE YOUR CHALLENGE
           </motion.h2>
@@ -122,7 +122,7 @@ export function DifficultySelectorSection() {
               >
                 {diff.level}
               </p>
-              <p className="text-xs" style={{ color: "#4A4A4A" }}>
+              <p className="text-xs" style={{ color: "#4A5E52" }}>
                 {diff.sublabel}
               </p>
             </motion.button>
@@ -156,7 +156,7 @@ export function DifficultySelectorSection() {
                   </h3>
                   <p
                     className="text-sm leading-relaxed mb-6"
-                    style={{ color: "#4A4A4A" }}
+                    style={{ color: "#4A5E52" }}
                   >
                     {DIFFICULTIES[selected].description}
                   </p>
@@ -183,13 +183,13 @@ export function DifficultySelectorSection() {
                       <div key={item.label}>
                         <p
                           className="text-[10px] uppercase tracking-wider mb-1"
-                          style={{ color: "#4A4A4A50" }}
+                          style={{ color: "#4A5E5250" }}
                         >
                           {item.label}
                         </p>
                         <p
                           className="text-xs font-medium"
-                          style={{ color: "#1A1A1A" }}
+                          style={{ color: "#1A2A1E" }}
                         >
                           {item.value}
                         </p>
@@ -201,7 +201,7 @@ export function DifficultySelectorSection() {
                 <div>
                   <p
                     className="text-xs uppercase tracking-wider mb-4"
-                    style={{ color: "#4A4A4A50" }}
+                    style={{ color: "#4A5E5250" }}
                   >
                     Matching Treks
                   </p>
@@ -215,7 +215,7 @@ export function DifficultySelectorSection() {
                             flexShrink: 0,
                           }}
                         />
-                        <span className="text-sm" style={{ color: "#1A1A1A" }}>
+                        <span className="text-sm" style={{ color: "#1A2A1E" }}>
                           {t}
                         </span>
                       </div>
@@ -227,7 +227,7 @@ export function DifficultySelectorSection() {
                     className="flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold transition-all hover:opacity-90 inline-flex"
                     style={{
                       background: DIFFICULTIES[selected].color,
-                      color: "#1A1A1A",
+                      color: "#1A2A1E",
                     }}
                   >
                     Take Full Trek Finder Quiz <ArrowRight size={14} />

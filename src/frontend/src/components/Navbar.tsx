@@ -362,7 +362,10 @@ export function Navbar() {
     : [];
 
   return (
-    <header className="fixed top-0 inset-x-0 z-40" data-ocid="navbar">
+    <header
+      className="hidden md:block md:fixed md:top-0 md:inset-x-0 md:z-40"
+      data-ocid="navbar"
+    >
       {/* Announcement bar */}
       {(() => {
         const activeTexts =

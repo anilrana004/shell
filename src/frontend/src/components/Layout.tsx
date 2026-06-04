@@ -87,7 +87,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       <MobileNav />
-      <main className="flex-1 pt-[calc(2rem+5rem)] md:pt-[calc(2rem+5rem)]">
+      <main className="flex-1 md:pt-[calc(2rem+5rem)] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer />

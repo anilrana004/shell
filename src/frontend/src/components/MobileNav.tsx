@@ -19,6 +19,7 @@ import {
   Users,
   X,
 } from "lucide-react";
+import { useScrollHeader } from "@/hooks/use-scroll-header";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
@@ -137,6 +138,7 @@ export function MobileNav() {
   const [searchQuery, setSearchQuery] = useState("");
   const routerState = useRouterState();
   const pathname = routerState.location.pathname;
+  const headerVisible = useScrollHeader(open);
 
   const close = () => setOpen(false);
 
@@ -148,20 +150,63 @@ export function MobileNav() {
 
   return (
     <>
-      {/* Hamburger — top-right, mobile only */}
-      <button
-        type="button"
-        data-ocid="mobile_nav.open_modal_button"
-        onClick={() => setOpen(true)}
-        className="md:hidden fixed top-3 right-3 z-50 p-2.5 rounded-xl"
+      {/* Mobile top bar — hides on scroll down, shows on scroll up */}
+      <header
+        className={`md:hidden fixed top-0 inset-x-0 z-50 flex items-center justify-between px-4 min-h-14 w-full transition-transform duration-300 ease-out will-change-transform ${
+          headerVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
         style={{
-          background: "rgba(45,27,30,0.92)",
-          border: "1px solid #F8837944",
+          background: "rgba(45,27,30,0.98)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          borderBottom: "1px solid rgba(248,131,121,0.25)",
+          paddingTop: "env(safe-area-inset-top, 0px)",
+          minHeight: "calc(3.5rem + env(safe-area-inset-top, 0px))",
         }}
-        aria-label="Open navigation menu"
+        data-ocid="mobile_nav.header"
       >
-        <Menu size={20} style={{ color: "#1A1A1A" }} />
-      </button>
+        <Link to="/" className="flex items-center gap-2 min-w-0">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 40 40"
+            fill="none"
+            role="img"
+            aria-label="Shail Hikers"
+            className="flex-shrink-0"
+          >
+            <path d="M20 3L38 36H2L20 3Z" fill="#F88379" />
+            <path
+              d="M20 13L30 36H10L20 13Z"
+              fill="#E6D8C4"
+              opacity="0.5"
+            />
+            <circle cx="20" cy="36" r="2" fill="#D4A843" />
+          </svg>
+          <span
+            style={{
+              fontFamily: "var(--font-display)",
+              color: "#FFFFFF",
+            }}
+            className="font-semibold tracking-widest uppercase text-sm truncate"
+          >
+            Shail Hikers
+          </span>
+        </Link>
+        <button
+          type="button"
+          data-ocid="mobile_nav.open_modal_button"
+          onClick={() => setOpen(true)}
+          className="p-2.5 rounded-xl flex-shrink-0"
+          style={{
+            background: "rgba(248,131,121,0.15)",
+            border: "1px solid rgba(248,131,121,0.4)",
+          }}
+          aria-label="Open navigation menu"
+        >
+          <Menu size={20} style={{ color: "#FFFFFF" }} />
+        </button>
+      </header>
 
       <AnimatePresence>
         {open && (
@@ -582,11 +627,11 @@ export function MobileNav() {
 
       {/* Fixed bottom nav bar */}
       <nav
-        className="md:hidden fixed bottom-0 inset-x-0 z-40 flex"
+        className="md:hidden fixed bottom-0 inset-x-0 z-50 flex shadow-[0_-4px_16px_rgba(26,26,26,0.08)]"
         style={{
           background: "#E6D8C4",
-          borderTop: "1px solid #F8837933",
-          paddingBottom: "env(safe-area-inset-bottom)",
+          borderTop: "1px solid #F8837966",
+          paddingBottom: "env(safe-area-inset-bottom, 0px)",
         }}
         aria-label="Bottom navigation"
       >
@@ -599,12 +644,17 @@ export function MobileNav() {
             <Link
               key={item.to}
               to={item.to as "/"}
-              className="flex-1 flex flex-col items-center gap-1 py-2.5 transition-colors"
-              style={{ color: isActive ? "#F88379" : "#4A4A4A55" }}
+              className="relative flex-1 flex flex-col items-center gap-1 py-2.5 transition-colors"
+              style={{ color: isActive ? "#F88379" : "#4A4A4A" }}
               data-ocid={`bottom_nav.${item.label.toLowerCase()}`}
             >
-              <Icon size={20} />
-              <span className="text-[10px] font-medium">{item.label}</span>
+              <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+              <span
+                className="text-[10px] font-medium"
+                style={{ opacity: isActive ? 1 : 0.85 }}
+              >
+                {item.label}
+              </span>
               {isActive && (
                 <span
                   className="absolute bottom-0 w-8 h-0.5 rounded-full"

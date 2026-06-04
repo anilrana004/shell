@@ -423,11 +423,11 @@ export function Footer() {
           <p style={{ color: "#4A4A4A66" }} className="text-xs">
             &copy; {year} Shail Hikers. All rights reserved.{" "}
             <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(typeof window !== "undefined" ? window.location.hostname : "shailhikers.com")}`}
+              href="https://omnistack.co.in"
               style={{ color: "#F88379" }}
               className="hover:text-[#1A1A1A] transition-colors"
             >
-              Built with caffeine.ai
+              omnistack.co.in
             </a>
           </p>
         </div>

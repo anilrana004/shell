@@ -2,8 +2,11 @@ import { PackageCard } from "@/components/PackageCard";
 import { HOMEPAGE_PACKAGES } from "@/data/packages";
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
+import { useRef } from "react";
 
 export function PackagesSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   return (
     <section
       data-ocid="packages.section"
@@ -14,8 +17,8 @@ export function PackagesSection() {
       }}
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
-          <div className="text-center md:text-left">
+        <div className="flex items-end justify-between mb-12">
+          <div>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -34,9 +37,9 @@ export function PackagesSection() {
             >
               EXCLUSIVE PACKAGES
             </motion.h2>
-            <p className="mt-3 text-sm max-w-lg text-sh-graphite mx-auto md:mx-0">
-              Multi-trek & yatra bundles with bundled pricing — hotels, meals,
-              guides & transport included
+            <p className="mt-3 text-sm max-w-lg text-sh-graphite">
+              Multi-trek & yatra bundles with bundled pricing — swipe to compare
+              savings, routes & inclusions
             </p>
           </div>
           <Link
@@ -48,10 +51,25 @@ export function PackagesSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          {HOMEPAGE_PACKAGES.map((pkg, i) => (
-            <PackageCard key={pkg.id} pkg={pkg} index={i} />
-          ))}
+        {/* Horizontal scroll carousel — same as Yatras & Legendary Trails */}
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
+          style={{ scrollbarWidth: "none" }}
+        >
+          <div
+            className="flex gap-5 items-stretch"
+            style={{ width: "max-content" }}
+          >
+            {HOMEPAGE_PACKAGES.map((pkg, i) => (
+              <PackageCard
+                key={pkg.id}
+                pkg={pkg}
+                index={i}
+                layout="carousel"
+              />
+            ))}
+          </div>
         </div>
 
         <div className="mt-6 flex justify-center md:hidden">

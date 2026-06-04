@@ -56,9 +56,11 @@ function StarRating({ rating, count }: { rating: number; count: number }) {
 interface PackageCardProps {
   pkg: HomepagePackage;
   index: number;
+  layout?: "carousel" | "grid";
 }
 
-export function PackageCard({ pkg, index }: PackageCardProps) {
+export function PackageCard({ pkg, index, layout = "grid" }: PackageCardProps) {
+  const isCarousel = layout === "carousel";
   const savings = pkg.originalPrice - pkg.price;
   const savingsPct = Math.round((savings / pkg.originalPrice) * 100);
 
@@ -69,7 +71,9 @@ export function PackageCard({ pkg, index }: PackageCardProps) {
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.55 }}
       data-ocid={`packages.card.${index + 1}`}
-      className="group flex flex-col h-full rounded-2xl overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300 border border-sh-orange/25 shadow-[0_4px_20px_rgba(46,125,79,0.06)]"
+      className={`group flex flex-col rounded-2xl overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300 border border-sh-orange/25 shadow-[0_4px_20px_rgba(46,125,79,0.06)] ${
+        isCarousel ? "flex-shrink-0 w-[320px] min-w-[320px] h-full" : "h-full w-full"
+      }`}
     >
       <div className="relative h-44 sm:h-48 overflow-hidden flex-shrink-0">
         <img

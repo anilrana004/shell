@@ -12,8 +12,11 @@ export function FeaturedTreksSection() {
   return (
     <section
       data-ocid="featured_treks.section"
-      style={{ background: "#EDF7F2" }}
-      className="py-20"
+      className="py-20 bg-sh-green-ultra"
+      style={{
+        background:
+          "linear-gradient(180deg, var(--sh-green-ultra) 0%, var(--sh-green-pale) 55%, var(--sh-green-ultra) 100%)",
+      }}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-end justify-between mb-12">
@@ -22,8 +25,7 @@ export function FeaturedTreksSection() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xs uppercase tracking-[0.3em] mb-3"
-              style={{ color: "#2E7D4F" }}
+              className="text-xs uppercase tracking-[0.3em] mb-3 text-sh-green font-semibold"
             >
               Handpicked for You
             </motion.p>
@@ -32,17 +34,20 @@ export function FeaturedTreksSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-semibold"
-              style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
+              className="text-4xl md:text-6xl font-semibold text-sh-ink"
+              style={{ fontFamily: "var(--font-display)" }}
             >
               LEGENDARY TRAILS
             </motion.h2>
+            <p className="mt-3 text-sm max-w-lg text-sh-graphite">
+              Full trek details — route, altitude, inclusions & certified guides,
+              like a premium adventure agency
+            </p>
           </div>
           <Link
             to="/treks"
             data-ocid="featured_treks.view_all"
-            className="hidden md:flex items-center gap-2 text-sm font-semibold transition-colors hover:text-[#E8541A]"
-            style={{ color: "#2E7D4F" }}
+            className="hidden md:flex items-center gap-2 text-sm font-semibold text-sh-green transition-colors hover:text-sh-orange"
           >
             View All 14 Treks →
           </Link>
@@ -51,12 +56,12 @@ export function FeaturedTreksSection() {
         {/* Horizontal scroll carousel */}
         <div
           ref={ref}
-          className="overflow-x-auto pb-4"
+          className="overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden"
           style={{ scrollbarWidth: "none" }}
         >
-          <div className="flex gap-5" style={{ width: "max-content" }}>
+          <div className="flex gap-5 items-stretch" style={{ width: "max-content" }}>
             {featured.map((trek, i) => (
-              <TrekCard key={trek.id} trek={trek} index={i} />
+              <TrekCard key={trek.id} trek={trek} index={i} layout="carousel" />
             ))}
           </div>
         </div>
@@ -65,11 +70,7 @@ export function FeaturedTreksSection() {
           <Link
             to="/treks"
             data-ocid="featured_treks.view_all_mobile"
-            className="px-6 py-3 rounded-xl text-sm font-semibold tracking-wide"
-            style={{
-              border: "1px solid rgba(232,84,26,0.4)",
-              color: "#E8541A",
-            }}
+            className="px-6 py-3 rounded-xl text-sm font-semibold tracking-wide border border-sh-orange/40 text-sh-orange hover:bg-sh-orange-pale transition-colors"
           >
             View All 14 Treks →
           </Link>

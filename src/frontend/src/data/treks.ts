@@ -1,6 +1,6 @@
 import type { Trek } from "@/types";
 
-export const TREKS: Trek[] = [
+const RAW_TREKS = [
   {
     id: "1",
     slug: "kedarkantha",
@@ -409,6 +409,162 @@ export const TREKS: Trek[] = [
   },
 ];
 
+const TREK_CARD_META: Record<
+  string,
+  {
+    route: string;
+    highlights: string[];
+    inclusions: string[];
+    groupType: string;
+  }
+> = {
+  kedarkantha: {
+    route: "Sankri → Juda Ka Talab → Kedarkantha Summit (12,500 ft)",
+    highlights: [
+      "360° snow summit sunrise views",
+      "Pine & oak forests in deep winter snow",
+      "Ideal first Himalayan winter trek",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "har-ki-dun": {
+    route: "Sankri → Osla → Har Ki Dun Valley → Maninda Lake",
+    highlights: [
+      "Mythical Pandava valley & ancient villages",
+      "Swargarohini peak panoramas",
+      "Riverside camps in Govind Sanctuary",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "chandernahan-lake": {
+    route: "Rohru → Chirgaon → Chandernahan Lake (14,100 ft)",
+    highlights: [
+      "Sacred high-altitude glacial lake",
+      "Alpine boulder terrain & open ridges",
+      "Pabbar Valley cultural trail",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "chaainsheel-bugyal": {
+    route: "Balipass Road → Chaainsheel Bugyal meadows",
+    highlights: [
+      "Untouched rolling alpine meadows",
+      "Wildflower carpets (May–Sep)",
+      "Low-crowd alternative to Dayara",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group / Private",
+  },
+  "buran-ghati": {
+    route: "Janglik → Litham → Buran Ghati Pass → Sangla side",
+    highlights: [
+      "200m snow rappel descent",
+      "High pass at 15,328 ft",
+      "Waterfalls, meadows & river crossings",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Small Group",
+  },
+  "ruinsara-tal": {
+    route: "Taluka → Seema → Ruinsara Tal → Thanga Camps",
+    highlights: [
+      "Pristine glacial lake under Swargarohini",
+      "Dense deodar & walnut forests",
+      "Remote pastoral hamlets",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "rupin-pass": {
+    route: "Dhaula → Lower Rupin → Rupin Pass → Sangla",
+    highlights: [
+      "Snow bridges & hanging villages",
+      "Dramatic Rupin waterfall gorge",
+      "Cross from Uttarakhand to Himachal",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "bali-pass": {
+    route: "Sankri → Ruinsara → Bali Pass → Yamunotri region",
+    highlights: [
+      "16,207 ft technical pass crossing",
+      "Multi-valley expedition traverse",
+      "For experienced mountaineers only",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Expedition",
+  },
+  "dayara-bugyal": {
+    route: "Barsu → Barnala → Dayara Bugyal → Bakaria Top",
+    highlights: [
+      "Vast snow meadows (winter ski zone)",
+      "Summer wildflower paradise",
+      "Gentle slopes — family friendly",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "nag-tibba": {
+    route: "Panthwari → Nag Tibba Base → Summit (9,915 ft)",
+    highlights: [
+      "Weekend escape from Dehradun",
+      "Views of Bandarpoonch & Gangotri peaks",
+      "Year-round accessible trail",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Weekend Trek",
+  },
+  "chopta-chandrashila": {
+    route: "Chopta → Tungnath Temple → Chandrashila Summit",
+    highlights: [
+      "Highest Shiva temple in the world",
+      "Nanda Devi & Trishul panoramas",
+      "Winter snow summit option",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "phulara-ridge": {
+    route: "Barsu → Phulara Ridge walk → Pushtara Meadows",
+    highlights: [
+      "Miles of continuous ridge walking",
+      "360° views Swargarohini to Bandarpoonch",
+      "Unique skywalk-style trail",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+  "borasu-pass": {
+    route: "Sankri → Har Ki Dun → Borasu Pass → Kinnaur",
+    highlights: [
+      "Ancient Tibet trade route",
+      "17,100 ft remote pass",
+      "10-day expedition-grade trek",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Expedition",
+  },
+  "valley-of-flowers": {
+    route: "Govindghat → Ghangaria → Valley of Flowers → Hemkund",
+    highlights: [
+      "UNESCO World Heritage valley",
+      "300+ wildflower species (monsoon)",
+      "Optional Hemkund Sahib visit",
+    ],
+    inclusions: ["Camping", "Meals", "Guide", "Transport", "Permits"],
+    groupType: "Group Trek",
+  },
+};
+
+export const TREKS: Trek[] = RAW_TREKS.map((t) => ({
+  ...t,
+  ...TREK_CARD_META[t.slug],
+}));
+
 export const DIFFICULTY_COLORS: Record<string, string> = {
   Easy: "#2E7D4F",
   Moderate: "#D4A843",
@@ -436,6 +592,20 @@ export const YATRAS = [
     helicopterOption: true,
     nextDeparture: "2025-05-15",
     pilgrimage: "Challenging",
+    region: "Garhwal Himalayas, Uttarakhand",
+    rating: 4.8,
+    reviewCount: 412,
+    route:
+      "Haridwar → Barkot → Uttarkashi → Guptkashi → Kedarnath → Badrinath → Rishikesh",
+    highlights: [
+      "Yamunotri, Gangotri, Kedarnath & Badrinath darshan",
+      "Ganga Aarti at Har Ki Pauri, Haridwar",
+      "Mana Village — last village before Tibet",
+      "Optional helicopter (Kedarnath / Yamunotri)",
+    ],
+    inclusions: ["Hotel", "Meals", "Transport", "Darshan", "Guide"],
+    groupType: "Group Pilgrimage",
+    seatsAvailable: 8,
   },
   {
     id: "2",
@@ -456,6 +626,20 @@ export const YATRAS = [
     helicopterOption: true,
     nextDeparture: "2025-05-20",
     pilgrimage: "Moderate",
+    region: "Kedarnath & Badrinath, Uttarakhand",
+    rating: 4.7,
+    reviewCount: 286,
+    route:
+      "Haridwar → Guptkashi → Kedarnath → Badrinath → Mana → Rudraprayag",
+    highlights: [
+      "Kedarnath Jyotirlinga trek (16 km) or heli",
+      "Badrinath Temple & Tapt Kund holy dip",
+      "Panch Prayag river confluences en route",
+      "Mana Village & Vyas Gufa sightseeing",
+    ],
+    inclusions: ["Hotel", "Meals", "Transport", "Darshan", "Guide"],
+    groupType: "Group Pilgrimage",
+    seatsAvailable: 12,
   },
   {
     id: "3",
@@ -476,6 +660,19 @@ export const YATRAS = [
     helicopterOption: false,
     nextDeparture: "2025-01-20",
     pilgrimage: "Easy",
+    region: "Rishikesh & Haridwar, Uttarakhand",
+    rating: 4.9,
+    reviewCount: 198,
+    route: "Dehradun → Haridwar → Rishikesh → Neelkanth (optional)",
+    highlights: [
+      "Ganga Aarti at Triveni Ghat & Har Ki Pauri",
+      "Ram Jhula, Laxman Jhula & Beatles Ashram",
+      "Guided yoga session at certified ashram",
+      "Optional Grade III–IV river rafting (seasonal)",
+    ],
+    inclusions: ["Hotel", "Meals", "Transport", "Sightseeing", "Guide"],
+    groupType: "Group / Private",
+    seatsAvailable: 15,
   },
   {
     id: "4",
@@ -496,6 +693,19 @@ export const YATRAS = [
     helicopterOption: false,
     nextDeparture: "2025-01-25",
     pilgrimage: "Easy",
+    region: "Mussoorie, Uttarakhand",
+    rating: 4.6,
+    reviewCount: 124,
+    route: "Dehradun → Mussoorie → Kempty Falls → Gun Hill → Camel's Back",
+    highlights: [
+      "Gun Hill ropeway & Mall Road heritage walk",
+      "Kempty Falls & Company Garden",
+      "Lal Tibba — highest point views",
+      "Family-friendly hill station circuit",
+    ],
+    inclusions: ["Hotel", "Meals", "Transport", "Sightseeing", "Guide"],
+    groupType: "Family / Group",
+    seatsAvailable: 18,
   },
 ];
 

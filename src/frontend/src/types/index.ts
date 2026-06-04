@@ -26,6 +26,11 @@ export interface Trek {
   rating?: number;
   reviewCount?: number;
   completedThisMonth?: number;
+  /** Trail route summary for agency-style cards */
+  route: string;
+  highlights: string[];
+  inclusions: string[];
+  groupType: string;
 }
 
 export interface Yatra {
@@ -45,6 +50,18 @@ export interface Yatra {
   helicopterOption: boolean;
   nextDeparture?: string;
   pilgrimage?: string;
+  /** e.g. "Garhwal Himalayas, Uttarakhand" */
+  region: string;
+  rating: number;
+  reviewCount: number;
+  /** Key dhams / stops — standard agency card bullets */
+  highlights: string[];
+  /** Short inclusion labels for icon row */
+  inclusions: string[];
+  groupType: string;
+  seatsAvailable?: number;
+  /** One-line route summary */
+  route: string;
 }
 
 export interface Batch {

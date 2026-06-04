@@ -1,35 +1,47 @@
-import { DIFFICULTY_COLORS } from "@/data/treks";
-import type { Trek } from "@/types";
+import type { ComponentType, CSSProperties } from "react";
+import type { Yatra } from "@/types";
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
+  Bed,
   Bus,
+  Calendar,
   Clock,
-  Heart,
+  Compass,
   MapPin,
-  Mountain,
-  Route,
-  Shield,
   Star,
   Sun,
-  Tent,
   Users,
   Utensils,
 } from "lucide-react";
-import type { ComponentType, CSSProperties } from "react";
-import { useState } from "react";
 import { motion } from "motion/react";
+
+const PILGRIMAGE_COLORS: Record<string, string> = {
+  Easy: "#2E7D4F",
+  Moderate: "#D4A843",
+  Challenging: "#E8541A",
+};
 
 const INCLUSION_ICONS: Record<
   string,
   ComponentType<{ size?: number; style?: CSSProperties }>
 > = {
-  Camping: Tent,
+  Hotel: Bed,
   Meals: Utensils,
-  Guide: Users,
   Transport: Bus,
-  Permits: Shield,
+  Darshan: Compass,
+  Sightseeing: Compass,
+  Guide: Users,
 };
+
+function getDaysUntil(dateStr: string) {
+  const d = new Date(dateStr);
+  const now = new Date();
+  return Math.max(
+    0,
+    Math.floor((d.getTime() - now.getTime()) / 86400000),
+  );
+}
 
 function StarRating({ rating, count }: { rating: number; count: number }) {
   return (
@@ -56,39 +68,41 @@ function StarRating({ rating, count }: { rating: number; count: number }) {
   );
 }
 
-interface TrekCardProps {
-  trek: Trek;
+interface YatraCardProps {
+  yatra: Yatra;
   index: number;
-  /** Horizontal carousel on homepage vs grid on /treks */
   layout?: "carousel" | "grid";
 }
 
-export function TrekCard({ trek, index, layout = "carousel" }: TrekCardProps) {
-  const [wishlisted, setWishlisted] = useState(false);
-  const diffColor = DIFFICULTY_COLORS[trek.difficulty] ?? "#E8541A";
-  const seatsLow = (trek.seatsAvailable ?? 10) <= 3;
-  const seatsMid = (trek.seatsAvailable ?? 10) <= 7 && !seatsLow;
+export function YatraCard({ yatra, index, layout = "grid" }: YatraCardProps) {
   const isCarousel = layout === "carousel";
+  const pilgrimageColor =
+    PILGRIMAGE_COLORS[yatra.pilgrimage as string] ?? "#D4A843";
+  const daysUntil = yatra.nextDeparture
+    ? getDaysUntil(yatra.nextDeparture)
+    : null;
+  const seatsLow = (yatra.seatsAvailable ?? 10) <= 5;
 
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.08, duration: 0.55 }}
-      data-ocid={`treks.card.${index + 1}`}
-      className={`group flex flex-col rounded-2xl overflow-hidden bg-white transition-shadow duration-300 hover:shadow-lg ${
-        isCarousel ? "flex-shrink-0 w-[320px] min-w-[320px]" : "h-full w-full"
+      transition={{ delay: index * 0.1, duration: 0.55 }}
+      data-ocid={`yatras.card.${index + 1}`}
+      className={`group flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow duration-300 ${
+        isCarousel ? "flex-shrink-0 w-[320px] min-w-[320px] h-full" : "h-full w-full"
       }`}
       style={{
-        border: "1px solid #C8E0D4",
-        boxShadow: "0 4px 20px rgba(46,125,79,0.08)",
+        border: "1px solid rgba(232,84,26,0.18)",
+        boxShadow: "0 4px 20px rgba(46,125,79,0.06)",
       }}
     >
+      {/* Hero image */}
       <div className="relative h-44 sm:h-48 overflow-hidden flex-shrink-0">
         <img
-          src={trek.heroImage}
-          alt={`${trek.name} — ${trek.region}, Uttarakhand`}
+          src={yatra.heroImage}
+          alt={`${yatra.name} — ${yatra.region}`}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />
@@ -96,52 +110,45 @@ export function TrekCard({ trek, index, layout = "carousel" }: TrekCardProps) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, rgba(26,42,30,0.3) 0%, transparent 50%, transparent 75%, rgba(255,255,255,0.1) 100%)",
+              "linear-gradient(180deg, rgba(26,42,30,0.35) 0%, transparent 45%, transparent 70%, rgba(255,255,255,0.15) 100%)",
           }}
         />
 
         <div className="absolute top-3 left-3 flex flex-col gap-1.5">
           <span
-            className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide shadow-sm"
+            className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide shadow-sm"
             style={{ background: "#E8541A", color: "#FFFFFF" }}
           >
-            {trek.difficulty}
+            {yatra.pilgrimage as string}
           </span>
-          {trek.slug === "valley-of-flowers" && (
+          {yatra.requiresAdvanceRegistration && (
             <span
-              className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase"
-              style={{ background: "#D4A843", color: "#1A2A1E" }}
+              className="px-2 py-0.5 rounded-full text-[10px] font-bold"
+              style={{
+                background: "rgba(255,255,255,0.92)",
+                color: "#E8541A",
+                border: "1px solid rgba(232,84,26,0.35)",
+              }}
             >
-              UNESCO
+              Reg Required
             </span>
           )}
         </div>
 
-        <button
-          type="button"
-          data-ocid={`treks.wishlist.${index + 1}`}
-          onClick={(e) => {
-            e.preventDefault();
-            setWishlisted(!wishlisted);
-          }}
-          className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-all hover:scale-110"
-          style={{
-            background: "rgba(255,255,255,0.92)",
-            border: "1px solid rgba(232,84,26,0.3)",
-          }}
-          aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
-        >
-          <Heart
-            size={14}
-            style={{
-              color: wishlisted ? "#E8541A" : "#1A2A1E80",
-              fill: wishlisted ? "#E8541A" : "transparent",
-            }}
-          />
-        </button>
-
-        {trek.seatsAvailable != null && (
-          <div className="absolute top-12 right-3">
+        <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
+          {yatra.helicopterOption && (
+            <span
+              className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold"
+              style={{
+                background: "rgba(255,255,255,0.92)",
+                border: "1px solid #D4A84366",
+                color: "#9A7B2A",
+              }}
+            >
+              🚁 Heli Option
+            </span>
+          )}
+          {yatra.seatsAvailable != null && (
             <span
               className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold"
               style={{
@@ -151,65 +158,46 @@ export function TrekCard({ trek, index, layout = "carousel" }: TrekCardProps) {
                 color: seatsLow ? "#FFFFFF" : "#1A2A1E",
               }}
             >
-              <span
-                className={`w-1.5 h-1.5 rounded-full ${seatsLow ? "animate-pulse-dot" : ""}`}
-                style={{
-                  background: seatsLow
-                    ? "#FFFFFF"
-                    : seatsMid
-                      ? "#D4A843"
-                      : "#2E7D4F",
-                }}
-              />
-              {trek.seatsAvailable} seats left
+              <Users size={10} />
+              {yatra.seatsAvailable} seats left
+            </span>
+          )}
+        </div>
+
+        {daysUntil != null && (
+          <div className="absolute bottom-3 left-3">
+            <span
+              className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold"
+              style={{
+                background: "rgba(26,42,30,0.88)",
+                color: "#FFFFFF",
+              }}
+            >
+              <Calendar size={10} />
+              {daysUntil > 0 ? `Next batch in ${daysUntil}d` : "Departing soon"}
             </span>
           </div>
         )}
-
-        <div className="absolute bottom-3 left-3 flex gap-1.5">
-          <span
-            className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold"
-            style={{ background: "rgba(26,42,30,0.88)", color: "#FFFFFF" }}
-          >
-            <Mountain size={10} />
-            {trek.maxAltitude.toLocaleString()} ft
-          </span>
-          <span
-            className="px-2 py-0.5 rounded-full text-[10px] font-semibold"
-            style={{ background: "rgba(26,42,30,0.88)", color: "#FFFFFF" }}
-          >
-            {trek.trekDistance} km
-          </span>
-        </div>
       </div>
 
+      {/* Body — standard travel agency layout */}
       <div className="flex flex-col flex-1 p-4 gap-2.5">
-        <div
-          className="flex items-center gap-1 text-[11px] font-medium"
-          style={{ color: "#2E7D4F" }}
-        >
+        <div className="flex items-center gap-1 text-[11px]" style={{ color: "#2E7D4F" }}>
           <MapPin size={11} className="flex-shrink-0" />
-          <span className="truncate">
-            {trek.region}, Uttarakhand
-          </span>
+          <span className="truncate font-medium">{yatra.region}</span>
         </div>
 
-        {trek.rating != null && trek.reviewCount != null && (
-          <StarRating rating={trek.rating} count={trek.reviewCount} />
-        )}
+        <StarRating rating={yatra.rating} count={yatra.reviewCount} />
 
         <div>
           <h3
             className="text-lg font-semibold leading-tight mb-0.5"
             style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
           >
-            {trek.name}
+            {yatra.name}
           </h3>
-          <p
-            className="text-xs leading-snug line-clamp-2"
-            style={{ color: "#4A5E52" }}
-          >
-            {trek.tagline}
+          <p className="text-xs leading-snug line-clamp-2" style={{ color: "#4A5E52" }}>
+            {yatra.tagline}
           </p>
         </div>
 
@@ -218,13 +206,13 @@ export function TrekCard({ trek, index, layout = "carousel" }: TrekCardProps) {
           style={{ background: "#EDF7F2", color: "#4A5E52" }}
         >
           <span className="font-semibold" style={{ color: "#2E7D4F" }}>
-            Trail:{" "}
+            Route:{" "}
           </span>
-          {trek.route}
+          {yatra.route}
         </p>
 
         <ul className="space-y-1">
-          {trek.highlights.slice(0, 3).map((h) => (
+          {yatra.highlights.slice(0, 3).map((h) => (
             <li
               key={h}
               className="flex items-start gap-1.5 text-[11px] leading-snug"
@@ -232,46 +220,36 @@ export function TrekCard({ trek, index, layout = "carousel" }: TrekCardProps) {
             >
               <span
                 className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0"
-                style={{ background: diffColor }}
+                style={{ background: pilgrimageColor }}
               />
               {h}
             </li>
           ))}
         </ul>
 
-        <div
-          className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px]"
-          style={{ color: "#7A8E80" }}
-        >
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px]" style={{ color: "#7A8E80" }}>
           <span className="flex items-center gap-1">
             <Clock size={10} style={{ color: "#2E7D4F" }} />
-            {trek.durationDays}D / {trek.durationNights}N
+            {yatra.durationDays}D / {yatra.durationNights}N
           </span>
           <span className="flex items-center gap-1">
             <Sun size={10} style={{ color: "#E8541A" }} />
-            {trek.bestTime}
+            {yatra.bestTime}
           </span>
           <span
             className="px-1.5 py-0.5 rounded font-medium"
             style={{ background: "rgba(46,125,79,0.1)", color: "#2E7D4F" }}
           >
-            {trek.groupType}
+            {yatra.groupType}
           </span>
         </div>
 
-        {trek.completedThisMonth != null && (
-          <p className="text-[10px] font-medium" style={{ color: "#7A8E80" }}>
-            <Users size={10} className="inline mr-1" style={{ color: "#2E7D4F" }} />
-            {trek.completedThisMonth} trekkers completed this month
-          </p>
-        )}
-
         <div
-          className="flex flex-wrap gap-2 pt-1"
+          className="flex flex-wrap gap-2 pt-1 pb-0.5"
           style={{ borderTop: "1px solid #E4F0EA" }}
         >
-          {trek.inclusions.map((inc) => {
-            const Icon = INCLUSION_ICONS[inc] ?? Route;
+          {yatra.inclusions.map((inc) => {
+            const Icon = INCLUSION_ICONS[inc] ?? Compass;
             return (
               <span
                 key={inc}
@@ -284,10 +262,7 @@ export function TrekCard({ trek, index, layout = "carousel" }: TrekCardProps) {
                 >
                   <Icon size={12} style={{ color: "#2E7D4F" }} />
                 </span>
-                <span
-                  className="text-[9px] font-medium"
-                  style={{ color: "#7A8E80" }}
-                >
+                <span className="text-[9px] font-medium" style={{ color: "#7A8E80" }}>
                   {inc}
                 </span>
               </span>
@@ -310,22 +285,19 @@ export function TrekCard({ trek, index, layout = "carousel" }: TrekCardProps) {
               className="text-xl font-bold leading-none"
               style={{ color: "#E8541A", fontFamily: "var(--font-display)" }}
             >
-              ₹{trek.basePrice.toLocaleString("en-IN")}
-              <span
-                className="text-[10px] font-normal ml-0.5"
-                style={{ color: "#7A8E80" }}
-              >
+              ₹{yatra.basePrice.toLocaleString("en-IN")}
+              <span className="text-[10px] font-normal ml-0.5" style={{ color: "#7A8E80" }}>
                 / person
               </span>
             </p>
             <span className="text-[10px]" style={{ color: "#7A8E80" }}>
-              Ex. {trek.startingPoint.split(",")[0]}
+              Ex. {yatra.startingPoint}
             </span>
           </div>
           <Link
-            to="/treks/$slug"
-            params={{ slug: trek.slug }}
-            data-ocid={`treks.explore.${index + 1}`}
+            to="/yatras/$slug"
+            params={{ slug: yatra.slug }}
+            data-ocid={`yatras.explore.${index + 1}`}
             className="flex items-center gap-1 px-3.5 py-2 rounded-lg text-xs font-bold uppercase tracking-wide transition-all hover:gap-2 flex-shrink-0"
             style={{ background: "#E8541A", color: "#FFFFFF" }}
           >

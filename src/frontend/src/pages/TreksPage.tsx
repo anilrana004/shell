@@ -1,3 +1,4 @@
+import { TrekCard } from "@/components/TrekCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -12,7 +13,7 @@ import {
 import { DIFFICULTY_COLORS, TREKS } from "@/data/treks";
 import type { Trek } from "@/types";
 import { Link } from "@tanstack/react-router";
-import { Heart, SlidersHorizontal, Star, X } from "lucide-react";
+import { SlidersHorizontal, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
 const QUICK_FILTERS = [
@@ -87,137 +88,6 @@ function applyQuickFilter(trek: Trek, key: string): boolean {
     default:
       return true;
   }
-}
-
-function TrekCard({ trek }: { trek: Trek }) {
-  const [wishlisted, setWishlisted] = useState(false);
-  const diffColor = DIFFICULTY_COLORS[trek.difficulty] ?? "#E8541A";
-  const seatsLow = (trek.seatsAvailable ?? 10) <= 3;
-
-  return (
-    <div
-      data-ocid={`treks.item.${trek.id}`}
-      className="relative rounded-xl overflow-hidden flex flex-col"
-      style={{
-        background: "#EDF7F2",
-        border: "1px solid rgba(212,237,224,0.15)",
-      }}
-    >
-      {/* Image */}
-      <div className="relative h-52 overflow-hidden">
-        <img
-          src={trek.heroImage}
-          alt={trek.name}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-        />
-        <button
-          type="button"
-          data-ocid={`treks.wishlist.${trek.id}`}
-          aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
-          onClick={() => setWishlisted((w) => !w)}
-          className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center"
-          style={{ background: "rgba(255,255,255,0.85)" }}
-        >
-          <Heart
-            size={16}
-            fill={wishlisted ? "#E8541A" : "none"}
-            stroke={wishlisted ? "#E8541A" : "#1A2A1E"}
-          />
-        </button>
-        <div className="absolute top-3 left-3 flex gap-1 flex-wrap">
-          <span
-            className="text-xs font-semibold px-2 py-0.5 rounded-full"
-            style={{ background: "#E8541A", color: "#FFFFFF" }}
-          >
-            {trek.difficulty}
-          </span>
-          {trek.slug === "valley-of-flowers" && (
-            <span
-              className="text-xs font-semibold px-2 py-0.5 rounded-full"
-              style={{ background: "#D4A843", color: "#EDF7F2" }}
-            >
-              UNESCO
-            </span>
-          )}
-        </div>
-        {seatsLow && (
-          <div
-            className="absolute bottom-3 left-3 text-xs px-2 py-0.5 rounded-full font-medium"
-            style={{ background: "#E8541A", color: "#FFFFFF" }}
-          >
-            Only {trek.seatsAvailable} seats left!
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="flex flex-col flex-1 p-4 gap-2">
-        <h3
-          className="text-lg leading-tight"
-          style={{ fontFamily: "var(--font-display)", color: "#1A2A1E" }}
-        >
-          {trek.name}
-        </h3>
-        <p className="text-xs line-clamp-2" style={{ color: "#4A5E52" }}>
-          {trek.shortDescription}
-        </p>
-
-        <div
-          className="flex flex-wrap gap-x-4 gap-y-1 text-xs mt-1"
-          style={{ color: "#4A5E52" }}
-        >
-          <span>
-            ⏱ {trek.durationDays}D/{trek.durationNights}N
-          </span>
-          <span>📍 {trek.maxAltitude.toLocaleString()} ft</span>
-          <span>📅 {trek.bestTime}</span>
-        </div>
-
-        {trek.rating && (
-          <div
-            className="flex items-center gap-1 text-xs"
-            style={{ color: "#D4A843" }}
-          >
-            <Star size={12} fill="#D4A843" />
-            <span>{trek.rating}</span>
-            <span style={{ color: "#4A5E52" }}>
-              ({trek.reviewCount} reviews)
-            </span>
-          </div>
-        )}
-
-        <div
-          className="flex items-center justify-between mt-auto pt-2"
-          style={{ borderTop: "1px solid rgba(212,237,224,0.1)" }}
-        >
-          <div>
-            <span className="text-xs" style={{ color: "#4A5E52" }}>
-              From{" "}
-            </span>
-            <span
-              className="text-base font-bold"
-              style={{ color: "#D4A843", fontFamily: "var(--font-display)" }}
-            >
-              ₹{trek.basePrice.toLocaleString()}
-            </span>
-          </div>
-          <Link to="/book/$slug" params={{ slug: trek.slug }}>
-            <Button
-              size="sm"
-              data-ocid={`treks.book_button.${trek.id}`}
-              className="text-xs px-3"
-              style={{
-                background: "#E8541A", color: "#FFFFFF",
-                border: "none",
-              }}
-            >
-              Book Now
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 function FilterPanel({
@@ -744,16 +614,14 @@ export default function TreksPage() {
                 </Button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-                {filtered.map((trek) => (
-                  <Link
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
+                {filtered.map((trek, i) => (
+                  <TrekCard
                     key={trek.id}
-                    to="/treks/$slug"
-                    params={{ slug: trek.slug }}
-                    className="block"
-                  >
-                    <TrekCard trek={trek} />
-                  </Link>
+                    trek={trek}
+                    index={i}
+                    layout="grid"
+                  />
                 ))}
               </div>
             )}
